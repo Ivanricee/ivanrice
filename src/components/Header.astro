@@ -1,0 +1,26 @@
+---
+const id = Astro.params
+const hasBack = id['id'] ?? false
+---
+<header>
+  <h1
+    class="text-7xl font-black leading-none text-stone-600 sm:truncate  tracking-tight"
+  >
+    IVANRICE
+  </h1>
+  <p class="text-xl font-bold leading-7 text-stone-500 sm:truncate ">
+    Front End Developer | 3D Artist
+  </p>
+  <nav class="pb-2 md:pb-20 pt-14 ">
+    <div class=" flex justify-between text-2xl font-medium">
+      {
+        hasBack ? <a href="/">  Back </a> : ''
+      }
+      <ul class="flex gap-5 text-2xl font-medium  w-full justify-end">
+        <li>About</li>
+        <li>Portfolio</li>
+        <li>Blog Post</li>
+      </ul>
+    </div>
+  </nav>
+</header>
