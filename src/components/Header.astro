@@ -4,14 +4,17 @@ const hasBack = id['id'] ?? false
 ---
 <header>
   <h1
-    class="text-7xl font-black leading-none text-stone-600 sm:truncate  tracking-tight"
+    class="text-7xl font-black leading-none text-slate-600 sm:truncate  tracking-tight text-center"
   >
     IVANRICE
   </h1>
-  <p class="text-xl font-bold leading-7 text-stone-500 sm:truncate ">
+  <p class="text-xl font-bold leading-7 text-red-500/60 sm:truncate text-center">
     Front End Developer | 3D Artist
   </p>
-  <nav class="pb-2 md:pb-20 pt-14 ">
+  <div class="flex justify-center w-full p-2">
+    <div class="w-1/3 h-1 bg-slate-500/10"></div>
+  </div>
+  <nav class="pb-2 md:pb-6 pt-8 ">
     <div class=" flex justify-between text-2xl font-medium">
       {
         hasBack ? <a href="/">  Back </a> : ''
