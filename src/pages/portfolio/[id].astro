@@ -1,17 +1,14 @@
 ---
 
 import Layout from "../../layouts/Layout.astro";
-import { CARD_INFO } from "../../lib/data";
+import { CARD_INFO, SOFTWARE } from "../../lib/data";
 import CarouselPortfolio from "@/components/CarouselPortfolio";
 import InfoAlert from '@/components/InfoAlert'
+import BadgeItems from '@/components/BadgeItems'
 
 const { id } = Astro.params
 const card = CARD_INFO.find(info => String(info.id) === id) || null
-console.log({id,card});
-
-  //
-
-
+const srcSoftware = card && card.software.map(itm => {return {'src': SOFTWARE[itm], 'text': itm}} )
 ---
 
 <Layout title="Ivanrice Portfolio">
@@ -57,12 +54,7 @@ console.log({id,card});
               >
               Software Used
               </h3>
-
-              <div class="w-[25px] h-[25px] bg-stone-700 inline-block"></div>
-              <div class="w-[25px] h-[25px] bg-stone-700 inline-block"></div>
-              <div class="w-[25px] h-[25px] bg-stone-700 inline-block"></div>
-              <div class="w-[25px] h-[25px] bg-stone-700 inline-block"></div>
-              <div class="w-[25px] h-[25px] bg-stone-700 inline-block"></div>
+              <BadgeItems items={srcSoftware!} />
             </section>
           }
 
@@ -73,9 +65,7 @@ console.log({id,card});
 </Layout>
 
 <style>
-
   .caption {
     font-family: 'Sawarabi Gothic', sans-serif;
-
   }
 </style>
