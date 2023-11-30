@@ -9,6 +9,7 @@ export default {
     extend: {
       backgroundColor: {
         backImg: "#a9b8b7",
+        secondaryBack: "#e67177",
       },
       backgroundImage: {
         "floor-rock":
@@ -21,7 +22,7 @@ export default {
         "card-2xl": "-10px -15px 16px #bcc9c0,3px 3px 12px #dae9da",
       },
       textColor: {
-        "card-text": "#1c69cc",
+        "card-text": "#e67177",
       },
     },
   },
