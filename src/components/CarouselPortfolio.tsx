@@ -16,10 +16,10 @@ const theme: CustomFlowbiteTheme["carousel"] = {
     },
     base: "h-3 w-3 rounded-full",
     wrapper:
-      "absolute bottom-5 left-1/2 flex -translate-x-1/2 space-x-3 bg-slate-500/30 p-2 rounded-full",
+      "absolute bottom-5 left-1/2 flex -translate-x-1/2 space-x-3 bg-secondaryBack/30 p-2 rounded-full",
   },
   control: {
-    base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-500/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10",
+    base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-secondaryBack/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10",
     icon: "h-5 w-5 text-white dark:text-gray-800 sm:h-6 sm:w-6",
   },
   scrollContainer: {
@@ -50,7 +50,7 @@ export default function CarouselPortfolio({ imgs }: Props) {
 
   return (
     <div className="h-full ">
-      <Carousel theme={theme}>
+      <Carousel theme={theme} pauseOnHover>
         {imageList.map((url) => {
           return (
             <img
