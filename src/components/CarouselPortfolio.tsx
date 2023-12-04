@@ -1,5 +1,3 @@
-"use client";
-
 import {
   CLOUDINARY_HIGH,
   CLOUDINARY_LOW,
@@ -32,7 +30,9 @@ interface Props {
 }
 export default function CarouselPortfolio({ imgs }: Props) {
   const imgLowQ = `${CLOUDINARY_URL}${CLOUDINARY_LOW}${imgs[0]}`;
-  const [imageList, setImageList] = useState([imgLowQ]);
+  const [imageList, setImageList] = useState<string[] | null>(null);
+  const [loadAnimate, setLoadAnimate] = useState(false);
+
   useEffect(() => {
     let loadedImgs = 0;
     let HQImages: string[] = [];
@@ -42,26 +42,40 @@ export default function CarouselPortfolio({ imgs }: Props) {
       img.onload = () => {
         loadedImgs++;
         HQImages[index] = img.src;
-        if (loadedImgs === imgs.length) setImageList(HQImages);
+        if (loadedImgs === imgs.length) {
+          setLoadAnimate(true);
+          setImageList(HQImages);
+        }
       };
     });
   }, []);
-  //console.log("lista ", imageList);
 
   return (
     <div className="h-full ">
-      <Carousel theme={theme} pauseOnHover>
-        {imageList.map((url) => {
-          return (
-            <img
-              key={url}
-              src={url}
-              alt="..."
-              className=" w-full h-full object-contain transition duration-150 absolute bg- rounded-2xl"
-            />
-          );
-        })}
-      </Carousel>
+      <img
+        src={imgLowQ}
+        alt="carousel image"
+        className={`w-full h-full object-contain absolute rounded-2xl ${
+          loadAnimate ? "animate-fadeOut" : ""
+        }`}
+      />
+      {imageList && imageList.length > 0 && (
+        <Carousel theme={theme} pauseOnHover>
+          {imageList?.map((url) => {
+            console.log({ imageList });
+            return (
+              <img
+                key={url}
+                src={url}
+                alt="carousel image"
+                className={`w-full h-full object-contain absolute  rounded-2xl ${
+                  loadAnimate ? "animate-fadeIn" : ""
+                }`}
+              />
+            );
+          })}
+        </Carousel>
+      )}
     </div>
   );
 }
