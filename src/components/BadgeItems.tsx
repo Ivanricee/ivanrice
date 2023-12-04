@@ -1,5 +1,4 @@
 import { Badge } from "flowbite-react";
-import { HiCheck, HiClock } from "react-icons/hi";
 
 interface Props {
   items: { src: string; text: string }[];
