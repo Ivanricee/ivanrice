@@ -6,7 +6,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: "https://Ivanricee.github.io",
-  base: "/my-repo",
+  base: "/ivanrice",
   integrations: [tailwind(), react()],
   output: "server",
   adapter: vercel({
