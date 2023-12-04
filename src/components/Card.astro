@@ -1,5 +1,6 @@
 ---
 import { CLOUDINARY_LOW, CLOUDINARY_URL } from '@/lib/constants'
+import { fade } from 'astro:transitions';
 interface Props {
 	title: string
   longTitle: string
@@ -18,19 +19,19 @@ const url = `${CLOUDINARY_URL}${CLOUDINARY_LOW}${bg}`
 ---
 
   <li style={`--rotate: ${rand}deg`} class=" relative z-10 rounded-2xl bg-lime-50/40 card-xl shadow-card-xl w-[250px] h-[270px] origin-top
-  before:absolute before:z-20 before:content before:block before:w-4 before:h-4 before:rounded-full before:bg-stone-600 before:translate-x-[120px] before:translate-y-2
-  transition duration-300 hover:scale-105 hover:shadow-card-2xl transform hover:rotate-0"  transition:name=`card ${id} box`>
-  <a href={href} class=" transition-all w-full h-full">
-    <div class="p-4 w-full h-full ">
-      <div class="h-5/6 rounded-t-xl overflow-hidden bg-backImg relative">
+    before:absolute before:z-20 before:content before:block before:w-4 before:h-4 before:rounded-full before:bg-stone-600 before:translate-x-[120px] before:translate-y-2
+    transition duration-300 hover:scale-105 hover:shadow-card-2xl transform hover:rotate-0" transition:name=`card ${id} box`
+  >
+  <a href={href} class=" w-full h-full" transition:name={`card ${id} link`}>
+    <div class="p-4 w-full h-full " transition:name={`card ${id} container`}>
+      <div class="h-5/6 rounded-t-xl overflow-hidden bg-backImg relative "
+        transition:name={`card ${id} containerRound`}>
         <picture>
           <img
             src={url}
             alt={longTitle}
-            class="w-full h-full opacity-80 object-cover object-center transition duration-150 hover:scale-[1.1] rounded-t-xl absolute top-0 left-0"
-            transition:name=`card ${id} image`
+            class="w-full h-full opacity-80 object-cover object-center rounded-t-xl absolute top-0 left-0 transition duration-150 hover:scale-[1.1] "
           />
-
         </picture>
       </div>
       <h2 class="text-xl text-center p-2 text-card-text">
