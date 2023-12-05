@@ -5,13 +5,15 @@ import { CARD_INFO, SOFTWARE } from "../../lib/data";
 import CarouselPortfolio from "../../components/CarouselPortfolio";
 import InfoAlert from '../../components/InfoAlert'
 import BadgeItems from '../../components/BadgeItems'
-import { CLOUDINARY_LOW, CLOUDINARY_URL } from "@/lib/constants";
 import { fade } from 'astro:transitions';
 
 const { id } = Astro.params
 const card = CARD_INFO.find(info => String(info.id) === id) || null
 const srcSoftware = card && card.software.map(itm => {return {'src': SOFTWARE[itm], 'text': itm}} )
 
+export async function getStaticPaths() {
+  return [];
+}
 ---
 
 <Layout title="Ivanrice Portfolio">
