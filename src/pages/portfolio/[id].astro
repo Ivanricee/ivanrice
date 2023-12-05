@@ -12,7 +12,7 @@ const card = CARD_INFO.find(info => String(info.id) === id) || null
 const srcSoftware = card && card.software.map(itm => {return {'src': SOFTWARE[itm], 'text': itm}} )
 
 export async function getStaticPaths() {
-  return [];
+  return CARD_INFO.map(item => ({ params: { id: String(item.id) } }));
 }
 ---
 
