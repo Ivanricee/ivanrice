@@ -1,0 +1,70 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Card from '@/components/Card.astro';
+
+import {CARD_INFO} from '@/lib/data'
+const  type  = Astro.params.type
+const is3D = type === '3D'
+
+export async function getStaticPaths() {
+  const paths = ['3D', 'frontend'].map(type => {
+    return { params: { type } };
+  });
+  return paths;
+}
+---
+
+<Layout title="Ivanrice Portfolio" >
+  <main class="w-full h-full box-content overflow-auto scrollbar-hide">
+
+    <article class=" w-full">
+      <div class="w-full inline-flex justify-center h-max p-1">
+        <div class="sm:hidden">
+            <label for="tabs" class="sr-only">Select your country</label>
+            <select id="tabs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-100/30 focus:border-yellow-100/30 block w-full p-2.5 ">
+                <option>3D</option>
+                <option>FRONTEND</option>
+            </select>
+        </div>
+        <ul class="hidden text-base font-medium text-center text-gray-500 rounded-lg shadow sm:flex ">
+            <li class="w-full">
+                <a href="/ivanrice/portfolio/3D"
+                  class={`inline-block w-full p-2 ${is3D ? 'underline bg-lime-800/10 text-slate-600 font-semibold border-s-0 rounded-3-lg focus:outline-none active ':'bg-lime-50/40  text-slate-800 border-r hover:bg-slate-100 rounded-s-lg hover:text-slate-700 focus:outline-none'}   border-slate-200   focus:ring-2 focus:ring-yellow-300/5  `}
+                  aria-current="page">
+                  3D
+                </a>
+            </li>
+            <li class="w-full">
+                <a href="/ivanrice/portfolio/frontend"
+                  class={`inline-block w-full p-2 ${!is3D ? 'underline bg-lime-800/10 text-slate-600 font-semibold border-s-0 rounded-s-lg focus:outline-none active':'bg-lime-50/40  text-slate-800 border-r hover:bg-slate-100 rounded-e-lg hover:text-slate-700 focus:outline-none'}  border-slate-200   focus:ring-2  focus:ring-yellow-300/5`}>
+                  FRONTEND
+                </a>
+            </li>
+        </ul>
+      </div>
+        <ul class=" flex flex-wrap gap-8 justify-center lg:mx-[5rem] xl:mx-[13rem] 2xl:mx-[15rem]  p-4 mt-8">
+          {
+            CARD_INFO.map(info => {
+              return <Card
+                id={info.id}
+                title={info.title}
+                longTitle={info.longTitle}
+                software={info.software}
+                caption={info.caption}
+                href={`/ivanrice/portfolio/${info.type}/${info.id}`}
+                bg={info.urls[0]}
+                type={info.type}
+              />
+            })
+          }
+      </ul>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .scrollbar-hide{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+</style>
