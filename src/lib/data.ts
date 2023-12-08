@@ -37,7 +37,7 @@ export const CARD_INFO: CardInfo[] = [
       "/v1700179030/portfolio/model/mictlantecuhtli/mictlantecuhtli_ao_g2ynqp.jpg",
       "/v1700179026/portfolio/model/mictlantecuhtli/diffuse_ind_iyoy4z.jpg",
     ],
-    title: "MICTLANTECUHTLI",
+    title: "MICTLAN",
     longTitle: "Mictlantecuhtli - Señor del Mictlan.",
     software: ["maya", "arnold", "mari"],
     caption: "Made with Arnold render.",
