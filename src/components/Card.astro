@@ -1,6 +1,6 @@
 ---
 import { CLOUDINARY_LOW, CLOUDINARY_URL } from '@/lib/constants'
-//import { fade } from 'astro:transitions';
+
 interface Props {
 	title: string
   longTitle: string
@@ -18,7 +18,7 @@ const url = `${CLOUDINARY_URL}${CLOUDINARY_LOW}${bg}`
 
 ---
 
-  <li style={`--rotate: ${rand}deg`} class=" relative z-10 rounded-2xl bg-lime-50/40 card-xl shadow-card-xl w-[250px] h-[270px] origin-top
+  <li style={`--rotate: ${rand}deg`} class=" relative z-10 rounded-2xl bg-lime-50/40 card-xl shadow-card-xl w-[240px] h-[230px] origin-top
     before:absolute before:z-20 before:content before:block before:w-4 before:h-4 before:rounded-full before:bg-stone-600 before:translate-x-[120px] before:translate-y-2
     transition duration-300 hover:scale-105 hover:shadow-card-2xl transform hover:rotate-0" transition:name=`card ${id} box`
   >
