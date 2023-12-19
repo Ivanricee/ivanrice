@@ -7,4 +7,5 @@ export interface CardInfo {
   software: string[];
   caption: string;
   type: string;
+  links: { title: string; href: string }[];
 }
