@@ -2,6 +2,8 @@ import {
   CLOUDINARY_HIGH,
   CLOUDINARY_LOW,
   CLOUDINARY_URL,
+  CLOUDINARY_VIDEO,
+  CLOUDINARY_VIDEO_URL,
 } from "@/lib/constants";
 import { Carousel } from "flowbite-react";
 import type { CustomFlowbiteTheme } from "flowbite-react";
@@ -26,27 +28,54 @@ const theme: CustomFlowbiteTheme["carousel"] = {
   },
 };
 interface Props {
-  imgs: string[];
+  media: string[];
+  slide: boolean;
 }
-export default function CarouselPortfolio({ imgs }: Props) {
-  const imgLowQ = `${CLOUDINARY_URL}${CLOUDINARY_LOW}${imgs[0]}`;
+export default function CarouselPortfolio({ media, slide }: Props) {
+  const getMediaLowQSrc = () => {
+    const firstMedia = media[0];
+    const isImg = firstMedia.endsWith("webp");
+    if (isImg) return `${CLOUDINARY_URL}${CLOUDINARY_LOW}${media[0]}`;
+    return `${CLOUDINARY_VIDEO_URL}${CLOUDINARY_VIDEO}${media[0]}`;
+  };
+
+  const mediaLowQSrc = getMediaLowQSrc();
   const [imageList, setImageList] = useState<string[] | null>(null);
   const [loadAnimate, setLoadAnimate] = useState(false);
 
   useEffect(() => {
-    let loadedImgs = 0;
-    let HQImages: string[] = [];
-    imgs.forEach((url, index) => {
-      const img = new Image();
-      img.src = `${CLOUDINARY_URL}${CLOUDINARY_HIGH}${url}`;
-      img.onload = () => {
-        loadedImgs++;
-        HQImages[index] = img.src;
-        if (loadedImgs === imgs.length) {
-          setLoadAnimate(true);
-          setImageList(HQImages);
-        }
-      };
+    let loadedMedia = 0;
+    let HQMedia: string[] = [];
+    const getMediaHighSrc = (url: string) => {
+      const isImg = url.endsWith("webp");
+      if (isImg) return `${CLOUDINARY_URL}${CLOUDINARY_HIGH}${url}`;
+      return `${CLOUDINARY_VIDEO_URL}${CLOUDINARY_VIDEO}${url}`;
+    };
+    media.forEach((url, index) => {
+      const isImg = url.endsWith("webp");
+      if (isImg) {
+        const img = new Image();
+        img.src = getMediaHighSrc(url);
+        img.onload = () => {
+          loadedMedia++;
+          HQMedia[index] = img.src;
+          if (loadedMedia === media.length) {
+            setLoadAnimate(true);
+            setImageList(HQMedia);
+          }
+        };
+      } else {
+        fetch(getMediaHighSrc(url))
+          .then((response) => response.blob())
+          .then((blob) => {
+            loadedMedia++;
+            HQMedia[index] = URL.createObjectURL(blob);
+            if (loadedMedia === media.length) {
+              setLoadAnimate(true);
+              setImageList(HQMedia);
+            }
+          });
+      }
     });
   }, []);
 
@@ -58,7 +87,7 @@ export default function CarouselPortfolio({ imgs }: Props) {
         }`}
       >
         <img
-          src={imgLowQ}
+          src={mediaLowQSrc}
           alt="carousel image"
           className={`w-full h-full object-contain absolute rounded-2xl `}
         />
@@ -84,17 +113,32 @@ export default function CarouselPortfolio({ imgs }: Props) {
       </div>
 
       {imageList && imageList.length > 0 && (
-        <Carousel theme={theme} pauseOnHover>
+        <Carousel theme={theme} slide={slide} pauseOnHover={true}>
           {imageList?.map((url) => {
-            console.log({ imageList });
+            if (url.endsWith("webp"))
+              return (
+                <img
+                  key={url}
+                  src={url}
+                  alt="carousel image"
+                  className={`w-full h-full object-contain absolute  rounded-2xl ${
+                    loadAnimate ? "animate-fadeIn" : ""
+                  }`}
+                />
+              );
+
             return (
-              <img
+              <video
                 key={url}
                 src={url}
-                alt="carousel image"
-                className={`w-full h-full object-contain absolute  rounded-2xl ${
+                className={`w-full h-full object-contain absolute rounded-2xl ${
                   loadAnimate ? "animate-fadeIn" : ""
                 }`}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
               />
             );
           })}
