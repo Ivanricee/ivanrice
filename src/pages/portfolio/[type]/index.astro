@@ -3,8 +3,14 @@ import Layout from '@/layouts/Layout.astro';
 import Card from '@/components/Card.astro';
 
 import {CARD_INFO} from '@/lib/data'
+import type { CardInfo } from '@/env';
 const  type  = Astro.params.type
 const is3D = type === '3D'
+const cardInfoMap: {[key: string]: () => CardInfo[]} = {
+  '3D': () => CARD_INFO.filter(item => item.type === '3D'),
+  'frontend': () => CARD_INFO.filter(item => item.type === 'frontend')
+} || []
+const cardInfo = cardInfoMap[type] ? cardInfoMap[type]() : [];
 
 export async function getStaticPaths() {
   const paths = ['3D', 'frontend'].map(type => {
@@ -44,7 +50,7 @@ export async function getStaticPaths() {
       </div>
         <ul class=" flex flex-wrap gap-8 justify-center lg:mx-[5rem] xl:mx-[13rem] 2xl:mx-[15rem]  p-4 mt-8">
           {
-            CARD_INFO.map(info => {
+              cardInfo.map((info: CardInfo) => {
               return <Card
                 id={info.id}
                 title={info.title}
