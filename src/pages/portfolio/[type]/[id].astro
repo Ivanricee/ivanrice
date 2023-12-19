@@ -9,6 +9,8 @@ import { fade } from 'astro:transitions';
 
 
 const { id, type } = Astro.params
+const hasImgs = type === '3D'
+const slide = hasImgs
 const card = CARD_INFO.find(info => String(info.id) === id) || null
 const srcSoftware = card && card.software.map(itm => {return {'src': SOFTWARE[itm], 'text': itm}} )
 
@@ -33,7 +35,7 @@ export async function getStaticPaths() {
                 <InfoAlert caption="No se encontró ningún elemento en el portafolio seleccionado." />
               : <div class="w-full h-full rounded-xl overflow-hidden relative "
                   transition:name={`card ${id} containerRound`}>
-                  <CarouselPortfolio imgs={card?.urls!}  client:load />
+                  <CarouselPortfolio media={card?.urls!}  client:load slide={slide} />
                 </div>
             }
           </div>
