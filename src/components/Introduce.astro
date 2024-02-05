@@ -1,0 +1,14 @@
+---
+import PhotoCard from "./PhotoCard.astro"
+const src = 'https://res.cloudinary.com/ivanrice-c/image/upload/v1605297167/ivanrice/foto_prof_fx0xfd.webp'
+---
+
+<section class="w-full flex justify-center text-roman-50/80 font-devina mb-40 font-thin">
+  <div class="inline-flex justify-center items-center gap-9 w-1/2 min-w-[50rem] max-w-screen-md pl-8">
+    <PhotoCard layers={2} className="aspect-square w-80 opacity-75" src={src} alt="Profile"/>
+    <h2 class="text-xs md:text-3xl text-balance pl-0">
+      <p class="leading-relaxed "><span class="font-semibold font-devina text-pretty">Hi, I'm Ivan Bautista.</span> With 9+ years of experience,
+      I've moved from Full Stack to <span class="italic">Frontend Developer</span>, with a background in 3D and a keen interest in UI/UX</p>
+    </h2>
+  </div>
+</section>
