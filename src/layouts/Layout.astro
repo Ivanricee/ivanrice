@@ -1,12 +1,16 @@
 ---
+import Introduce from '@/components/Introduce.astro';
 import Header from '../components/Header.astro';
 import { ViewTransitions } from 'astro:transitions'
-
+import Title from '@/components/Title';
+import '../styles/main.css'
+import ProjectMenu from '@/components/ProjectMenu.astro';
+import Experience from '@/components/Experience.astro';
 interface Props {
 	title: string;
 }
 
-const { title } = Astro.props;
+const { title= "ivanrice" } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,41 +19,47 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Neucha&family=Permanent+Marker&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
-
-
+		<link rel="icon" type="image/svg+xml" href="ivanrice/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-
 		<title>{title}</title>
     <ViewTransitions  />
 	</head>
-	<body class="light">
-    <div class="bg-backImg w-screen min-h-full h-screen flex justify-center items-center 2xl:p-8 relative overflow-hidden">
+  <!--dark/light -->
+	<body class="light flex">
+    <div class="bg-backImg w-dvw min-h-dvh flex justify-center items-center 2xl:p-8  h-full overflow-auto">
       <div
-      class="flex flex-col w-full max-w-screen-2xl h-full bg-floor-rock bg-center
-      bg-cover 2xl:rounded-2xl 2xl:shadow-bg-shadow p-4"
+        id="introduce"
+        class="bg-roman-500 border-[1.5rem] border-ottoman-50 relative flex flex-col w-full h-full bg-center items-center
+        bg-cover rounded-[4rem] lg:shadow-bg-shadow p-4 pt-64 max-w-screen-2xl overflow-hidden z-0"
       >
         <Header />
-        <slot />
+        <main class=" max-w-screen-md">
+          <section>
+            <Introduce />
+          </section>
+          <section id="experience">
+            <Title caption="Experiencia" client:visible />
+            <Experience />
+          </section>
+          <section id="projects">
+            <Title caption="Projectos" client:visible />
+            <ProjectMenu />
+          </section>
+          <section  id="aboutme">
+            <Title caption="Sobre Mi" client:visible />
+          </section>
+          <slot />
+        </main>
+        <div class="absolute inset-0  overflow-hidden animate-fadeIn -z-10">
+          <div class="bg-shadow bg-center bg-cover absolute -left-6 -right-2 -top-5 -bottom-2 animate-wave-shadow"></div>
+        </div>
       </div>
     </div>
 
-
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
 	</body>
 
-  <script  >
-
-   /* import { Carousel } from 'flowbite';
-    document.addEventListener('astro:after-swap', () => {
-     // Get the carousel element
-      const carouselElement = document.getElementById('indicators-carousel');
-      // Initialize the carousel
-      const carousel = new Carousel(carouselElement);
-      console.log("AaAaAAaAaaaaaa carousel variable",{carousel});
-    });*/
+  <script>
   </script>
 </html>
 <style is:global>
@@ -64,14 +74,22 @@ const { title } = Astro.props;
       scrollbar-width: none;  /* Firefox */
   }
 	html {
-
-    /*
-    font-family: 'Bebas Neue', sans-serif;
-    font-family: 'Sawarabi Gothic', sans-serif;
-    */
     font-family: 'Neucha', cursive;
 		background: #13151a;
 		background-size: 224px;
+    scroll-behavior: smooth;
 	}
-
+  body {
+    overscroll-behavior: none;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  [aria-selected="true"] {
+   color: #2d3432;
+   font-weight: 600;
+   border-bottom: 2px solid #5d6d69;
+  }
 </style>
