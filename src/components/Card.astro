@@ -1,5 +1,6 @@
 ---
 import { CLOUDINARY_LOW, CLOUDINARY_URL } from '@/lib/constants'
+import PhotoCard from './PhotoCard.astro'
 
 interface Props {
 	title: string
@@ -14,34 +15,12 @@ interface Props {
 
 const { href, title, caption, bg, longTitle,id } = Astro.props;
 const rand = String(Math.random() * 4 - 2)
-const url = `${CLOUDINARY_URL}${CLOUDINARY_LOW}${bg}`
+const src = `${CLOUDINARY_URL}${CLOUDINARY_LOW}${bg}`
 
 ---
 
-  <li style={`--rotate: ${rand}deg`} class=" relative z-10 rounded-2xl bg-lime-50/40 card-xl shadow-card-xl w-[240px] h-[230px] origin-top
-    before:absolute before:z-20 before:content before:block before:w-4 before:h-4 before:rounded-full before:bg-stone-600 before:translate-x-[112px] before:translate-y-2
-    transition duration-300 hover:scale-105 hover:shadow-card-2xl transform hover:rotate-0" transition:name=`card ${id} box`
-  >
-  <a href={href} class=" w-full h-full" transition:name={`card ${id} link`}>
-    <div class="p-4 w-full h-full " transition:name={`card ${id} container`}>
-      <div class="h-5/6 rounded-t-xl overflow-hidden bg-backImg relative "
-        transition:name={`card ${id} containerRound`}>
-        <picture>
-          <img
-            src={url}
-            alt={longTitle}
-            class="w-full h-full opacity-80 object-cover object-center rounded-t-xl absolute top-0 left-0 transition duration-150 hover:scale-[1.1] "
-          />
-        </picture>
-      </div>
-      <h2 class="text-xl text-center p-2 text-card-text">
-        {title}
-      </h2>
-      <p class="hidden">
-        {caption}
-      </p>
-    </div>
-  </a>
+<li class=" border-8 border-t-roman-400/50 border-b-roman-400/50 border-x-0 flex  p-9 ">
+  <PhotoCard src={src} alt={longTitle} className=" aspect-video w-60 h-40 opacity-75" animate id={id} href={href} layers={3} />
 </li>
 <style>
   li {
