@@ -2,7 +2,7 @@
 import Introduce from '@/components/Introduce.astro';
 import Header from '../components/Header.astro';
 import { ViewTransitions } from 'astro:transitions'
-import Title from '@/components/Title';
+import Title from '@/components/Title.astro';
 import '../styles/main.css'
 import ProjectMenu from '@/components/ProjectMenu.astro';
 import Experience from '@/components/Experience.astro';
@@ -38,15 +38,15 @@ const { title= "ivanrice" } = Astro.props;
             <Introduce />
           </section>
           <section id="experience">
-            <Title caption="Experiencia" client:visible />
+            <Title caption="Experiencia" />
             <Experience />
           </section>
           <section id="projects">
-            <Title caption="Projectos" client:visible />
+            <Title caption="Projectos" />
             <ProjectMenu />
           </section>
           <section  id="aboutme">
-            <Title caption="Sobre Mi" client:visible />
+            <Title caption="Sobre Mi" />
           </section>
           <slot />
         </main>
