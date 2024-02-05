@@ -13,7 +13,7 @@ export default function Menu({ hasBackBtn, currentPath }: Props) {
 
   return (
     <>
-      <nav className=" md:pb-4 pt-3 md:pt-7">
+      <nav className="bg-gradient-to-r from-transparent via-lime-50/60 to-transparent backdrop-blur-sm p-4 rounded">
         <div className=" flex justify-between text-base md:text-2xl font-medium ">
           {hasBackBtn ? (
             <button
@@ -41,14 +41,11 @@ export default function Menu({ hasBackBtn, currentPath }: Props) {
           )}
 
           <ul
-            className="flex gap-4 font-medium  w-full justify-end  z-10  [&>li>a]:p-2 [&>li>a]:px-3"
+            className="flex gap-4 font-batusa text-lg w-full justify-end  z-10  [&>li>a]:p-2 [&>li>a]:px-3"
             ref={liListRef}
           >
             <li className={`${isAbout ? "underline" : ""}`}>
-              <a href="#">About</a>
-            </li>
-            <li className={`${isPortfolio ? "underline" : ""}`}>
-              <a href="#">Portfolio</a>
+              <a href="#">BLOG</a>
             </li>
           </ul>
         </div>
