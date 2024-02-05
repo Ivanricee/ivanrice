@@ -1,0 +1,34 @@
+---
+import { FRONTEND, TRESD } from "@/lib/constants";
+import { CARD_INFO } from "../lib/data";
+import type { CardInfo } from '@/env';
+import Card from "./Card.astro";
+interface Props {
+  type: 'frontend' | '3D'
+}
+const { type } = Astro.props
+const cardInfoMap: {[key: string]: () => CardInfo[]} = {
+  [TRESD]: () => CARD_INFO.filter(item => item.type === TRESD),
+  [FRONTEND]: () => CARD_INFO.filter(item => item.type === FRONTEND)
+} || []
+const cardInfo = cardInfoMap[type] ? cardInfoMap[type]() : [];
+
+---
+<article class="w-full ">
+  <ul class="w-full [&>li:not(:first-child)]:border-t-0 flex flex-col justify-center">
+    {
+      cardInfo.map((info: CardInfo) => {
+        return <Card
+          id={info.id}
+          title={info.title}
+          longTitle={info.longTitle}
+          software={info.software}
+          caption={info.caption}
+          href={`/ivanrice/portfolio/${info.type}/${info.id}`}
+          bg={info.urls[0]}
+          type={info.type}
+        />
+      })
+    }
+  </ul>
+</article>
