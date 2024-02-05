@@ -1,19 +1,126 @@
 ---
-import Menu from '@/components/Menu'
+
 const id = Astro.params
 const hasBackBtn = id['id'] ?? false
-let currentPath = Astro.request.url;
+const currentPath = Astro.request.url;
+const current = Astro.url
+
+
+const navItems = [{
+  title: 'Experiencia',
+  url: '/ivanrice/#experience'
+},
+{
+  title: 'Projectos',
+  url: '/ivanrice/#projects'
+},
+{
+  title: 'Sobre Mi',
+  url: '/ivanrice/#aboutme'
+}]
 ---
-<header>
-  <h1
-    class="text-xl md:text-7xl font-black leading-none text-slate-600 sm:truncate  tracking-tight "
+<header class="flex justify-between items-center absolute left-16 right-20 top-16 z-20
+ 2xl:w-full 2xl:left-auto 2xl:right-auto 2xl:max-w-[91rem] 2xl:top-16">
+<nav class="w-full">
+  <ul class="home-title flex justify-between items-center border-2 border-roman-400/50 rounded-md p-5 mx-24
+    before:mx-24 before:content before:absolute before:inset-0  before:-z-10
+    before:bg-gradient-to-r before:from-roman-550/70  before:to-transparent before:backdrop-blur-md "
   >
-    IVANRICE
-  </h1>
-  <p class="text-xs md:text-xl font-bold leading-7 text-card-text sm:truncate">
-    Front End Developer | 3D Artist
-  </p>
-
-  <Menu hasBackBtn={hasBackBtn} currentPath={currentPath}  client:load/>
-
+    <li class="relative font-mauline text-3xl font-black leading-none text-roman-200 tracking-tight rounded">
+    <a href="/ivanrice/#introduce">
+      <span class="text-roman-300 font-black font-serif">{'<'}</span>
+        {`IVANRICE`}
+      <span class="text-roman-300 font-black font-serif">{'/>'}</span>
+    </a>
+    </li>
+    <div class="flex justify-center items-center gap-2">
+    {
+      navItems.map((itemNav) => {
+        return (
+        <li class="relative font-devina text-2xl font-base leading-none text-roman-200 tracking-tight rounded p-2">
+          <a href={itemNav.url}>
+            <span class="link link-underline link-underline-black">
+              {itemNav.title}
+            </span>
+          </a>
+        </li>)
+        })
+      }
+    </div>
+  </ul>
+</nav>
 </header>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener('scroll', () => {
+      sitckyHeader()
+    })
+  })
+  function sitckyHeader() {
+    const domHeader = document.querySelector("header")
+    const headerTop = 64
+    const borderHeight = 24
+    if(!domHeader) return 0
+    const scrollPosition = window.scrollY
+    if(scrollPosition >= (headerTop + borderHeight)){
+      domHeader.style.position = 'fixed'
+      domHeader.style.top = '0'
+    }else{
+      domHeader.style.position = 'absolute'
+      domHeader.style.top = `${headerTop }px`
+    }
+  }
+
+</script>
+<style>
+@keyframes blurHead {
+ from {
+   opacity: 0;
+   transform: scale(1);
+ }
+ to {
+   opacity: 1;
+   transform: scale(1);
+ }
+}
+@keyframes scaleHead {
+  from {
+    transform: scale(1.5), translateX(-5rem);
+  }
+  to {
+    transform: scale(0.5);
+  }
+}
+.home-title::before {
+view-timeline-name: --headerBlur;
+view-timeline-axis: block;
+
+animation: blurHead linear both;
+animation-timeline: --headerBlur;
+animation-range: exit;
+
+}
+.home-title {
+  view-timeline-name: --headerScale;
+  view-timeline-axis: block;
+
+  animation: blurSec linear both;
+  animation-timeline: --headerScale;
+  animation-range: exit;
+}
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .1s ease-in-out;
+}
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fcbea6, #effffb)
+}
+.link-underline:hover {
+  background-size: 70% 2px;
+  background-position: 50 100%
+}
+</style>
