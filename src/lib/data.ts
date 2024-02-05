@@ -15,12 +15,12 @@ export const CARD_INFO: CardInfo[] = [
     type: "3D",
     links: [
       {
-        title: "instagram",
-        href: "https://www.instagram.com/p/CX5kzGmLG8R/",
+        text: "instagram",
+        src: "https://www.instagram.com/p/CX5kzGmLG8R/",
       },
       {
-        title: "artstation",
-        href: "https://www.artstation.com/artwork/6bNWDr",
+        text: "artstation",
+        src: "https://www.artstation.com/artwork/6bNWDr",
       },
     ],
   },
@@ -41,12 +41,12 @@ export const CARD_INFO: CardInfo[] = [
     type: "3D",
     links: [
       {
-        title: "instagram",
-        href: "https://www.instagram.com/p/CJO0HkwjFUd/",
+        text: "instagram",
+        src: "https://www.instagram.com/p/CJO0HkwjFUd/",
       },
       {
-        title: "artstation",
-        href: "https://www.artstation.com/artwork/mDgzZy",
+        text: "artstation",
+        src: "https://www.artstation.com/artwork/mDgzZy",
       },
     ],
   },
@@ -64,12 +64,12 @@ export const CARD_INFO: CardInfo[] = [
     type: "3D",
     links: [
       {
-        title: "instagram",
-        href: "https://www.instagram.com/p/CkcD_GpDMff/",
+        text: "instagram",
+        src: "https://www.instagram.com/p/CkcD_GpDMff/",
       },
       {
-        title: "artstation",
-        href: "https://www.artstation.com/artwork/xYABK4",
+        text: "artstation",
+        src: "https://www.artstation.com/artwork/xYABK4",
       },
     ],
   },
@@ -96,12 +96,12 @@ export const CARD_INFO: CardInfo[] = [
     type: "3D",
     links: [
       {
-        title: "instagram",
-        href: "https://www.instagram.com/p/CkrRmQlPWEx/",
+        text: "instagram",
+        src: "https://www.instagram.com/p/CkrRmQlPWEx/",
       },
       {
-        title: "artstation",
-        href: "https://www.artstation.com/artwork/3qX3z2",
+        text: "artstation",
+        src: "https://www.artstation.com/artwork/3qX3z2",
       },
     ],
   },
@@ -127,12 +127,12 @@ export const CARD_INFO: CardInfo[] = [
     type: "3D",
     links: [
       {
-        title: "instagram",
-        href: "https://www.instagram.com/p/CFTW_GyA7aa/",
+        text: "instagram",
+        src: "https://www.instagram.com/p/CFTW_GyA7aa/",
       },
       {
-        title: "artstation",
-        href: "https://www.artstation.com/artwork/YeJ3Qw",
+        text: "artstation",
+        src: "https://www.artstation.com/artwork/YeJ3Qw",
       },
     ],
   },
@@ -162,12 +162,12 @@ export const CARD_INFO: CardInfo[] = [
     type: "3D",
     links: [
       {
-        title: "instagram",
-        href: "https://www.instagram.com/p/CFTVUBfArXe",
+        text: "instagram",
+        src: "https://www.instagram.com/p/CFTVUBfArXe",
       },
       {
-        title: "artstation",
-        href: "https://www.artstation.com/artwork/q9LeDz",
+        text: "artstation",
+        src: "https://www.artstation.com/artwork/q9LeDz",
       },
     ],
   },
@@ -186,11 +186,11 @@ export const CARD_INFO: CardInfo[] = [
     type: "frontend",
     links: [
       {
-        title: "api",
-        href: "https://github.com/Ivanricee/community-chat-api",
+        text: "api",
+        src: "https://github.com/Ivanricee/community-chat-api",
       },
-      { title: "web", href: "https://community-chat-discord.vercel.app/1/1" },
-      { title: "github", href: "https://github.com/Ivanricee/Community-chat" },
+      { text: "web", src: "https://community-chat-discord.vercel.app/1/1" },
+      { text: "github", src: "https://github.com/Ivanricee/Community-chat" },
     ],
   },
   {
@@ -210,10 +210,10 @@ export const CARD_INFO: CardInfo[] = [
       "This is a real-time application, which means that any changes you make will be displayed instantly, without the need to reload the page. Currently, it accepts Twitch clips videos as evidence. In the future, it will support additional file types and videos from different sources.",
     type: "frontend",
     links: [
-      { title: "web", href: "https://realtime-evidence-tracker.vercel.app" },
+      { text: "web", src: "https://realtime-evidence-tracker.vercel.app" },
       {
-        title: "github",
-        href: "https://github.com/Ivanricee/realtime-evidence-tracker",
+        text: "github",
+        src: "https://github.com/Ivanricee/realtime-evidence-tracker",
       },
     ],
   },
@@ -231,10 +231,10 @@ export const CARD_INFO: CardInfo[] = [
       "Explore countries, search, and filter by region to access specific details of the selected flag on a separate page. Personalize the interaction with a theme switcher",
     type: "frontend",
     links: [
-      { title: "web", href: "https://countries-finder-ivanrice.vercel.app/" },
+      { text: "web", src: "https://countries-finder-ivanrice.vercel.app/" },
       {
-        title: "github",
-        href: "https://github.com/Ivanricee/countries-finder",
+        text: "github",
+        src: "https://github.com/Ivanricee/countries-finder",
       },
     ],
   },
@@ -252,10 +252,10 @@ export const CARD_INFO: CardInfo[] = [
       "Responsive card form practice with validation and testing using Vitest. Real-time updates and error messages",
     type: "frontend",
     links: [
-      { title: "web", href: "https://bank-card.vercel.app/" },
+      { text: "web", src: "https://bank-card.vercel.app/" },
       {
-        title: "github",
-        href: "https://github.com/Ivanricee/Interactive-card-form",
+        text: "github",
+        src: "https://github.com/Ivanricee/Interactive-card-form",
       },
     ],
   },
@@ -273,10 +273,10 @@ export const CARD_INFO: CardInfo[] = [
       "View site layouts based on device screen, shorten URLs, manage links, and copy with one click, even after refreshing.",
     type: "frontend",
     links: [
-      { title: "web", href: "https://shorturl-ivnrice.vercel.app/" },
+      { text: "web", src: "https://shorturl-ivnrice.vercel.app/" },
       {
-        title: "github",
-        href: "https://github.com/Ivanricee/shorturl",
+        text: "github",
+        src: "https://github.com/Ivanricee/shorturl",
       },
     ],
   },
