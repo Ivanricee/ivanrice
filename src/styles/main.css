@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Devina Rodent';
+    src: url('/ivanrice/fonts/DevinaRodentThin.ttf') format('TrueType');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Devina Rodent';
+    src: url('/ivanrice/fonts/DevinaRodentRegular.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Devina Rodent';
+    src: url('/ivanrice/fonts/DevinaRodentBold.ttf') format('TrueType');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Devina Rodent';
+    src: url('/ivanrice/fonts/DevinaRodentSemibold.ttf') format('TrueType');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Devina Rodent';
+    src: url('/ivanrice/fonts/DevinaRodentBoldItalic.ttf') format('TrueType');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Mauline';
+    src: url('/ivanrice/fonts/Mauline.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
