@@ -1,0 +1,50 @@
+---
+import { FRONTEND, TRESD } from "@/lib/constants";
+import Project from "./Project.astro";
+---
+
+    <section class="font-devina w-full h-full box-content overflow-auto scrollbar-hide ">
+      <div class="mb-4">
+        <ul class="flex flex-wrap -mb-px text-base font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+          <li class="me-2" role="presentation">
+            <button
+              class="inline-block p-2 border-b-2 rounded-t-lg border-blue-smoke-400/50 hover:border-blue-smoke-400  hover:text-blue-smoke-600"
+              id="frontend-tab"
+              data-tabs-target="#frontend"
+              type="button" role="tab"
+              aria-controls="frontend"
+              aria-selected="false"
+            >
+              FRONTEND
+          </button>
+          </li>
+          <li class="me-2" role="presentation">
+            <button
+              class="inline-block p-2 border-b-2 rounded-t-lg border-blue-smoke-400/50 hover:border-blue-smoke-400  hover:text-blue-smoke-600"
+              id="tresd-tab"
+              data-tabs-target="#tresd"
+              type="button"
+              role="tab"
+              aria-controls="tresd"
+              aria-selected="false"
+            >
+              3D
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div id="default-tab-content">
+        <div class="hidden pt-4 rounded-lg border-0" id="frontend" role="tabpanel" aria-labelledby="frontend-tab">
+          <Project type={FRONTEND} />
+        </div>
+        <div class="hidden pt-4 rounded-lg border-0" id="tresd" role="tabpanel" aria-labelledby="tresd-tab">
+          <Project type={TRESD} />
+        </div>
+      </div>
+    </section>
+
+<style>
+  .caption {
+    font-family: 'Sawarabi Gothic', sans-serif;
+  }
+</style>
