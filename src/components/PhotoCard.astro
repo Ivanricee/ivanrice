@@ -1,0 +1,95 @@
+---
+interface Props {
+  className?: string
+  layers?: number // 1,2,3
+  id?: number
+  animate?: boolean
+  src: string
+  alt: string
+  href?: string
+}
+const {
+  className,
+  id = 0,
+  animate = false,
+  layers = 2,
+  src,
+  alt,
+  href
+} = Astro.props;
+
+
+const arrLayers = Array.from(Array(layers))
+const hasIdForTransition = id !== 0
+---
+
+<div class={`relative ${className} `}>
+  {
+    arrLayers.map((_,i) => {
+      const randRotate = String(Math.random() * 8 - 5)
+      const randTY = String(Math.random() * 1.5 - 1)
+      const randTX = String(Math.random() * 1.5 - 1)
+      const isLastLayer = layers === i + 1
+      const isAnimated = animate && isLastLayer ? 'group transition duration-300 ease-in-out transform hover:-rotate-0 hover:scale-110 hover:shadow-card-2xl' : '';
+
+      const picture = isLastLayer &&
+      (
+      <div class="h-full rounded-xl overflow-hidden bg-roman-700/50 relative "
+        transition:name={`card ${id} containerRound`}>
+        <picture>
+          <img
+            src={src}
+            alt={alt}
+            class="w-full h-full object-cover object-center rounded-t-xl absolute top-0 left-0 transition duration-150 group-hover:scale-[1.1] "
+          />
+        </picture>
+      </div>
+      )
+
+      if (hasIdForTransition && isLastLayer)
+      return (
+        <div
+          class={`card absolute z-10 rounded-2xl p-3 bg-roman-400 card-xl shadow-card-xl w-full h-full aspect-square origin-top ${isAnimated} `}
+          style={`--rotate: ${randRotate}deg; --translateX: ${randTX}rem; --translateY: ${randTY}rem`}
+          transition:name={`card ${id} box`}
+        >
+          <a href={href} class=" w-full h-full" transition:name={`card ${id} link`}>
+            <div class=" w-full h-full " transition:name={`card ${id} container`}>
+              {picture}
+            </div>
+          </a>
+        </div>
+      )
+      return (
+        <div
+          class={`card absolute z-10 rounded-2xl p-2 bg-roman-500 card-xl shadow-card-lg w-full h-full aspect-square origin-top ${isAnimated}`}
+          style={`--rotate: ${randRotate}deg; --translateX: ${randTX}rem; --translateY: ${randTY}rem`}
+        >
+          {picture}
+        </div>
+      )
+    })
+  }
+</div>
+<style>
+  @keyframes rotateAndMove {
+   from {
+     transform: rotate(0deg) translate(0, 0);
+   }
+   to {
+     transform: rotate(var(--rotate)) translate(var(--translateX), var(--translateY));
+   }
+  }
+  /*.card {
+    --rotate: 0;
+    --translateX: 0;
+    --translateY: 0;
+    animation: rotateAndMove 0.5s forwards;
+  }*/
+    .card {
+    --rotate: 0;
+    --translateX: 0;
+    --translateY: 0;
+    transform: rotate(var(--rotate)) translate(var(--translateX), var(--translateY));
+  }
+</style>
