@@ -1,3 +1,5 @@
+import { transform } from "typescript";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
@@ -10,6 +12,7 @@ export default {
     extend: {
       screens: {
         "-xl": { max: "1535px" },
+        "-md": { max: "767px" },
       },
       backgroundColor: {
         backImg: "#f1fffb",
@@ -25,6 +28,7 @@ export default {
         "card-lg": "-6px 6px 12px #b03c3f,6px -6px 12px #de4c4f",
         "card-xl": "-5.5px 10px 14px #c44143,4px -4px 15px #f85154",
         "card-2xl": "-10px 15px 16px #c44143,3px -3px 12px #de4c4f",
+        link: "0px -22px 18px -10px rgba(241,120,122,0.3) inset",
       },
       textColor: {
         "card-text": "#e67177",
@@ -33,6 +37,11 @@ export default {
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        fadeInBounce: {
+          "0%": { opacity: "0%", transform: "scale(0.99)" },
+          "50%": { opacity: "50%", transform: "scale(1.002)" },
+          "100%": { opacity: "100%", transform: "scale(1)" },
         },
         fadeOut: {
           "0%": { opacity: "1" },
@@ -47,6 +56,7 @@ export default {
       animation: {
         fadeIn: "fadeIn 0.7s ease-in-out",
         fadeOut: "fadeOut 1s ease-in-out forwards",
+        fadeInBounce: "fadeInBounce 0.3s ease-in-out",
         "wave-shadow": "wave 4s ease-in-out infinite",
       },
       fontFamily: {
@@ -63,6 +73,7 @@ export default {
           500: "#e64d4f",
           550: "#CF4447",
           600: "#d23032",
+          650: "#BF4345",
           700: "#b12426",
           800: "#922223",
           900: "#7a2223",
