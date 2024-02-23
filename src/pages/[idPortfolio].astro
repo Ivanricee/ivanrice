@@ -1,0 +1,22 @@
+---
+import type { CardInfo } from '@/env';
+import Layout from '@/layouts/Layout.astro';
+import { CARD_INFO } from '@/lib/data'
+
+const cardsInfo = await CARD_INFO
+
+const { idPortfolio } = Astro.params
+const idPortfolioNum = Number(idPortfolio)
+const card = cardsInfo.find(cardItm => cardItm.id === idPortfolioNum ) as CardInfo
+
+export async function getStaticPaths() {
+  const cardsInfo = await CARD_INFO
+  return cardsInfo.map(cardItm => ({
+    params: { idPortfolio: cardItm.id }
+  }));
+}
+const { caption, id, links, longTitle, software, title, type, urls } = card
+---
+<Layout title={ `${longTitle} - Portfolio` }>
+  <h1>Portfolio { title }</h1>
+</Layout>
