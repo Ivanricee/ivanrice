@@ -1,14 +1,67 @@
 ---
+import Icons from "./Icons.astro"
 import PhotoCard from "./PhotoCard.astro"
 const src = 'https://res.cloudinary.com/ivanrice-c/image/upload/v1605297167/ivanrice/foto_prof_fx0xfd.webp'
 ---
-
-<section class="w-full flex justify-center text-roman-50/80 font-devina mb-40 font-thin">
-  <div class="inline-flex justify-center items-center gap-9 w-1/2 min-w-[50rem] max-w-screen-md pl-8">
-    <PhotoCard layers={2} className="aspect-square w-80 opacity-75" src={src} alt="Profile"/>
-    <h2 class="text-xs md:text-3xl text-balance pl-0">
-      <p class="leading-relaxed "><span class="font-semibold font-devina text-pretty">Hi, I'm Ivan Bautista.</span> With 9+ years of experience,
-      I've moved from Full Stack to <span class="italic">Frontend Developer</span>, with a background in 3D and a keen interest in UI/UX</p>
-    </h2>
+<section class="relative pe-4 w-full font-devina font-thin text-american-blue-50/80
+   ps-6 lg:ps-0"
+>
+  <div class="flex flex-col gap-5 justify-center items-center md:flex-row lg:gap-7" >
+    <div class="absolute bg-american-blue-100/5 -inset-4 right-0 left-0 rounded-xl -z-10 top-14
+    md:top-0 md:left-14 lg:left-7 "></div>
+    <PhotoCard layers={2} className="aspect-square w-32 md:w-40 lg:w-52  md:translate-y-6" src={src} alt="Profile"/>
+    <div class=" text-center md:text-left text-xl sm:text-2xl lg:text-[1.7rem] text-balance pl-0 w-fit lg:pr-5 pt-4">
+      <h2 class="leading-relaxed "><span class="font-semibold font-devina text-green-lime-400">Hi, I'm Ivan Bautista.</span> With 9+ years of experience,
+      I've moved from Full Stack to <span class="font-semibold font-devina text-ottoman-100/95">Frontend Developer</span>, with a background in 3D and a keen interest in UI/UX</h2>
+    </div>
+  </div>
+  <div
+    class="flex justify-center items-center mt-3 text-ottoman-100/85 gap-3 pt-4 pb-3  ms-0 md:ms-14 lg:ms-7
+    [&>a]:border-2 [&>a]:border-green-lime-400/10 [&>a]:bg-green-lime-400/25 [&>a]:rounded-md
+    [&>a]:transition-all duration-200"
+  >
+    <a
+      href="https://github.com/Ivanricee"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      aria-label="GitHub Profile"
+      target="_blank" rel="noopener"
+    >
+      <Icons name="github" stroke={1.5} size='2.5rem'/>
+    </a>
+    <a
+      href="https://www.linkedin.com/in/ivanrice/"
+      target="_blank"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      aria-label="LinkedIn Profile"
+      rel="noopener">
+      <Icons name="linkedin" stroke={1.5} size='2.5rem'/>
+    </a>
+    <a
+      href="https://www.instagram.com/ivanrice_/"
+      target="_blank"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      aria-label="Instagram Profile"
+      rel="noopener"
+    >
+      <Icons name="instagram" stroke={1.5} size='2.5rem'/>
+    </a>
+    <a
+      href="https://www.artstation.com/ivanrice"
+      target="_blank"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      aria-label="Artstation Profile"
+      rel="noopener"
+    >
+      <Icons name="artstation" stroke={40} size='2.5rem'/>
+    </a>
+    <a
+      href="mailto:ivanbautistag@gmail.com"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      target="_blank"
+      aria-label="Mail"
+      rel="noopener"
+    >
+      <Icons name="gmail" stroke={1.5} size='2.5rem'/>
+    </a>
   </div>
 </section>
