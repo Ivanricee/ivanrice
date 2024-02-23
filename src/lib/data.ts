@@ -185,11 +185,7 @@ export const CARD_INFO: CardInfo[] = [
       "This website was created for educational purposes. The goal of this project is not to fully replicate discord, just some basic features like the front-end with basic interactions and some video features.",
     type: "frontend",
     links: [
-      {
-        text: "api",
-        src: "https://github.com/Ivanricee/community-chat-api",
-      },
-      { text: "web", src: "https://community-chat-discord.vercel.app/1/1" },
+      { text: "demo", src: "https://community-chat-discord.vercel.app/1/1" },
       { text: "github", src: "https://github.com/Ivanricee/Community-chat" },
     ],
   },
@@ -210,7 +206,7 @@ export const CARD_INFO: CardInfo[] = [
       "This is a real-time application, which means that any changes you make will be displayed instantly, without the need to reload the page. Currently, it accepts Twitch clips videos as evidence. In the future, it will support additional file types and videos from different sources.",
     type: "frontend",
     links: [
-      { text: "web", src: "https://realtime-evidence-tracker.vercel.app" },
+      { text: "demo", src: "https://realtime-evidence-tracker.vercel.app" },
       {
         text: "github",
         src: "https://github.com/Ivanricee/realtime-evidence-tracker",
@@ -231,7 +227,7 @@ export const CARD_INFO: CardInfo[] = [
       "Explore countries, search, and filter by region to access specific details of the selected flag on a separate page. Personalize the interaction with a theme switcher",
     type: "frontend",
     links: [
-      { text: "web", src: "https://countries-finder-ivanrice.vercel.app/" },
+      { text: "demo", src: "https://countries-finder-ivanrice.vercel.app/" },
       {
         text: "github",
         src: "https://github.com/Ivanricee/countries-finder",
@@ -252,7 +248,7 @@ export const CARD_INFO: CardInfo[] = [
       "Responsive card form practice with validation and testing using Vitest. Real-time updates and error messages",
     type: "frontend",
     links: [
-      { text: "web", src: "https://bank-card.vercel.app/" },
+      { text: "demo", src: "https://bank-card.vercel.app/" },
       {
         text: "github",
         src: "https://github.com/Ivanricee/Interactive-card-form",
@@ -273,7 +269,7 @@ export const CARD_INFO: CardInfo[] = [
       "View site layouts based on device screen, shorten URLs, manage links, and copy with one click, even after refreshing.",
     type: "frontend",
     links: [
-      { text: "web", src: "https://shorturl-ivnrice.vercel.app/" },
+      { text: "demo", src: "https://shorturl-ivnrice.vercel.app/" },
       {
         text: "github",
         src: "https://github.com/Ivanricee/shorturl",
@@ -282,10 +278,11 @@ export const CARD_INFO: CardInfo[] = [
   },
 ];
 
-const transform = "e_grayscale,q_auto:eco,f_avif,w_50,h_50";
+const transform2 = "e_grayscale,q_auto:eco,f_avif,w_50,h_50";
+const transform = "e_colorize,co_rgb:fde3e3,q_auto:eco,f_avif,w_50,h_50";
 export const SOFTWARE: Record<string, string> = {
   maya: `${CLOUDINARY_URL}${transform}${"/v1609285677/portfolio/icons/maya_mvhgmh.avif"}`,
-  redshift: `${CLOUDINARY_URL}${transform}${"/v1609286796/portfolio/icons/redshift_bzbnze.avif"}`,
+  redshift: `${CLOUDINARY_URL}${transform2}${"/v1609286796/portfolio/icons/redshift_bzbnze.avif"}`,
   mari: `${CLOUDINARY_URL}${transform}${"/v1609285677/portfolio/icons/mari_uq9jsd.avif"}`,
   "substance 3D": `${CLOUDINARY_URL}${transform}${"/v1609285677/portfolio/icons/substance_bpjo6v.avif"}`,
   zbrush: `${CLOUDINARY_URL}${transform}${"/v1609285678/portfolio/icons/zbrush_fgroar.avif"}`,
@@ -294,13 +291,13 @@ export const SOFTWARE: Record<string, string> = {
   nuke: `${CLOUDINARY_URL}${transform}${"/v1609285677/portfolio/icons/nuke_th3pum.avif"}`,
   react: `${CLOUDINARY_URL}${transform}${"/v1702929515/portfolio/icons/frontend/pngwing.com_bteiuk.avif"}`,
   redux: `${CLOUDINARY_URL}${transform}${"/v1702929735/portfolio/icons/frontend/reactRedux_qdzxyv.avif"}`,
-  twilio: `${CLOUDINARY_URL}${transform}${",e_replace_color:white/v1702930127/portfolio/icons/frontend/twilio_uhi2yw.avif"}`,
-  graphql: `${CLOUDINARY_URL}${transform}${",e_replace_color:white/v1702929508/portfolio/icons/frontend/graphql_yfzgzh.avif"}`,
+  twilio: `${CLOUDINARY_URL}${"/e_colorize,co_rgb:fde3e3,q_auto:eco,f_avif,c_crop,h_748,x_610,y_295/v1702930127/portfolio/icons/frontend/twilio_uhi2yw.avif"}`,
+  graphql: `${CLOUDINARY_URL}${transform}${"/v1702929508/portfolio/icons/frontend/graphql_yfzgzh.avif"}`,
   figma: `${CLOUDINARY_URL}${transform}${"/v1702929506/portfolio/icons/frontend/figma_zxcnoa.avif"}`,
-  next: `${CLOUDINARY_URL}${transform}${"/v1702929512/portfolio/icons/frontend/next_p5k0ub.avif"}`,
+  next: `${CLOUDINARY_URL}${transform}${"/v1708407050/portfolio/icons/frontend/1657707878-nextjs_logo_wdrwua.avif"}`,
   supabase: `${CLOUDINARY_URL}${transform}${"/v1702929866/portfolio/icons/frontend/supabase-logo-wordmark--dark_bopwfm.avif"}`,
   tailwind: `${CLOUDINARY_URL}${transform}${"/v1702929997/portfolio/icons/frontend/tailwind_giofmq.avif"}`,
-  mui: `${CLOUDINARY_URL}${transform}${",e_replace_color:white/v1702929510/portfolio/icons/frontend/mui_qw7c69.avif"}`,
-  "react hook form": `${CLOUDINARY_URL}${transform}${"/v1702929603/portfolio/icons/frontend/react-hook-form_l9larm.avif"}`,
+  mui: `${CLOUDINARY_URL}${transform}${"/v1702929510/portfolio/icons/frontend/mui_qw7c69.avif"}`,
+  "react hook form": `${CLOUDINARY_URL}${transform2}${"/v1702929603/portfolio/icons/frontend/react-hook-form_l9larm.avif"}`,
   vitest: `${CLOUDINARY_URL}${transform}${"/v1609285677/portfolio/icons/maya_mvhgmh.avif"}`,
 };
