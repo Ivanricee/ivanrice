@@ -56,3 +56,50 @@ import ProjectItem from "./ProjectItem.astro";
         </div>
       </div>
     </section>
+<script>
+
+  import { Tabs } from 'flowbite';
+  import type { TabsOptions, TabsInterface, TabItem } from 'flowbite';
+  import type { InstanceOptions } from 'flowbite';
+
+  function initializeFlowbiteTabs() {
+    const tabsElement:HTMLElement | null = document.getElementById('default-tab');
+
+    if (!tabsElement) throw new Error("not tab element found")
+
+    const tabElements: TabItem[] = [
+      {
+        id: 'frontend',
+        triggerEl: document.querySelector('#frontend-tab') as HTMLElement,
+        targetEl: document.querySelector('#frontend') as HTMLElement,
+      },
+      {
+        id: 'tresd',
+        triggerEl: document.querySelector('#tresd-tab') as HTMLElement,
+        targetEl: document.querySelector('#tresd') as HTMLElement,
+      },
+    ];
+
+
+    const options: TabsOptions = {
+      defaultTabId: 'frontend',
+      activeClasses: 'text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-400 border-blue-600 dark:border-blue-500',
+      inactiveClasses: 'text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300',
+    };
+
+    // Instance options with default values
+    const instanceOptions: InstanceOptions = {
+      id: 'default-tab',
+      override: true
+    };
+
+    // Create a new Tabs object based on the parameters previously set.
+    const tabs:TabsInterface = new Tabs(tabsElement, tabElements, options, instanceOptions);
+    //tabs.show('frontend')
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    initializeFlowbiteTabs();
+  });
+
+</script>
