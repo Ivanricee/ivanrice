@@ -1,0 +1,56 @@
+---
+import { CLOUDINARY_LOW, CLOUDINARY_URL, FRONTEND, TRESD } from "@/lib/constants";
+import { CARD_INFO, SOFTWARE } from "../lib/data";
+import type { CardInfo } from '@/env';
+import Card from "./Card.astro";
+import PhotoCard from "./PhotoCard.astro";
+import BadgeItems from "./BadgeItems.astro";
+interface Props {
+  type: 'frontend' | '3D'
+}
+const { type } = Astro.props
+const cardInfoMap: {[key: string]: () => CardInfo[]} = {
+  [TRESD]: () => CARD_INFO.filter(item => item.type === TRESD),
+  [FRONTEND]: () => CARD_INFO.filter(item => item.type === FRONTEND)
+} || []
+const cardInfo = cardInfoMap[type] ? cardInfoMap[type]() : [];
+
+const cloudBase = `${CLOUDINARY_URL}${CLOUDINARY_LOW}`
+---
+<article class="w-full font-devina">
+  <ul class="w-full flex flex-col justify-center [&>li:not(:first-child)]:border-t-0">
+    {
+      cardInfo.map((info: CardInfo) => {
+        const src =`${cloudBase}${info.urls[0]}`
+        const { id,longTitle, type, caption, links, title } = info
+        const href = `/ivanrice/${info.id}`
+        const srcSoftware = info.software.map(itm => {return {'src': SOFTWARE[itm], 'text': itm}} )
+
+        return (
+         <li class="flex flex-nowrap p-9 pe-0 ps-14 gap-6
+          border-2 border-t-american-blue-400/50 border-b-american-blue-400/50 border-x-0">
+          <div class="w-2/6 h-full">
+            <PhotoCard src={src} alt={longTitle} className="w-56 h-52 opacity-70" animate id={id} href={href} layers={2} />
+          </div>
+          <div class="w-4/6">
+            <h3 class="text-green-lime-100 w-full text-3xl font-bold mb-3">{title}</h3>
+            <p class=" text-american-blue-50">{ caption }</p>
+            <div class="pt-4">
+              <BadgeItems items={srcSoftware!} />
+            </div>
+            <div class="pt-4">
+              <BadgeItems items={links} isLink />
+            </div>
+          </div>
+         </li>
+        )
+      })
+    }
+  </ul>
+</article>
+<style>
+  li {
+    --rotate: 0;
+    transform: rotate(var(--rotate));
+  }
+</style>
