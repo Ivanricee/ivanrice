@@ -26,7 +26,7 @@ const hasIdForTransition = id !== 0
 <div class={`relative ${className} `}>
   {
     arrLayers.map((_,i) => {
-      const randRotate = String(Math.random() * 8 - 5)
+      const randRotate = String(Math.random() * 6 - 3)
       const randTY = String(Math.random() * 1.5 - 1)
       const randTX = String(Math.random() * 1.5 - 1)
       const isLastLayer = layers === i + 1
@@ -34,7 +34,7 @@ const hasIdForTransition = id !== 0
 
       const picture = isLastLayer &&
       (
-      <div class="h-full rounded-xl overflow-hidden bg-roman-700/50 relative "
+      <div class="h-full rounded-xl overflow-hidden bg-american-blue-700/50 relative "
         transition:name={`card ${id} containerRound`}>
         <picture>
           <img
@@ -49,7 +49,7 @@ const hasIdForTransition = id !== 0
       if (hasIdForTransition && isLastLayer)
       return (
         <div
-          class={`card absolute z-10 rounded-2xl p-3 bg-roman-400 card-xl shadow-card-xl w-full h-full aspect-square origin-top ${isAnimated} `}
+          class={`card absolute z-10 rounded-2xl p-3 bg-gradient-card card-xl shadow-card-xl w-full h-full aspect-square origin-top ${isAnimated} `}
           style={`--rotate: ${randRotate}deg; --translateX: ${randTX}rem; --translateY: ${randTY}rem`}
           transition:name={`card ${id} box`}
         >
@@ -62,7 +62,7 @@ const hasIdForTransition = id !== 0
       )
       return (
         <div
-          class={`card absolute z-10 rounded-2xl p-2 bg-roman-500 card-xl shadow-card-lg w-full h-full aspect-square origin-top ${isAnimated}`}
+          class={`card absolute z-10 rounded-2xl p-2 bg-gradient-card-b card-xl shadow-card-lg w-full h-full aspect-square origin-top ${isAnimated}`}
           style={`--rotate: ${randRotate}deg; --translateX: ${randTX}rem; --translateY: ${randTY}rem`}
         >
           {picture}
