@@ -3,8 +3,11 @@ interface Props {
   caption: string;
 }
 const { caption } = Astro.props
+//sm:bg-yellow-400 md:bg-yellow-700 lg:bg-purple-500
 ---
 
-<h2 class="font-thin  text-xs md:text-7xl md:my-14 font-mauline text-roman-100 uppercase w-full">
+<h2 class="
+  font-thin text-4xl mt-14 mb-14 sm:mt-20 font-mauline text-american-blue-100/90 uppercase w-full
+  sm:text-6xl md:text-7xl">
   {caption}
 </h2>
