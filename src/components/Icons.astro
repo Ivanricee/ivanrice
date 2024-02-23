@@ -1,0 +1,24 @@
+---
+import { getIcon, type IconName } from '@/utils/icons';
+interface Props {
+  name: IconName
+  stroke: number
+  size: string
+}
+const { name, size, stroke } = Astro.props
+const iconFn = getIcon(name)
+const  iconText = iconFn ? iconFn() : null
+---
+
+{
+  iconText && <i set:html={iconText} />
+}
+
+<style define:vars={{stroke, size}} is:global>
+  .icon-tabler {
+    stroke: currentColor;
+    stroke-width: var(--stroke);
+    width: var(--size);
+    height: auto;
+  }
+</style>
