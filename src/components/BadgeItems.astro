@@ -1,0 +1,60 @@
+---
+import { CLOUDINARY_URL } from "@/lib/constants";
+import { Badge } from "flowbite-react";
+
+interface Props {
+  items: { src: string; text: string }[];
+  isLink?: boolean;
+}
+const transform = "";
+const imgSMedia: { [key: string]: string } = {
+  github: `${CLOUDINARY_URL}${transform}/v1703043998/portfolio/icons/github_ctttgh.avif`,
+  artstation: `${CLOUDINARY_URL}${transform}/v1703028343/portfolio/icons/artstation_ecauis.avif`,
+  instagram: `${CLOUDINARY_URL}${transform}/v1703028343/portfolio/icons/instagram_vmxjaz.avif`,
+};
+const hasImg = (img: string) =>
+  img === "github" || img === "artstation" || img === "instagram";
+
+const { items, isLink = false } = Astro.props
+---
+
+<div class="flex flex-wrap gap-1 caption ">
+  {items.map((item) => {
+    return (
+      <div class="flex flex-wrap gap-1.5">
+        {isLink ? (
+          <a
+            href={item.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border-2 border-green-lime-400/5 bg-green-lime-400/10 rounded px-4 text-ottoman-50 flex items-center text-sm font-bold tracking-wider
+            hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-lg transition-all duration-200"
+          >
+            <span class="uppercase font-devina">
+              {hasImg(item.text) ? (
+                <img
+                  src={imgSMedia[item.text]}
+                  width={35}
+                  class="object-contain"
+                  alt={item.text}
+                />
+              ) : (
+                item.text
+              )}
+            </span>
+          </a>
+        ) : (
+            <span class="text-pink-100 text-xs font-medium me-1 px-2.5 py-1 rounded border border-pink-400/80 bg-pink-500/10">
+              <div class="flex gap-1.5 items-center justify-center">
+                <img src={item.src} width={20} class="object-contain" alt={item.text} />
+                <span class="capitalize font-normal">
+                  {item.text}
+                </span>
+              </div>
+            </span>
+        )}
+      </div>
+    );
+  })}
+</div>
+
