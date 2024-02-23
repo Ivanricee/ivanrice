@@ -1,5 +1,3 @@
-import { transform } from "typescript";
-
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
@@ -15,20 +13,22 @@ export default {
         "-md": { max: "767px" },
       },
       backgroundColor: {
-        backImg: "#f1fffb",
+        backImg: "#ebfff4",
       },
       backgroundImage: {
         rock: "url('httpsu://res.cloudinary.com/ivanrice-c/image/upload/q_70/v1706725502/portfolio/imges/bg_noshadow_darker_wbuiy4.webp')",
         "rock-dark":
           "url('https://res.cloudinary.com/ivanrice-c/image/upload/q_70/v1706250878/portfolio/imges/bg_dark_tfdbtw.webp')",
-        shadow: "url('/ivanrice/shadow.png')",
+        shadow: "url('/ivanrice/asdf.avif')",
+        "gradient-card": "linear-gradient(225deg, #4752bd, #4e5cd4)",
+        "gradient-card-b": "linear-gradient(225deg, #4554cc, #5c64d9)",
       },
       boxShadow: {
-        "bg-shadow": "-15px 15px 30px #cee6d8,15px -15px 30px #d9ffee",
-        "card-lg": "-6px 6px 12px #b03c3f,6px -6px 12px #de4c4f",
-        "card-xl": "-5.5px 10px 14px #c44143,4px -4px 15px #f85154",
-        "card-2xl": "-10px 15px 16px #c44143,3px -3px 12px #de4c4f",
-        link: "0px -22px 18px -10px rgba(241,120,122,0.3) inset",
+        bg: "-15px 15px 30px #cee6d8,15px -15px 30px #D1FFEA",
+        "card-lg": "-0.5px 3px 10px #4354bb,0px 3px 10px #475cdd",
+        "card-xl": "-13px 17px 23px #3d44b3, 5px -5px 28px #4b61ea",
+        /*"card-2xl": "-10px 15px 16px #bd3d3f,3px -3px 12px #d3393c",*/
+        link: "0px -4px 36px 0px #C0CEB24A inset",
       },
       textColor: {
         "card-text": "#e67177",
@@ -49,7 +49,7 @@ export default {
         },
         wave: {
           "0%": { transform: "translateX(0)" },
-          "50%": { transform: "translate(19px, 10px)" },
+          "50%": { transform: "translate(22px, 13px)" },
           "100%": { transform: "translateX(0)" },
         },
       },
@@ -91,6 +91,34 @@ export default {
           800: "#006943",
           900: "#005638",
           950: "#003121",
+        },
+        "green-lime": {
+          50: "#FDFFF5",
+          100: "#FBFFEB",
+          200: "#F4FCD4",
+          300: "#EDF8C3",
+          400: "#E5F2B5",
+          500: "#DAE8A9",
+          600: "#CAE567",
+          700: "#BCE623",
+          800: "#92B70B",
+          900: "#647F00",
+          950: "#485C00",
+        },
+        "american-blue": {
+          50: "#F0F1FA",
+          100: "#E0E2F5",
+          200: "#C2C6EB",
+          300: "#A3A9E0",
+          400: "#858DD6",
+          500: "#6670CC",
+          550: "#5368E7",
+          600: "#4955C2",
+          650: "#4852C2",
+          700: "#3843A8",
+          800: "#2D3686",
+          900: "#212863",
+          950: "#1B2050",
         },
       },
     },
