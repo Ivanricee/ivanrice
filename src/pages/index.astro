@@ -1,7 +1,59 @@
 ---
+import AboutMe from '@/components/AboutMe.astro';
+import Experience from '@/components/Experience.astro';
+import Header from '@/components/Header.astro';
+import Introduce from '@/components/Introduce.astro';
+import Projects from '@/components/Projects.astro';
+import Title from '@/components/Title.astro';
 import Layout from '@/layouts/Layout.astro';
 
 ---
-<Layout title="Ivanrice Portfolio" />
-
+<Layout title="Ivanrice Portfolio">
+  <div id="header-static" class="block">
+    <Header state="static" />
+  </div>
+  <div id="header-fixed" class="hidden">
+    <Header state="fixed" />
+  </div>
+  <main class="w-full max-w-screen-md">
+    <section class="section-menu pb-20 lg:pb-24">
+      <Introduce />
+      <div id="spotlight" aria-hidden class="bg-american-blue-650/50 absolute w-3/4 h-[37rem] rounded-s-full blur-3xl -z-10 -rotate-12 translate-x-1/3 translate-y-36 right-0"></div>
+    </section>
+    <section id="experience" class="section-menu relative">
+      <div id="spotlight1" aria-hidden class="bg-american-blue-550/30 absolute w-3/4 h-[37rem] rounded-e-full blur-2xl -z-10 -rotate-12 -translate-x-2/3 translate-y-36"></div>
+      <div id="spotlight2" aria-hidden class="bg-ottoman-400/5 absolute w-2/3 h-72 rounded-full blur-2xl -z-10 -rotate-12 -translate-x-2/4 translate-y-48"></div>
+      <Title caption="Experiencia" />
+      <Experience />
+    </section>
+    <section id="projects" class="section-menu relative">
+      <Title caption="Proyectos" />
+      <div id="spotlight3" aria-hidden class="bg-american-blue-550/30 absolute w-[120%] h-[35rem] rounded-e-full blur-2xl -z-10 -rotate-[36deg] -translate-x-1/2 translate-y-80"></div>
+      <div id="spotlight4" aria-hidden class="bg-pink-400/5 absolute w-2/3 h-60 rounded-full blur-3xl -z-10 -rotate-[36deg] -translate-x-1/2 translate-y-96"></div>
+      <Projects />
+    </section>
+    <section  id="aboutme"  class="section-menu">
+      <Title caption="Sobre Mi" />
+      <AboutMe />
+    </section>
+    <slot />
+  </main>
+</Layout>
+<script >
+  import { Debounce } from "@/utils"
+  import { fixedHeader } from "@/scripts"
+  document.addEventListener("astro:page-load", () => {
+    const headerStatic = document.getElementById("header-static");
+    const headerFixed = document.getElementById("header-fixed");
+    if (!headerStatic || !headerFixed) throw new Error("Header Element Not found.");
+    const options = {
+      delay: 12,
+      callback: () => fixedHeader({headerStatic,headerFixed})
+    }
+    const fixedHeaderDebounced = Debounce(options)
+    window.addEventListener('scroll', () => {
+      fixedHeaderDebounced()
+    })
+  })
+</script>
 
