@@ -3,7 +3,8 @@ export default {
   darkMode: "class",
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+    //"node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+    "node_modules/flowbite-react/lib/esm/**/*.js",
     "./node_modules/flowbite/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
@@ -19,7 +20,7 @@ export default {
         rock: "url('httpsu://res.cloudinary.com/ivanrice-c/image/upload/q_70/v1706725502/portfolio/imges/bg_noshadow_darker_wbuiy4.webp')",
         "rock-dark":
           "url('https://res.cloudinary.com/ivanrice-c/image/upload/q_70/v1706250878/portfolio/imges/bg_dark_tfdbtw.webp')",
-        shadow: "url('/ivanrice/asdf.avif')",
+        shadow: "url('/ivanrice/shadow.avif')",
         "gradient-card": "linear-gradient(225deg, #4752bd, #4e5cd4)",
         "gradient-card-b": "linear-gradient(225deg, #4554cc, #5c64d9)",
       },
@@ -49,15 +50,15 @@ export default {
         },
         wave: {
           "0%": { transform: "translateX(0)" },
-          "50%": { transform: "translate(22px, 13px)" },
-          "100%": { transform: "translateX(0)" },
+          "50%": { transform: "translate(24px, 10px)" },
+          "100%": { transform: "translateX(2px)" },
         },
       },
       animation: {
         fadeIn: "fadeIn 0.7s ease-in-out",
         fadeOut: "fadeOut 1s ease-in-out forwards",
         fadeInBounce: "fadeInBounce 0.3s ease-in-out",
-        "wave-shadow": "wave 4s ease-in-out infinite",
+        "wave-shadow": "wave 3.5s ease-in-out infinite",
       },
       fontFamily: {
         mauline: ["Mauline", "sans-serif"],
