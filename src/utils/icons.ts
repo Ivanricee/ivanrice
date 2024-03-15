@@ -17,6 +17,8 @@ const iconDir: Record<string, () => string | null> = {
   gmail: () => fetchSVGIcon("brand-gmail"),
   instagram: () => fetchSVGIcon("brand-instagram"),
   linkedin: () => fetchSVGIcon("brand-linkedin"),
+  seemore: () => fetchSVGIcon("brand-external-link"),
+  demo: () => fetchSVGIcon("brand-link"),
 };
 export type IconName = keyof typeof iconDir;
 
