@@ -3,21 +3,20 @@ import { FRONTEND, TRESD } from "@/lib/constants";
 import ProjectItem from "./ProjectItem.astro";
 ---
 
-    <section class="font-devina w-full h-full box-content overflow-auto scrollbar-hide ">
-      <div class="mb-4">
+    <section class="font-devina  h-full box-content ">
+      <div class="mb-4 flex justify-center w-full sm:w-1/2 lg:w-full">
         <ul
-          class="flex text-lg font-medium text-center rounded-lg justify-center"
+          class="flex text-xl font-semibold text-center rounded-lg justify-center relative z-10 w-60 h-[5.5rem]"
           id="default-tab"
           data-tabs-toggle="#default-tab-content"
           role="tablist"
         >
-
-          <li class="focus-within:z-10" role="presentation">
+          <li class="focus-within:z-10 w-7/12 h-full" role="presentation">
             <button
-              class="inline-block w-full p-4
-                text-ottoman-50/85  bg-green-lime-400/10 border-s-0 rounded-s-lg
-                aria-selected:text-american-blue-900 aria-selected:border-0 aria-selected:bg-green-lime-500/60
-                hover:text-green-lime-400/70 hover:bg-green-lime-400/20 focus:ring-1 focus:outline-none focus:ring-green-lime-500/40"
+              class="inline-block w-full h-full p-4
+                text-ottoman-50/85  bg-green-lime-500/25 border-s-0 rounded-s-lg
+                aria-selected:text-american-blue-900 aria-selected:border-0 aria-selected:bg-green-lime-500/90 aria-selected:font-extrabold
+                hover:text-green-lime-400/70 hover:bg-green-lime-500/20 focus:ring-1 focus:outline-none focus:ring-green-lime-500/40"
               id="frontend-tab"
               data-tabs-target="#frontend"
               type="button" role="tab"
@@ -28,11 +27,11 @@ import ProjectItem from "./ProjectItem.astro";
               FRONTEND
           </button>
           </li>
-          <li class="focus-within:z-10" role="presentation">
+          <li class="focus-within:z-10 w-5/12 h-full" role="presentation">
             <button
-              class="inline-block w-full p-4
-              text-ottoman-50/85  bg-green-lime-400/10 border-s-0 rounded-e-lg
-              aria-selected:text-american-blue-800 aria-selected:border-0 aria-selected:bg-green-lime-500/60
+              class="inline-block w-full p-4 h-full
+              text-ottoman-50/90  bg-green-lime-500/25 border-s-0 rounded-e-lg
+              aria-selected:text-american-blue-800 aria-selected:border-0 aria-selected:bg-green-lime-500/90  aria-selected:font-extrabold
               hover:text-green-lime-400/70 hover:bg-green-lime-400/20 focus:ring-1 focus:outline-none focus:ring-green-lime-500/40"
               id="tresd-tab"
               data-tabs-target="#tresd"
@@ -47,7 +46,7 @@ import ProjectItem from "./ProjectItem.astro";
           </li>
         </ul>
       </div>
-      <div id="default-tab-content">
+      <div id="default-tab-content" class="sm:-translate-y-[7.7rem]">
         <div class="hidden pt-4 rounded-lg border-0" id="frontend" role="tabpanel" aria-labelledby="frontend-tab">
           <ProjectItem type={FRONTEND} />
         </div>
