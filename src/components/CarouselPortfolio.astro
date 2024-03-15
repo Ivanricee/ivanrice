@@ -27,7 +27,7 @@ const mediaLowQSrc = getMediaLowQSrc();
 
 
 
-<div id="carousel-portfolio" class="relative w-full h-full sm:p-8">
+<div id="carousel-portfolio" class="relative w-full h-full sm:p-8" transition:name={`card ${id} container`}>
   <astro-cloudinary-video data-message={media} />
   {
     isSingle ? (
@@ -41,7 +41,7 @@ const mediaLowQSrc = getMediaLowQSrc();
     (
       <>
        <!-- Carousel wrapper -->
-        <div class="relative h-full overflow-hidden rounded-xl sm:border-2 sm:border-ottoman-100/50" transition:name={`card ${id} containerRound`}>
+        <div class="relative h-full overflow-hidden rounded-xl sm:border-2 sm:border-ottoman-100/50">
         {
           media.map((url, id) => {
             const srcImg = `${CLOUDINARY_URL}${CLOUDINARY_HIGH}${url}`
