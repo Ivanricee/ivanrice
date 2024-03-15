@@ -182,7 +182,7 @@ export const CARD_INFO: CardInfo[] = [
     longTitle: "Discord Clone",
     software: ["react", "redux", "twilio", "graphql", "figma"],
     caption:
-      "This website was created for educational purposes. The goal of this project is not to fully replicate discord, just some basic features like the front-end with basic interactions and some video features.",
+      "Clon con funciones similares a Discord, incluyendo diseño frontal, interacciones básicas y características de video.",
     type: "frontend",
     links: [
       { text: "demo", src: "https://community-chat-discord.vercel.app/1/1" },
@@ -207,7 +207,7 @@ export const CARD_INFO: CardInfo[] = [
     longTitle: "Evidence Monitoring tool",
     software: ["next", "supabase", "tailwind", "mui"],
     caption:
-      "This is a real-time application, which means that any changes you make will be displayed instantly, without the need to reload the page. Currently, it accepts Twitch clips videos as evidence. In the future, it will support additional file types and videos from different sources.",
+      "Administra sanciones de usuarios en tiempo real mediante preguntas, apuestas y clips de Twitch como evidencia.",
     type: "frontend",
     links: [
       { text: "demo", src: "https://realtime-evidence-tracker.vercel.app" },
@@ -228,7 +228,7 @@ export const CARD_INFO: CardInfo[] = [
     longTitle: "Countries Finder",
     software: ["react", "redux"],
     caption:
-      "Explore countries, search, and filter by region to access specific details of the selected flag on a separate page. Personalize the interaction with a theme switcher",
+      "Explora y filtra países por región. Al hacer clic, accede a detalles de la bandera seleccionada. ",
     type: "frontend",
     links: [
       { text: "demo", src: "https://countries-finder-ivanrice.vercel.app/" },
@@ -249,7 +249,7 @@ export const CARD_INFO: CardInfo[] = [
     longTitle: "Interactive Bank Card",
     software: ["react", "react hook form", "vitest"],
     caption:
-      "Responsive card form practice with validation and testing using Vitest. Real-time updates and error messages",
+      "Formulario con validación y actualizaciones en tiempo real, incluyendo mensajes de error.",
     type: "frontend",
     links: [
       { text: "demo", src: "https://bank-card.vercel.app/" },
@@ -270,7 +270,7 @@ export const CARD_INFO: CardInfo[] = [
     longTitle: "Shortly URL",
     software: ["react"],
     caption:
-      "View site layouts based on device screen, shorten URLs, manage links, and copy with one click, even after refreshing.",
+      "Acorta URLs, gestiona enlaces y copia con un solo clic, incluso después de actualizar la página.",
     type: "frontend",
     links: [
       { text: "demo", src: "https://shorturl-ivnrice.vercel.app/" },
