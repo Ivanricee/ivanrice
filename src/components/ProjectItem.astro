@@ -1,56 +1,145 @@
 ---
-import { CLOUDINARY_LOW, CLOUDINARY_URL, FRONTEND, TRESD } from "@/lib/constants";
+import { Image } from "astro:assets";
+import down from "../../public/down.jpg";
+import {
+  CLOUDINARY_LOW,
+  CLOUDINARY_URL,
+  FRONTEND,
+  TRESD,
+} from "@/lib/constants";
 import { CARD_INFO, SOFTWARE } from "../lib/data";
-import type { CardInfo } from '@/env';
-import Card from "./Card.astro";
-import PhotoCard from "./PhotoCard.astro";
+import type { CardInfo } from "@/env";
 import BadgeItems from "./BadgeItems.astro";
+import BadgeLink from "./BadgeLink.astro";
+import { getTemplateArea } from "@/utils";
 interface Props {
-  type: 'frontend' | '3D'
+  type: "frontend" | "3D";
 }
-const { type } = Astro.props
-const cardInfoMap: {[key: string]: () => CardInfo[]} = {
-  [TRESD]: () => CARD_INFO.filter(item => item.type === TRESD),
-  [FRONTEND]: () => CARD_INFO.filter(item => item.type === FRONTEND)
-} || []
+const { type } = Astro.props;
+const cardInfoMap: { [key: string]: () => CardInfo[] } =
+  {
+    [TRESD]: () => CARD_INFO.filter((item) => item.type === TRESD),
+    [FRONTEND]: () => CARD_INFO.filter((item) => item.type === FRONTEND),
+  } || [];
 const cardInfo = cardInfoMap[type] ? cardInfoMap[type]() : [];
 
-const cloudBase = `${CLOUDINARY_URL}${CLOUDINARY_LOW}`
----
-<article class="w-full font-devina">
-  <ul class="w-full flex flex-col justify-center [&>li:not(:first-child)]:border-t-0">
-    {
-      cardInfo.map((info: CardInfo) => {
-        const src =`${cloudBase}${info.urls[0]}`
-        const { id,longTitle, type, caption, links, title } = info
-        const href = `/ivanrice/${info.id}`
-        const srcSoftware = info.software.map(itm => {return {'src': SOFTWARE[itm], 'text': itm}} )
+const cloudBase = `${CLOUDINARY_URL}${CLOUDINARY_LOW}`;
 
+//----- area template
+const countCards = cardInfo.length;
+const [rows3, TGridArea3] = getTemplateArea({columns: 3, countCards});
+const [rows2, TGridArea2] = getTemplateArea({columns: 2, countCards});
+//----- area template
+---
+
+<article class="w-full font-devina">
+  <ul id="gridTemplateAreas" class="w-full h-full">
+    <div style={`grid-area: menu;`} class="w-full h-full relative"></div>
+    {
+      cardInfo.map((info: CardInfo, index: number) => {
+        const src = `${cloudBase}${info.urls[0]}`;
+        const { id, longTitle, type, caption, links, title } = info;
+
+        const srcSoftware = info.software.map((itm) => {
+          return { src: SOFTWARE[itm], text: itm };
+        });
+        const gridArea = `${index + 1}`;
         return (
-         <li class="flex flex-nowrap p-9 pe-0 ps-14 gap-6
-          border-2 border-t-american-blue-400/50 border-b-american-blue-400/50 border-x-0">
-          <div class="w-2/6 h-full">
-            <PhotoCard src={src} alt={longTitle} className="w-56 h-52 opacity-70" animate id={id} href={href} layers={2} />
-          </div>
-          <div class="w-4/6">
-            <h3 class="text-green-lime-100 w-full text-3xl font-bold mb-3">{title}</h3>
-            <p class=" text-american-blue-50">{ caption }</p>
-            <div class="pt-4">
-              <BadgeItems items={srcSoftware!} />
+          <li
+            class="group w-full h-full relative z-30 overflow-hidden rounded-xl border-2 border-american-blue-500/50
+            hover:border-2 hover:border-green-lime-600
+            bg-gradient-to-bl from-american-blue-950/50 from-10% via-american-blue-800/65 via-30% to-indigo-800/30 to-82%
+            hover:to-american-blue-800 hover:to-82% transition-[border] duration-700"
+            style={`grid-area: item${gridArea};`}
+            transition:name={`card ${id} container`}
+          >
+            <div class="w-full h-full relative">
+              <div class="light absolute w-28 h-28 rounded-full bg-indigo-700/20 blur-xl -right-7 -top-4 z-10" />
+              <div class="light absolute w-9 h-28 rounded-3xl bg-american-blue-550 blur-xl -right-4 top-12 z-10" />
+              <div
+                class="light absolute w-8 h-24 rounded-3xl bg-ottoman-500/30 blur-xl -left-2 top-20 z-10
+            group-hover:top-14 group-hover:w-12"
+              />
+              <Image
+                src={down}
+                class={`frontImgNoise absolute -z-10 translate-x-4 translate-y-4 w-full h-40 object-cover object-right rounded-lg mix-blend-plus-lighter opacity-30
+              group-hover:opacity-30 group-hover:translate-x-0 group-hover:translate-y-0 transition-all `}
+                width={235}
+                height={235}
+                alt="noise"
+                aria-hidden={true}
+              />
+
+              <Image
+                class={`frontImg translate-x-4 translate-y-4 w-full h-40 object-cover object-left rounded-lg hue-rotate-15 opacity-80
+              border-2 border-indigo-500/30
+              group-hover:opacity-30 group-hover:translate-x-0 group-hover:translate-y-0 transition-all ease-in`}
+                src={src}
+                alt={longTitle}
+                width={235}
+                height={235}
+              />
             </div>
-            <div class="pt-4">
-              <BadgeItems items={links} isLink />
+            <div
+              class="pb-4 flex justify-center w-full gap-1.5 absolute top-6 opacity-0 z-10
+              group-hover:opacity-100 transition-opacity duration-200 ease-in"
+            >
+              <BadgeLink items={links} itemId={id} />
             </div>
-          </div>
-         </li>
-        )
+            <div
+              class="w-full absolute inset-0 p-4 translate-y-28 font-devina
+              group-hover:translate-y-14 transition-transform  ease-out"
+            >
+              <h3 class="text-ottoman-100/95 w-full text-xl font-bold mb-2">
+                {title}
+              </h3>
+              <p class=" text-green-lime-100/80 text-balance">{caption}</p>
+              <div class="opacity-0 group-hover:opacity-100 transition-opacity mt-2">
+                <BadgeItems items={srcSoftware!} />
+              </div>
+            </div>
+          </li>
+        );
       })
     }
+    <div style={`grid-area: footer;`} class="w-full h-full bg-yellow-200">
+      footer
+    </div>
   </ul>
 </article>
-<style>
+<style define:vars={{ TGridArea2, rows2, TGridArea3, rows3 }}>
   li {
     --rotate: 0;
     transform: rotate(var(--rotate));
+  }
+  .frontImg {
+    mask-image: linear-gradient(180deg, black 35%, transparent 97%);
+  }
+  .frontImgNoise {
+    mask-image: linear-gradient(180deg, black 80%, transparent 100%);
+  }
+  #gridTemplateAreas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(var(--rows3), 6rem);
+    gap: 10px;
+    grid-template-areas: var(--TGridArea3);
+  }
+  @media (max-width: 1024px) {
+    #gridTemplateAreas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(var(--rows2), 6rem);
+      gap: 10px;
+      grid-template-areas: var(--TGridArea2);
+    }
+  }
+  @media (max-width: 640px) {
+    #gridTemplateAreas {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      grid-template-areas: var(--TGridArea2);
+    }
   }
 </style>
