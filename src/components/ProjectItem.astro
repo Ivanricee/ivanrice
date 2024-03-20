@@ -16,20 +16,34 @@ interface Props {
   type: "frontend" | "3D";
 }
 const { type } = Astro.props;
+let count3D = 0;
+let countFront = 0;
 const cardInfoMap: { [key: string]: () => CardInfo[] } =
   {
-    [TRESD]: () => CARD_INFO.filter((item) => item.type === TRESD),
-    [FRONTEND]: () => CARD_INFO.filter((item) => item.type === FRONTEND),
+    [TRESD]: () =>
+      CARD_INFO.filter((item) => item.type === TRESD && count3D++ <= 4),
+    [FRONTEND]: () =>
+      CARD_INFO.filter((item) => item.type === FRONTEND && countFront++ <= 4),
   } || [];
 const cardInfo = cardInfoMap[type] ? cardInfoMap[type]() : [];
 
 const cloudBase = `${CLOUDINARY_URL}${CLOUDINARY_LOW}`;
 
 //----- area template
-const countCards = cardInfo.length;
-const [rows3, TGridArea3] = getTemplateArea({columns: 3, countCards});
-const [rows2, TGridArea2] = getTemplateArea({columns: 2, countCards});
+/*const countCards = cardInfo.length;
+const [rows3, TGridArea3] = getTemplateArea({ columns: 3, countCards });
+const [rows2, TGridArea2] = getTemplateArea({ columns: 2, countCards });*/
+//default 5 iitems
+const [rows3, TGridArea3] = getTemplateArea({
+  columns: 3,
+  countCards: 5,
+});
+const [rows2, TGridArea2] = getTemplateArea({
+  columns: 2,
+  countCards: 5,
+});
 //----- area template
+const isFront = type === FRONTEND
 ---
 
 <article class="w-full font-devina">
@@ -103,7 +117,12 @@ const [rows2, TGridArea2] = getTemplateArea({columns: 2, countCards});
       })
     }
     <div style={`grid-area: footer;`} class="w-full h-full bg-yellow-200">
-      footer
+      {
+        isFront ?
+        <a href="github.com">Ver mas</a>
+        :
+        <a href="instagram.com">Ver mas</a>
+      }
     </div>
   </ul>
 </article>
@@ -143,3 +162,4 @@ const [rows2, TGridArea2] = getTemplateArea({columns: 2, countCards});
     }
   }
 </style>
+<script></script>
