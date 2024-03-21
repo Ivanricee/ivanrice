@@ -1,82 +1,62 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
+import { ViewTransitions } from "astro:transitions";
 
-import '../styles/main.css'
+import "../styles/main.css";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
-const { title= "Portafolio de ivanrice" } = Astro.props;
+const { title = "Portafolio de ivanrice" } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="ivanrice/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-    <ViewTransitions  />
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="ivanrice/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
   <!--dark/light -->
-	<body class="flex">
-    <div class="bg-backImg w-dvw min-h-dvh flex justify-center items-center 2xl:p-8  h-full overflow-auto">
+  <body>
+    <div
+      class="bg-backImg w-full flex justify-center items-center 2xl:p-8 h-full overflow-auto"
+    >
       <div
         id="introduce"
-        class="bg-american-blue-600 border-0 sm:border-[1.5rem] border-ottoman-50 relative flex flex-col w-full h-full bg-center items-center
-        bg-cover rounded-none sm:rounded-[4rem] lg:shadow-bg px-8 md:px-16 pt-52 md:pt-56 max-w-screen-2xl min-h-dvh overflow-hidden z-0"
+        class="bg-american-blue-600 border-0 sm:border-[1.5rem] border-ottoman-50 relative flex flex-col w-full h-full min-h-dvh items-center
+         rounded-none sm:rounded-[4rem] lg:shadow-container px-8 md:px-16 pt-52 md:pt-56 max-w-screen-2xl overflow-hidden z-0"
       >
-
-      <slot />
-        <div class="absolute -inset-5  overflow-hidden animate-fadeIn -z-10" aria-hidden="true">
-          <picture>
-            <source srcset="/ivanrice/shadow.avif" type="image/avif">
-            <img src="/ivanrice/shadow.png" alt="fill background" class="w-full h-full object-cover bg-center bg-cover absolute -left-6 -right-2 -top-5 -bottom-2 animate-wave-shadow">
-          </picture>
-          <div ></div>
-        </div>
+        <slot />
       </div>
     </div>
+    <style is:global>
+      :root {
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      /* For IE, Edge and Firefox */
+      .scrollbar-hide {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      html {
+        font-family: "Neucha", cursive;
+        background: #13151a;
+        background-size: 224px;
+        /*scroll-behavior: smooth;*/
+      }
 
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
-
-	</body>
-
-  <script>
-  </script>
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </body>
 </html>
-<style is:global>
-	:root {
-	}
-  .scrollbar-hide::-webkit-scrollbar {
-      display: none;
-  }
-  /* For IE, Edge and Firefox */
-  .scrollbar-hide {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-  }
-	html {
-    font-family: 'Neucha', cursive;
-		background: #13151a;
-		background-size: 224px;
-    scroll-behavior: smooth;
-	}
-  body {
-    overscroll-behavior: none;
-  }
-  @media (prefers-reduced-motion: reduce){
-    html {
-      scroll-behavior: auto;
-    }
-  }
-  [aria-selected="true"] {
-   color: #2d3432;
-   font-weight: 600;
-   border-bottom: 2px solid #5d6d69;
-  }
-</style>
-
