@@ -23,7 +23,7 @@ export default {
         "gradient-card-b": "linear-gradient(225deg, #4554cc, #5c64d9)",
       },
       boxShadow: {
-        bg: "-15px 15px 30px #cee6d8,15px -15px 30px #D1FFEA",
+        container: "-15px 15px 30px #cee6d8,15px -15px 30px #D1FFEA",
         "card-lg": "-0.5px 3px 10px #4354bb,0px 3px 10px #475cdd",
         "card-xl": "-13px 17px 23px #3d44b3, 5px -5px 28px #4b61ea",
         /*"card-2xl": "-10px 15px 16px #bd3d3f,3px -3px 12px #d3393c",*/
@@ -48,7 +48,7 @@ export default {
         },
         wave: {
           "0%": { transform: "translateX(0)" },
-          "50%": { transform: "translate(24px, 10px)" },
+          "50%": { transform: "translate(34px, 10px)" },
           "100%": { transform: "translateX(2px)" },
         },
       },
@@ -56,7 +56,7 @@ export default {
         fadeIn: "fadeIn 0.7s ease-in-out",
         fadeOut: "fadeOut 1s ease-in-out forwards",
         fadeInBounce: "fadeInBounce 0.3s ease-in-out",
-        "wave-shadow": "wave 3.5s ease-in-out infinite",
+        "wave-shadow": "wave 2.8s ease-in-out infinite",
       },
       fontFamily: {
         mauline: ["Mauline", "sans-serif"],
