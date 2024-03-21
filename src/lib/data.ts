@@ -11,7 +11,8 @@ export const CARD_INFO: CardInfo[] = [
     title: "CHRISTMAS",
     longTitle: "Little Christmas",
     software: ["maya", "redshift", "mari", "zbrush", "rizom uv"],
-    caption: "Snowman Little Christmas. Rendered with redshift",
+    caption:
+      "Escena de muñecos de nieve, inspirada por la textura de arcilla y la temporada navideña.",
     type: "3D",
     links: [
       {
@@ -37,7 +38,8 @@ export const CARD_INFO: CardInfo[] = [
       "zbrush",
       "rizom uv",
     ],
-    caption: "A practice of snow and lighting",
+    caption:
+      "Snowman: una práctica con nieve y luces, donde los autos rodean a un gigante muñeco de nieve.",
     type: "3D",
     links: [
       {
@@ -58,9 +60,10 @@ export const CARD_INFO: CardInfo[] = [
       "/v1700179026/portfolio/model/mictlantecuhtli/diffuse_ind_iyoy4z.webp",
     ],
     title: "MICTLAN",
-    longTitle: "Mictlantecuhtli - Señor del Mictlan.",
+    longTitle: "Mictlantecuhtli",
     software: ["maya", "arnold", "mari"],
-    caption: "Made with Arnold render.",
+    caption:
+      "Inspirado en el dios azteca de la muerte Mictlantecuhtli, realizado con un estilo toon.",
     type: "3D",
     links: [
       {
@@ -92,7 +95,8 @@ export const CARD_INFO: CardInfo[] = [
       "zbrush",
       "rizom uv",
     ],
-    caption: "3D fan art of Ghibli's Totoro, inspired by autumn.  🍂🎨",
+    caption:
+      "Fan art en 3D del Totoro de Ghibli, inspirado en el otoño japonés. 🍂🎨",
     type: "3D",
     links: [
       {
@@ -123,7 +127,7 @@ export const CARD_INFO: CardInfo[] = [
       "zbrush",
       "rizom uv",
     ],
-    caption: "Clancy from The midnight gospel.",
+    caption: "Fan art de Clancy, personaje de 'The Midnight Gospel'.",
     type: "3D",
     links: [
       {
