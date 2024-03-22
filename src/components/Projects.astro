@@ -73,7 +73,6 @@ import ProjectItem from "./ProjectItem.astro";
 </section>
 <script>
   document.addEventListener("astro:page-load", () => {
-    console.log("sdfdasfddsfadsfdfsfdsfdsfsdafasdf");
     const frontendTabButton = document.getElementById("frontend-tab");
     const tresdTabButton = document.getElementById("tresd-tab");
     if (!frontendTabButton || !tresdTabButton)
@@ -95,6 +94,15 @@ import ProjectItem from "./ProjectItem.astro";
   import { Tabs } from "flowbite";
   import type { TabsOptions, TabsInterface, TabItem } from "flowbite";
   import type { InstanceOptions } from "flowbite";
+  const getQueryParam = () => {
+    // Get the fragment identifier and remove the '#' symbol
+    const queryString = window.location.hash.substring(1).split("?")[1];
+
+    if (!queryString) throw new Error("No query string found in the fragment.");
+    // Create a URLSearchParams object with the query string
+    const searchParams = new URLSearchParams(queryString);
+    return searchParams.get("type");
+  };
 
   function initializeFlowbiteTabs() {
     const tabsElement: HTMLElement | null =
@@ -136,7 +144,8 @@ import ProjectItem from "./ProjectItem.astro";
       options,
       instanceOptions
     );
-    tabs.show("tresd");
+    const type = getQueryParam();
+    if (type) tabs.show(type);
   }
 
   document.addEventListener("astro:page-load", () => {
