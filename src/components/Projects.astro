@@ -5,6 +5,9 @@ import ProjectItem from "./ProjectItem.astro";
 
 <section
   class="font-devina box-content md:h-[66rem] lg:h-[39rem]"
+  transition:name="project-container"
+  transition:persist
+  transition:persist-props
 >
   <div class="mb-4 flex justify-center w-full sm:w-1/2 lg:w-full">
     <ul
@@ -69,6 +72,26 @@ import ProjectItem from "./ProjectItem.astro";
   </div>
 </section>
 <script>
+  document.addEventListener("astro:page-load", () => {
+    console.log("sdfdasfddsfadsfdfsfdsfdsfsdafasdf");
+    const frontendTabButton = document.getElementById("frontend-tab");
+    const tresdTabButton = document.getElementById("tresd-tab");
+    if (!frontendTabButton || !tresdTabButton)
+      throw new Error("menu items not found");
+    frontendTabButton.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      const name = target.getAttribute("aria-controls");
+      history.replaceState({}, "", `/ivanrice/#projects/?type=${name}`);
+    });
+
+    tresdTabButton.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      const name = target.getAttribute("aria-controls");
+      history.replaceState({}, "", `/ivanrice/#projects/?type=${name}`);
+    });
+  });
+</script>
+<script>
   import { Tabs } from "flowbite";
   import type { TabsOptions, TabsInterface, TabItem } from "flowbite";
   import type { InstanceOptions } from "flowbite";
@@ -113,7 +136,7 @@ import ProjectItem from "./ProjectItem.astro";
       options,
       instanceOptions
     );
-    //tabs.show('frontend')
+    tabs.show("tresd");
   }
 
   document.addEventListener("astro:page-load", () => {
