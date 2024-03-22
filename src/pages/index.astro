@@ -9,10 +9,17 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Ivanrice Portfolio">
-  <div class="absolute inset-0 -left-9 overflow-hidden animate-fadeIn -z-10" aria-hidden="true">
+  <div
+    class="absolute inset-0 -left-9 overflow-hidden animate-fadeIn -z-10"
+    aria-hidden="true"
+  >
     <picture>
-      <source srcset="/ivanrice/shadow.avif" type="image/avif">
-      <img src="/ivanrice/shadow.png" alt="fill background" class="w-full h-full object-cover bg-center bg-cover absolute animate-wave-shadow">
+      <source srcset="/ivanrice/shadow.avif" type="image/avif" />
+      <img
+        src="/ivanrice/shadow.png"
+        alt="fill background"
+        class="w-full h-full object-cover bg-center bg-cover absolute animate-wave-shadow"
+      />
     </picture>
   </div>
   <div id="header-static" class="block">
@@ -42,7 +49,7 @@ import Layout from "@/layouts/Layout.astro";
       <Title caption="Experiencia" />
       <Experience />
     </section>
-    <section id="projects" class="section-menu relative">
+    <section id="projects/?type=frontend" class="section-menu relative">
       <Title caption="Proyectos" />
       <!--
 
