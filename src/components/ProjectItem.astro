@@ -68,6 +68,11 @@ const isFront = type === FRONTEND;
             style={`grid-area: item${gridArea};`}
             transition:name={`card ${id} container`}
           >
+            <div class=" absolute top-0 right-0 w-1/3 flex justify-center py-8 z-10 pointer-events-none">
+              <h3 class="text-9xl text-american-blue-400/60 blur-sm group-hover:blur group-hover:text-american-blue-400/35">
+                {gridArea}
+              </h3>
+            </div>
             <div class="w-full h-full relative">
               <div class="light absolute w-28 h-28 rounded-full bg-indigo-700/20 blur-xl -right-7 -top-4 z-10" />
               <div class="light absolute w-9 h-28 rounded-3xl bg-american-blue-550 blur-xl -right-4 top-12 z-10" />
