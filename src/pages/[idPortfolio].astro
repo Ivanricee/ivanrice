@@ -33,10 +33,10 @@ const { caption, id, links, longTitle, software, title, type, image } = card;
       <button
         type="button"
         id="close"
-        class="text-green-lime-600 bg-green-lime-100/20 hover:bg-green-lime-100/35 hover:text-green-lime-500 focus:ring-4 focus:outline-none focus:ring-green-lime-600/60 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center transition-colors"
+        class="text-green-lime-400 bg-american-blue-550/45 hover:bg-american-blue-550/65 hover:text-green-lime-600 focus:ring-4 focus:outline-none focus:ring-green-lime-600/60 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center transition-colors"
       >
-        <Icons name="close" size="3rem" stroke={2.5}>
-          <span class="sr-only">Icon description</span>
+        <Icons name="close" size="3rem" stroke={1.5}>
+          <span class="sr-only">Close</span>
         </Icons>
       </button>
     </div>
@@ -47,14 +47,14 @@ const { caption, id, links, longTitle, software, title, type, image } = card;
 
   document.addEventListener("astro:page-load", () => {
     const closeBtn = document.getElementById("close");
-    const handleBack = () =>  history.back();
+    const handleBack = () => history.back();
 
     if (!closeBtn) throw new Error(" carousel close btn not found");
     // Listen for the click
     closeBtn.addEventListener("click", handleBack);
     // Listen for the keydownesc
     if (eventListenersAdded) return; // Prevent adding keydown listeners multiple times
-     document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") handleBack();
     });
     eventListenersAdded = true;
