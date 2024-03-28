@@ -5,9 +5,10 @@ import "../styles/main.css";
 
 interface Props {
   title: string;
+  position: string;
 }
 
-const { title = "Portafolio de ivanrice" } = Astro.props;
+const { title = "Portafolio de ivanrice", position = "relative" } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,12 +25,12 @@ const { title = "Portafolio de ivanrice" } = Astro.props;
   <!--dark/light -->
   <body>
     <div
-      class="bg-backImg w-full flex justify-center items-center 2xl:p-8 h-full overflow-auto"
+      class="bg-backImg w-full min-h-dvh flex justify-center items-center 2xl:p-8 h-full overflow-auto"
     >
       <div
         id="introduce"
-        class="bg-american-blue-600 border-0 sm:border-[1.5rem] border-ottoman-50 relative flex flex-col w-full h-full min-h-dvh items-center
-         rounded-none sm:rounded-[4rem] lg:shadow-container px-8 md:px-16 pt-52 md:pt-56 max-w-screen-2xl overflow-hidden z-0"
+        class={`bg-american-blue-600 border-0 sm:border-[1.5rem] border-ottoman-50 ${position} flex flex-col w-full h-full items-center
+         rounded-none sm:rounded-[4rem] lg:shadow-container px-8 md:px-16 pt-52 md:pt-56 max-w-screen-2xl overflow-hidden z-0 `}
       >
         <slot />
       </div>
