@@ -4,9 +4,15 @@ import { CLOUDINARY_URL } from "./constants";
 export const CARD_INFO: CardInfo[] = [
   {
     id: 1,
-    urls: [
-      "/v1700180330/portfolio/model/christmas/christmas_snowman_ecngcw.webp",
-      "/v1700180349/portfolio/model/christmas/little_christmas_ivan_bautista_unxbbg.webp",
+    image: [
+      {
+        url: "/v1700180330/portfolio/model/christmas/christmas_snowman_ecngcw.webp",
+        bg: "#090207",
+      },
+      {
+        url: "/v1700180349/portfolio/model/christmas/little_christmas_ivan_bautista_unxbbg.webp",
+        bg: "#090207",
+      },
     ],
     title: "CHRISTMAS",
     longTitle: "Little Christmas",
@@ -27,7 +33,12 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 2,
-    urls: ["/v1700182548/portfolio/model/snowman/final_ig_imytwj.webp"],
+    image: [
+      {
+        url: "/v1700182548/portfolio/model/snowman/final_ig_imytwj.webp",
+        bg: "#1847b9",
+      },
+    ],
     title: "SNOWMAN",
     longTitle: "Snowman lights",
     software: [
@@ -54,10 +65,19 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 3,
-    urls: [
-      "/v1700179021/portfolio/model/mictlantecuhtli/mictlantecuhtli_cut_bmmbxs.webp",
-      "/v1700179030/portfolio/model/mictlantecuhtli/mictlantecuhtli_ao_g2ynqp.webp",
-      "/v1700179026/portfolio/model/mictlantecuhtli/diffuse_ind_iyoy4z.webp",
+    image: [
+      {
+        url: "/v1700179021/portfolio/model/mictlantecuhtli/mictlantecuhtli_cut_bmmbxs.webp",
+        bg: "#43037e",
+      },
+      {
+        url: "/v1700179030/portfolio/model/mictlantecuhtli/mictlantecuhtli_ao_g2ynqp.webp",
+        bg: "#fdfcff",
+      },
+      {
+        url: "/v1700179026/portfolio/model/mictlantecuhtli/diffuse_ind_iyoy4z.webp",
+        bg: "#090207",
+      },
     ],
     title: "MICTLAN",
     longTitle: "Mictlantecuhtli",
@@ -79,11 +99,23 @@ export const CARD_INFO: CardInfo[] = [
 
   {
     id: 4,
-    urls: [
-      "/v1700179626/portfolio/model/Ghibli/ghibli_totoro_autumn_2_bfxe5a.webp",
-      "/v1700179638/portfolio/model/Ghibli/byke_mpidi9.webp",
-      "/v1700179681/portfolio/model/Ghibli/lighting_raw_nuhwlq.webp",
-      "/v1700179664/portfolio/model/Ghibli/REFERENCES_vbdopx.webp",
+    image: [
+      {
+        url: "/v1700179626/portfolio/model/Ghibli/ghibli_totoro_autumn_2_bfxe5a.webp",
+        bg: "#251f40",
+      },
+      {
+        url: "/v1700179638/portfolio/model/Ghibli/byke_mpidi9.webp",
+        bg: "#1d0255",
+      },
+      {
+        url: "/v1700179681/portfolio/model/Ghibli/lighting_raw_nuhwlq.webp",
+        bg: "#090207",
+      },
+      {
+        url: "/v1700179664/portfolio/model/Ghibli/REFERENCES_vbdopx.webp",
+        bg: "#090207",
+      },
     ],
     title: "GHIBLI",
     longTitle: "Ghibli Train Station",
@@ -111,11 +143,23 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 5,
-    urls: [
-      "/v1606776535/portfolio/model/midnightgospel/final_img_c_mzsgrf.webp",
-      "/v1606776535/portfolio/model/midnightgospel/sec_dktemn.webp",
-      "/v1606776535/portfolio/model/midnightgospel/thrids_2_eflw2k.webp",
-      "/v1700182921/portfolio/model/midnightgospel/gray_shaed_ttscyo.webp",
+    image: [
+      {
+        url: "/v1606776535/portfolio/model/midnightgospel/final_img_c_mzsgrf.webp",
+        bg: "#32125b",
+      },
+      {
+        url: "/v1606776535/portfolio/model/midnightgospel/sec_dktemn.webp",
+        bg: "#322157",
+      },
+      {
+        url: "/v1606776535/portfolio/model/midnightgospel/thrids_2_eflw2k.webp",
+        bg: "#3e249d",
+      },
+      {
+        url: "/v1700182921/portfolio/model/midnightgospel/gray_shaed_ttscyo.webp",
+        bg: "#090207",
+      },
     ],
     title: "CLANCY",
     longTitle: "Clancy - Fan Art",
@@ -142,13 +186,31 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 6,
-    urls: [
-      "/v1606775187/portfolio/model/cyberpunk/nave-final_v6m09q.webp",
-      "/v1606774993/portfolio/model/cyberpunk/LIGHT_uu7hiw.webp",
-      "/v1606774993/portfolio/model/cyberpunk/SPEC_dgjnox.webp",
-      "/v1606774994/portfolio/model/cyberpunk/emission_qyjzyw.webp",
-      "/v1606774993/portfolio/model/cyberpunk/UVMAP_utl350.webp",
-      "/v1606775523/portfolio/model/cyberpunk/ivan-bautista-wip2_hd2o1r.webp",
+    image: [
+      {
+        url: "/v1606775187/portfolio/model/cyberpunk/nave-final_v6m09q.webp",
+        bg: "#090207",
+      },
+      {
+        url: "/v1606774993/portfolio/model/cyberpunk/LIGHT_uu7hiw.webp",
+        bg: "#090207",
+      },
+      {
+        url: "/v1606774993/portfolio/model/cyberpunk/SPEC_dgjnox.webp",
+        bg: "#090207",
+      },
+      {
+        url: "/v1606774994/portfolio/model/cyberpunk/emission_qyjzyw.webp",
+        bg: "#090207",
+      },
+      {
+        url: "/v1606774993/portfolio/model/cyberpunk/UVMAP_utl350.webp",
+        bg: "#090207",
+      },
+      {
+        url: "/v1606775523/portfolio/model/cyberpunk/ivan-bautista-wip2_hd2o1r.webp",
+        bg: "#090207",
+      },
     ],
     title: "SPACESHIP",
     longTitle: "Steampunk spaceship",
@@ -177,10 +239,19 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 7,
-    urls: [
-      "/v1702071603/portfolio/frontend/discord/cover_dmo4zq.webp",
-      "portfolio/frontend/discord/Browser_vlmm8c.webm",
-      "portfolio/frontend/discord/Browser_vlmm8c.webm",
+    image: [
+      {
+        url: "/v1702071603/portfolio/frontend/discord/cover_dmo4zq.webp",
+        bg: "#202226",
+      },
+      {
+        url: "portfolio/frontend/discord/Browser_vlmm8c.webm",
+        bg: "#232a2d",
+      },
+      {
+        url: "portfolio/frontend/discord/Browser_vlmm8c.webm",
+        bg: "#232a2d",
+      },
     ],
     title: "DISCORD",
     longTitle: "Discord Clone",
@@ -195,17 +266,35 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 8,
-    urls: [
-      "/v1702080763/portfolio/frontend/evidence%20tool/responsive_gpvchp.webp",
+    image: [
       /*"/l_text:Roboto_34px_bold:Agregar%20Participante,co_rgb:90f0a7,g_north,y_40,eo_4/v1702080771/portfolio/frontend/evidence%20tool/Add_participant_l1mee9.webm",
       "/l_text:Roboto_34px_bold:Preguntas,co_rgb:90f0a7,g_north,y_40,eo_4/v1702080772/portfolio/frontend/evidence%20tool/Quiz_i5lqsk.webm",
       "/l_text:Roboto_34px_bold:Evidencias,co_rgb:90f0a7,g_north,y_40,eo_4/v1702080769/portfolio/frontend/evidence%20tool/Evidences_dgq5rm.webm",
       "/l_text:Roboto_34px_bold:Deudas,co_rgb:90f0a7,g_north,y_40,eo_4/v1702080770/portfolio/frontend/evidence%20tool/finance_x9d9my.webm",*/
-      "portfolio/frontend/evidence%20tool/Add_participant_l1mee9.webm",
-      "portfolio/frontend/evidence%20tool/Quiz_i5lqsk.webm",
-      "portfolio/frontend/evidence%20tool/Evidences_dgq5rm.webm",
-      "portfolio/frontend/evidence%20tool/finance_x9d9my.webm",
-      "/v1702080762/portfolio/frontend/evidence%20tool/supabase_schema_uk8aia.webp",
+      {
+        url: "/v1702080763/portfolio/frontend/evidence%20tool/responsive_gpvchp.webp",
+        bg: "#242a2f",
+      },
+      {
+        url: "portfolio/frontend/evidence%20tool/Add_participant_l1mee9.webm",
+        bg: "#202226",
+      },
+      {
+        url: "portfolio/frontend/evidence%20tool/Quiz_i5lqsk.webm",
+        bg: "#202226",
+      },
+      {
+        url: "portfolio/frontend/evidence%20tool/Evidences_dgq5rm.webm",
+        bg: "#202226",
+      },
+      {
+        url: "portfolio/frontend/evidence%20tool/finance_x9d9my.webm",
+        bg: "#202226",
+      },
+      {
+        url: "/v1702080762/portfolio/frontend/evidence%20tool/supabase_schema_uk8aia.webp",
+        bg: "#1c1c1c",
+      },
     ],
     title: "EVIDENCE TOOL",
     longTitle: "Evidence Monitoring tool",
@@ -223,10 +312,19 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 9,
-    urls: [
-      "/v1702090713/portfolio/frontend/countries/cover_subieb.webp",
-      "portfolio/frontend/countries/Browser_pvsqww.webm",
-      "portfolio/frontend/countries/Mobile_kihkqy.webm",
+    image: [
+      {
+        url: "/v1702090713/portfolio/frontend/countries/cover_subieb.webp",
+        bg: "#1f2d38",
+      },
+      {
+        url: "portfolio/frontend/countries/Browser_pvsqww.webm",
+        bg: "#1e2f3b",
+      },
+      {
+        url: "portfolio/frontend/countries/Mobile_kihkqy.webm",
+        bg: "#232a2d",
+      },
     ],
     title: "COUNTRIES",
     longTitle: "Countries Finder",
@@ -244,10 +342,19 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 10,
-    urls: [
-      "/v1702338812/portfolio/frontend/cards/cover_pj1ebf.webp",
-      "portfolio/frontend/cards/card-browser_uedxy4.webm",
-      "portfolio/frontend/cards/card_mobile_rhmkoz.webm",
+    image: [
+      {
+        url: "/v1702338812/portfolio/frontend/cards/cover_pj1ebf.webp",
+        bg: "#222128",
+      },
+      {
+        url: "portfolio/frontend/cards/card-browser_uedxy4.webm",
+        bg: "#23252b",
+      },
+      {
+        url: "portfolio/frontend/cards/card_mobile_rhmkoz.webm",
+        bg: "#23252b",
+      },
     ],
     title: "BANK CARD",
     longTitle: "Interactive Bank Card",
@@ -265,10 +372,19 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 11,
-    urls: [
-      "/v1702090998/portfolio/frontend/shor-url/cover_fkxq2a.webp",
-      "portfolio/frontend/shor-url/Browser_myslco.webm",
-      "portfolio/frontend/shor-url/Mobile_xpet1s.webm",
+    image: [
+      {
+        url: "/v1702090998/portfolio/frontend/shor-url/cover_fkxq2a.webp",
+        bg: "#eff1f7",
+      },
+      {
+        url: "portfolio/frontend/shor-url/Browser_myslco.webm",
+        bg: "#fffffd",
+      },
+      {
+        url: "portfolio/frontend/shor-url/Mobile_xpet1s.webm",
+        bg: "#fffffd",
+      },
     ],
     title: "SHORTLY URL",
     longTitle: "Shortly URL",

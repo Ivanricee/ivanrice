@@ -1,8 +1,12 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
+export type Image = {
+  url: string;
+  bg: string;
+};
 export interface CardInfo {
   id: number;
-  urls: string[];
+  image: Image[];
   title: string;
   longTitle: string;
   software: string[];

@@ -52,7 +52,7 @@ const isFront = type === FRONTEND;
     <div style={`grid-area: menu;`} class="w-full h-full relative"></div>
     {
       cardInfo.map((info: CardInfo, index: number) => {
-        const src = `${cloudBase}${info.urls[0]}`;
+        const src = `${cloudBase}${info.image[0].url}`;
         const { id, longTitle, type, caption, links, title } = info;
 
         const srcSoftware = info.software.map((itm) => {
@@ -189,4 +189,3 @@ const isFront = type === FRONTEND;
     }
   }
 </style>
-<script></script>
