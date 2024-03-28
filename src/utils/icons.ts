@@ -19,6 +19,7 @@ const iconDir: Record<string, () => string | null> = {
   linkedin: () => fetchSVGIcon("brand-linkedin"),
   seemore: () => fetchSVGIcon("brand-external-link"),
   demo: () => fetchSVGIcon("brand-link"),
+  close: () => fetchSVGIcon("brand-square-rounded-x"),
 };
 export type IconName = keyof typeof iconDir;
 
