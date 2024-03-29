@@ -42,9 +42,9 @@ const mediaStr = JSON.stringify(media)
     (
       <>
        <!-- Carousel wrapper -->
-        <div class="relative h-full overflow-hidden rounded-xl sm:border-2 sm:border-ottoman-100/50">
+        <div class="relative h-full overflow-hidden sm:rounded-xl sm:border-2 sm:border-ottoman-100/50">
         {
-          media.map(({url, bg}, id) => {
+          media.map(({url, bg, caption}, id) => {
             const srcImg = `${CLOUDINARY_URL}${CLOUDINARY_HIGH}${url}`
             if (url.endsWith("webp")){
               return (
@@ -59,8 +59,14 @@ const mediaStr = JSON.stringify(media)
               )
             }
             return (
-              <div id={`carousel-item-${id}`} class="item-portfolio hidden duration-700 ease-in-out"
+              <div id={`carousel-item-${id}`} class="item-portfolio hidden duration-700 ease-in-out absolute inset-0"
                  style={`background-color: ${bg};`}>
+                 {
+                  caption && (
+                   <h2 class="text-ottoman-200 text-xl absolute z-10 top-0 left-0 right-0 text-center pt-4 pb-2 backdrop-blur-sm" >
+                    {caption}
+                   </h2>)
+                 }
                 <video id={`player${id}`} controls muted class="cld-video-player w-full h-full object-contain rounded-2xl bg-transparent"></video>
               </div>
             );
@@ -209,7 +215,7 @@ const mediaStr = JSON.stringify(media)
     ) as CarouselItem[]
     //Options
     const options: CarouselOptions = {
-      interval: 60000,
+      interval: 6000000,
       indicators: {
         activeClasses: 'bg-american-blue-200',
         inactiveClasses:
