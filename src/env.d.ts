@@ -3,6 +3,7 @@
 export type Image = {
   url: string;
   bg: string;
+  caption?: string;
 };
 export interface CardInfo {
   id: number;
