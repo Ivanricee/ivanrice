@@ -28,12 +28,15 @@ const { caption, id, links, longTitle, software, title, type, image } = card;
   >
     <CarouselPortfolio media={image} slide id={id} />
     <div
-      class="flex justify-center items-center absolute z-30 top-0 right-0 translate-y-12 -translate-x-12"
+      class="flex justify-center items-center absolute z-30 top-0 right-0 translate-y-4 -translate-x-4
+      sm:translate-y-12 sm:-translate-x-12"
     >
       <button
         type="button"
         id="close"
-        class="text-green-lime-400 bg-american-blue-550/45 hover:bg-american-blue-550/65 hover:text-green-lime-600 focus:ring-4 focus:outline-none focus:ring-green-lime-600/60 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center transition-colors"
+        class="text-sm p-2.5 text-center inline-flex items-center text-green-lime-400 bg-american-blue-550/45
+        focus:outline-none focus:ring-green-lime-600/60 font-medium rounded-full
+        hover:bg-american-blue-550/65 hover:text-green-lime-600 focus:ring-4 transition-colors"
       >
         <Icons name="close" size="3rem" stroke={1.5}>
           <span class="sr-only">Close</span>
