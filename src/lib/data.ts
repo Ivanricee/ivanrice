@@ -128,7 +128,7 @@ export const CARD_INFO: CardInfo[] = [
       "rizom uv",
     ],
     caption:
-      "Fan art en 3D del Totoro de Ghibli, inspirado en el otoño japonés. 🍂🎨",
+      "Totoro de Ghibli, Fan art 3D, inspirado en el otoño japonés. 🍂🎨",
     type: "3D",
     links: [
       {
@@ -278,18 +278,22 @@ export const CARD_INFO: CardInfo[] = [
       {
         url: "portfolio/frontend/evidence%20tool/Add_participant_l1mee9.webm",
         bg: "#202226",
+        caption: "Agregar un participante",
       },
       {
         url: "portfolio/frontend/evidence%20tool/Quiz_i5lqsk.webm",
         bg: "#202226",
+        caption: "Administrar Preguntas",
       },
       {
         url: "portfolio/frontend/evidence%20tool/Evidences_dgq5rm.webm",
         bg: "#202226",
+        caption: "Administrar Evidencias",
       },
       {
         url: "portfolio/frontend/evidence%20tool/finance_x9d9my.webm",
         bg: "#202226",
+        caption: "Administrar Deudas",
       },
       {
         url: "/v1702080762/portfolio/frontend/evidence%20tool/supabase_schema_uk8aia.webp",
