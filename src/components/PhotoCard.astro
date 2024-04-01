@@ -34,8 +34,7 @@ const hasIdForTransition = id !== 0
 
       const picture = isLastLayer &&
       (
-      <div class="h-full rounded-xl overflow-hidden bg-american-blue-700/50 relative "
-        transition:name={`card ${id} containerRound`}>
+      <div class="h-full rounded-xl overflow-hidden bg-american-blue-700/50 relative ">
         <picture>
           <img
             src={src}
@@ -51,10 +50,9 @@ const hasIdForTransition = id !== 0
         <div
           class={`card absolute z-10 rounded-2xl p-3 bg-gradient-card card-xl shadow-card-xl w-full h-full aspect-square origin-top ${isAnimated} `}
           style={`--rotate: ${randRotate}deg; --translateX: ${randTX}rem; --translateY: ${randTY}rem`}
-          transition:name={`card ${id} box`}
         >
-          <a href={href} class=" w-full h-full" transition:name={`card ${id} link`}>
-            <div class=" w-full h-full " transition:name={`card ${id} container`}>
+          <a href={href} class=" w-full h-full" >
+            <div class=" w-full h-full" >
               {picture}
             </div>
           </a>
