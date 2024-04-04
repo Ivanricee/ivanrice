@@ -51,12 +51,29 @@ export default {
           "50%": { transform: "translate(34px, 10px)" },
           "100%": { transform: "translateX(2px)" },
         },
+        reveal: {
+          from: {
+            opacity: "0",
+            translate: "0 100px",
+          },
+          "50%": {
+            opacity: "0.1",
+          },
+          to: {
+            opacity: "1",
+            translate: "0 0",
+          },
+        },
       },
       animation: {
         fadeIn: "fadeIn 0.7s ease-in-out",
         fadeOut: "fadeOut 1s ease-in-out forwards",
         fadeInBounce: "fadeInBounce 0.3s ease-in-out",
+        reveal: "reveal",
         "wave-shadow": "wave 2.8s ease-in-out infinite",
+      },
+      supports: {
+        "no-scroll-driven-animations": "not(animation-timeline: view())",
       },
       fontFamily: {
         mauline: ["Mauline", "sans-serif"],
