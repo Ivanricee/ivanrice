@@ -61,7 +61,9 @@ const isFront = type === FRONTEND;
         const gridArea = `${index + 1}`;
         return (
           <li
-            class="group w-full sm:h-full h-64 relative z-30 overflow-hidden rounded-xl border-2 border-american-blue-500/50
+            class="animate-reveal supports-no-scroll-driven-animations:animate-none
+            [animation-timeline:view()] [animation-range:entry_-40%_cover_20%]
+            group w-full sm:h-full h-64 relative z-30 overflow-hidden rounded-xl border-2 border-american-blue-500/50
             hover:border-2 hover:border-green-lime-600
             bg-gradient-to-bl from-american-blue-950/50 from-10% via-american-blue-800/65 via-30% to-indigo-800/30 to-82%
             hover:to-american-blue-800 hover:to-82% transition-[border] duration-700"
