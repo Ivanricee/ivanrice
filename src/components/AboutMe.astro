@@ -1,26 +1,117 @@
-<div class="flex flex-col flex-nowrap justify-center items-start md:w-8/12">
-  <div
-    class="w-full font-devina text-american-blue-50/80 text-lg
-    [&>p]:text-balance [&>p]:mb-4 [&>p>strong]:text-ottoman-100/95 [&>p>strong]:font-normal"
-  >
-    <p>
-      Soy ivanrice, un apasionado Desarrollador especializado en Frontend con
-      más de 9 años de experiencia. Durante este tiempo, he tenido la
-      oportunidad de <strong>
-        liderar el área de programación como Fullstack Developer,</strong
-      >
-      aprovechando al máximo cada oportunidad que se me ha presentado.
-    </p>
-    <p>
-      Además, <strong> he incursionado en el mundo del diseño 3D</strong>, donde
-      he creado proyectos personales y contribuido ocasionalmente en la creación
-      de assets 3D.
-    </p>
-    <p>
-      Me caracterizan mi compromiso y fiabilidad en el trabajo en equipo, así
-      como mi capacidad para superar desafíos. Mi objetivo es continuar
-      aprendiendo y aportando al mundo del desarrollo, siempre dispuesto a
-      crecer y colaborar con otros.
-    </p>
+---
+import { Image } from "astro:assets";
+import BadgeItems from "./BadgeItems.astro";
+import { SOFTWARE } from "@/lib/data";
+
+export const THREED = [
+  { src: SOFTWARE["maya"], text: "maya" },
+  { src: SOFTWARE["redshift"], text: "redshift" },
+  { src: SOFTWARE["mari"], text: "mari" },
+  { src: SOFTWARE["substance 3D"], text: "substance 3D" },
+  { src: SOFTWARE["zbrush"], text: "zbrush" },
+  { src: SOFTWARE["rizom uv"], text: "rizom uv" },
+  { src: SOFTWARE["arnold"], text: "arnold" },
+  { src: SOFTWARE["nuke"], text: "nuke" },
+];
+const WEB = [
+  { src: SOFTWARE["react"], text: "react" },
+  { src: SOFTWARE["redux"], text: "redux" },
+  { src: SOFTWARE["twilio"], text: "twilio" },
+  { src: SOFTWARE["graphql"], text: "graphql" },
+  { src: SOFTWARE["figma"], text: "figma" },
+  { src: SOFTWARE["next"], text: "next" },
+  { src: SOFTWARE["supabase"], text: "supabase" },
+  { src: SOFTWARE["tailwind"], text: "tailwind" },
+  { src: SOFTWARE["mui"], text: "mui" },
+  { src: SOFTWARE["react hook form"], text: "react hook form" },
+  { src: SOFTWARE["vitest"], text: "vitest" },
+];
+---
+
+<div
+  class="font-devina md:flex md:flex-nowrap md:justify-center md:items-start md:gap-8"
+>
+  <div class="w-full md:w-7/12">
+    <div
+      class="w-full text-american-blue-50/80 text-lg
+      [&>p]:text-balance [&>p]:mb-4 [&>p>strong]:text-ottoman-100/95 [&>p>strong]:font-normal"
+    >
+      <p>
+        Soy ivanrice, un apasionado Desarrollador especializado en Frontend con
+        más de 9 años de experiencia. Durante este tiempo, he tenido la
+        oportunidad de <strong>
+          liderar el área de programación como Fullstack Developer,</strong
+        >
+        aprovechando al máximo cada oportunidad que se me ha presentado.
+      </p>
+      <p>
+        Además, <strong> he incursionado en el mundo del diseño 3D</strong>,
+        donde he creado proyectos personales y contribuido ocasionalmente en la
+        creación de assets 3D.
+      </p>
+      <p>
+        Me caracterizan mi compromiso y fiabilidad en el trabajo en equipo, así
+        como mi capacidad para superar desafíos. Mi objetivo es continuar
+        aprendiendo y aportando al mundo del desarrollo, siempre dispuesto a
+        crecer y colaborar con otros.
+      </p>
+    </div>
+  </div>
+  <div class="w-full md:w-5/12">
+    <section
+      class="flex flex-col gap-1 text-american-blue-50/80 text-base [&>div]:flex [&>div]:gap-2 [&>div]:items-center"
+    >
+      <h3 class="text-green-lime-400 text-base uppercase mb-2 font-bold">
+        Apasionado por:
+      </h3>
+      <div>
+        <Image
+          width="20"
+          height="10"
+          src="/ivanrice/images/ui.png"
+          alt="ui/ux"
+        />
+        <p>UI/UX</p>
+      </div>
+      <div>
+        <Image
+          width="20"
+          height="10"
+          src="/ivanrice/images/3d.png"
+          alt="3D art"
+        />
+        <p>3D Texturing & Look Development</p>
+      </div>
+      <div>
+        <Image
+          width="20"
+          height="10"
+          src="/ivanrice/images/camera.png"
+          alt="camera"
+        />
+        <p>Fotografía y Videografía</p>
+      </div>
+      <div>
+        <Image
+          width="20"
+          height="10"
+          src="/ivanrice/images/piano.png"
+          alt="piano"
+        />
+        <p>Tocar Piano</p>
+      </div>
+    </section>
+    <section>
+      <h3 class="text-green-lime-400 text-base uppercase my-4 font-bold">
+        Web stack:
+      </h3>
+      <BadgeItems items={WEB} />
+    </section>
+    <section>
+      <h3 class="text-green-lime-400 text-base uppercase my-4 font-bold">
+        3D stack:
+      </h3>
+      <BadgeItems items={THREED} />
+    </section>
   </div>
 </div>
