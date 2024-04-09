@@ -15,12 +15,11 @@ const { items } = Astro.props;
               <img
                 src={item.src}
                 width={16}
+                height={16}
                 class="object-contain"
                 alt={item.text}
               />
-              <span
-                class="capitalize leading-none  m-0 p-0 flex justify-center items-center translate-y-0.5"
-              >
+              <span class="capitalize leading-none  m-0 p-0 flex justify-center items-center translate-y-0.5">
                 {item.text}
               </span>
             </div>
