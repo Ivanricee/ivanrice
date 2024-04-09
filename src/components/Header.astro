@@ -1,8 +1,5 @@
 ---
 const id = Astro.params;
-const hasBackBtn = id["id"] ?? false;
-const currentPath = Astro.request.url;
-const current = Astro.url;
 interface Props {
   state: "static" | "fixed";
 }
@@ -21,7 +18,7 @@ const headerArrStyles: Record<string, HeadStyles> = {
   ["fixed"]: {
     header: "fixed top-0",
     nav: "max-w-[119rem] m-auto mx-3 bg-gradient-to-r from-american-blue-650/85 to-american-blue-400/30 2xl:mx-64 border-green-lime-600/25",
-    menuCont: "-md:-top-16 -md:h-[111dvh] flex justify-center items-center",
+    menuCont: "-md:-top-0 -md:h-[111dvh] flex justify-center items-center",
   },
 };
 const cstmtyles = headerArrStyles[state] ?? "";
