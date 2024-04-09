@@ -5,22 +5,26 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class={`flex flex-wrap gap-1`}>
+<div class={`flex flex-wrap gap-1 font-biryani font-extralight`}>
   {
     items.map((item) => {
       return (
         <div class="flex flex-wrap gap-1.5">
-            <span class="text-pink-100 text-xs font-medium px-1.5 py-1 rounded border border-blue-400/50 bg-purple-500/20">
-              <div class="flex gap-1 items-center justify-center">
-                <img
-                  src={item.src}
-                  width={16}
-                  class="object-contain"
-                  alt={item.text}
-                />
-                <span class="capitalize font-normal">{item.text}</span>
-              </div>
-            </span>
+          <span class="text-pink-100 text-[0.66rem]  px-1.5 py-1 rounded border border-blue-400/50 bg-purple-500/20">
+            <div class="flex gap-1 items-center justify-center">
+              <img
+                src={item.src}
+                width={16}
+                class="object-contain"
+                alt={item.text}
+              />
+              <span
+                class="capitalize leading-none  m-0 p-0 flex justify-center items-center translate-y-0.5"
+              >
+                {item.text}
+              </span>
+            </div>
+          </span>
         </div>
       );
     })

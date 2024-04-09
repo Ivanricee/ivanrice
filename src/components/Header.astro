@@ -16,12 +16,12 @@ const headerArrStyles: Record<string, HeadStyles> = {
   ["static"]: {
     header: "absolute sm:top-16 top-5",
     nav: " 2xl:mx-16 border-green-lime-400/10 bg-gradient-to-r from-american-blue-600/80  to-transparent ",
-    menuCont: "-md:-top-0",
+    menuCont: "-md:-top-8 flex justify-center items-center",
   },
   ["fixed"]: {
     header: "fixed top-0",
     nav: "max-w-[119rem] m-auto mx-3 bg-gradient-to-r from-american-blue-650/85 to-american-blue-400/30 2xl:mx-64 border-green-lime-600/25",
-    menuCont: "-md:-top-16",
+    menuCont: "-md:-top-16 -md:h-[111dvh] flex justify-center items-center",
   },
 };
 const cstmtyles = headerArrStyles[state] ?? "";
@@ -50,19 +50,19 @@ const navItems = [
 >
   <nav
     class={`w-full home-title flex justify-between items-center border-2 rounded-md
-    text-ottoman-50 px-2 backdrop-blur-md ${cstmtyles.nav}`}
+    text-ottoman-50 px-2 backdrop-blur-sm  ${cstmtyles.nav}`}
   >
     <a
       href="/ivanrice/#introduce"
-      class="relative font-mauline sm:text-3xl text-2xl pl-4 font-black leading-none rounded"
+      class="relative font-mauline sm:text-3xl text-2xl pl-4 font-bold leading-none rounded"
     >
       <p>
-        <span class="text-american-blue-100/80 font-devina tracking-tighter"
+        <span class="text-american-blue-100/80 font-biryani tracking-tighter"
           >{"<"}</span
         >
         <span class="tracking-wide text-american-blue-100/90">{`IVANRICE`}</span
         >
-        <span class="text-american-blue-100/80 font-devina tracking-tighter"
+        <span class="text-american-blue-100/80 font-biryani tracking-tighter"
           >{"/>"}</span
         >
       </p>
@@ -92,28 +92,31 @@ const navItems = [
       </svg>
     </button>
     <div
-      class={`hidden md:block md:w-auto -md:absolute -md:h-[114dvh] -md:w-wvh  -md:-left-28 -md:-right-28 -md:-top-16 -md:bottom-20 -md:rounded-t-[2.7rem]
-    -md:rounded-b-md -md:bg-american-blue-700/65 -md:backdrop-blur-md overflow-hidden ${cstmtyles.menuCont} backdrop-blur-lg`}
+      class={`hidden md:block md:w-auto -md:absolute  -md:h-dvh -md:w-wvh  -md:-left-28 -md:-right-28 -md:-top-16 -md:bottom-20 -md:rounded-t-[2.7rem]
+    -md:rounded-b-md -md:bg-american-blue-700/95 -md:backdrop-blur-md overflow-hidden ${cstmtyles.menuCont}`}
       id={state}
     >
       <ul
-        class="-md:h-full justify-center items-center flex flex-col md:flex-row md:mt-0 md:border-0 backdrop-blur-lg"
+        class="justify-center items-center flex flex-col md:flex-row md:mt-0 md:border-0 h-20 rounded-3xl -md:h-[30rem] w-full"
       >
         {
           navItems.map((itemNav) => {
             return (
-              <a
-                href={itemNav.url}
-                class="py-8 px-4 relative font-bold font-devina text-base tracking-wider font-base uppercase leading-none
+              <li class="w-full h-full ">
+                <a
+                  href={itemNav.url}
+                  class="py-8 px-4 relative font-bold font-biryani text-sm tracking-wider  uppercase leading-none
                 hover:bg-green-lime-400/5 hover:shadow-link hover:backdrop-blur-sm transition-all ease-in-out duration-500
-                  -md:px-0 -md:py-7 -md:w-full -md:text-center -md:text-5xl"
-                aria-current="false"
-                aria-label={itemNav.ariaLabel}
-              >
-                <span class="link-underline link-underline-black">
-                  {itemNav.title}
-                </span>
-              </a>
+                  -md:px-0 -md:py-7 -md:w-full -md:text-center -md:text-5xl
+                  h-full inline-flex justify-center items-center"
+                  aria-current="false"
+                  aria-label={itemNav.ariaLabel}
+                >
+                  <span class="link-underline link-underline-black">
+                    {itemNav.title}
+                  </span>
+                </a>
+              </li>
             );
           })
         }
@@ -164,7 +167,7 @@ const navItems = [
   document.addEventListener("astro:page-load", () => {
     //Observer
     const sections = document.querySelectorAll(".section-menu");
-    const navItems = document.querySelectorAll("header nav a");
+    const navItems = document.querySelectorAll("header nav ul li a");
     if (!sections || !navItems)
       throw new Error("section or anchor Element Not found.");
     menuRoutingObserver({ navItems, sections });

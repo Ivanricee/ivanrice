@@ -22,12 +22,15 @@ const isNotSocial = (social: string) =>
         href={item.src}
         target={`${isSeemore ? "" : "_blank"}`}
         rel="noopener noreferrer"
-        class="border-2 border-green-lime-400/45 bg-american-blue-650/70 backdrop-blur-3xl rounded text-ottoman-50 flex items-center text-xs font-bold tracking-wider
+        class="border-2 border-green-lime-400/45 bg-american-blue-650/70 backdrop-blur-3xl rounded text-ottoman-50 flex items-center text-xs   font-biryani font-bold tracking-wider
       hover:bg-green-lime-500/85 hover:border-green-lime-500/50 hover:scale-105 hover:text-american-blue-900/90 hover:rounded-md transition-all duration-200"
+        aria-label={item.text}
       >
-        <span class="uppercase font-devina w-full flex flex-nowrap gap-1 items-center p-1">
+        <span class="uppercase  w-full flex flex-nowrap gap-1 items-center p-1 ">
           <Icons name={item.text} size="1.3rem" stroke={2} />
-          {isNotSocial(item.text) && imgSMedia[item.text]}
+          {isNotSocial(item.text) && (
+            <p class="translate-y-0.5 leading-normal">{imgSMedia[item.text]}</p>
+          )}
         </span>
       </a>
     );

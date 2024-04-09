@@ -77,7 +77,7 @@ export default {
       },
       fontFamily: {
         mauline: ["Mauline", "sans-serif"],
-        devina: ["Devina Rodent", "sans-serif"],
+        biryani: ["Biryani", "sans-serif"],
       },
       colors: {
         roman: {

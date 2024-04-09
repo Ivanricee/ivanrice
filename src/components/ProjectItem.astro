@@ -47,9 +47,9 @@ const [rows2, TGridArea2] = getTemplateArea({
 const isFront = type === FRONTEND;
 ---
 
-<article class="w-full font-devina">
+<article class="w-full font-biryani">
   <ul id="gridTemplateAreas" class="w-full h-full">
-    <div style={`grid-area: menu;`} class="w-full h-full relative"></div>
+    <li style={`grid-area: menu;`} class="w-full h-full relative"></li>
     {
       cardInfo.map((info: CardInfo, index: number) => {
         const src = `${cloudBase}${info.image[0].url}`;
@@ -71,7 +71,7 @@ const isFront = type === FRONTEND;
             transition:name={`card-${id}-container`}
           >
             <div class=" absolute top-0 right-0 w-1/3 flex justify-center py-8 z-10 pointer-events-none">
-              <h3 class="text-9xl text-american-blue-400/60 blur-sm group-hover:blur group-hover:text-american-blue-400/35">
+              <h3 class="text-9xl font-extralight text-green-lime-700/45 blur-sm group-hover:blur group-hover:text-american-blue-400/35">
                 {gridArea}
               </h3>
             </div>
@@ -109,13 +109,15 @@ const isFront = type === FRONTEND;
               <BadgeLink items={links} itemId={id} />
             </div>
             <div
-              class="w-full absolute inset-0 p-4 translate-y-28 font-devina
+              class="w-full absolute inset-0 p-4 translate-y-28
               group-hover:translate-y-14 transition-transform  ease-out"
             >
               <h3 class="text-ottoman-100/95 w-full text-xl font-bold mb-2">
                 {longTitle}
               </h3>
-              <p class=" text-green-lime-100/80 text-balance">{caption}</p>
+              <p class=" text-green-lime-100/70 text-balance text-sm font-normal group-hover:text-green-lime-100/90">
+                {caption}
+              </p>
               <div class="opacity-0 group-hover:opacity-100 transition-opacity mt-2">
                 <BadgeItems items={srcSoftware!} />
               </div>
@@ -124,7 +126,7 @@ const isFront = type === FRONTEND;
         );
       })
     }
-    <div
+    <li
       style={`grid-area: footer;`}
       class="w-full sm:h-full h-64 relative z-30 overflow-hidden rounded-xl border-2 border-american-blue-500/50
       flex justify-center items-center text-xl text-green-lime-300
@@ -137,9 +139,9 @@ const isFront = type === FRONTEND;
               href="https://github.com/Ivanricee"
               target="_blank"
               rel="noopener"
-              class="hover:underline transition-all duration-700"
+              class="hover:underline transition-all duration-700 text-sm uppercase font-bold translate-y-0.5"
             >
-              Ver más
+              VER MÁS
             </a>
             <Icons name="seemore" size="1.3rem" stroke={2} />
           </div>
@@ -149,15 +151,15 @@ const isFront = type === FRONTEND;
               href="https://www.instagram.com/ivanrice_/"
               target="_blank"
               rel="noopener"
-              class="hover:underline transition-all duration-700"
+              class="hover:underline transition-all duration-700 text-sm uppercase font-bold translate-y-0.5"
             >
-              Ver más
+              VER MÁS
             </a>
             <Icons name="seemore" size="1.3rem" stroke={2} />
           </div>
         )
       }
-    </div>
+    </li>
   </ul>
 </article>
 <style define:vars={{ TGridArea2, rows2, TGridArea3, rows3 }}>
