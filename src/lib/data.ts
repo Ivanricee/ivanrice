@@ -267,10 +267,6 @@ export const CARD_INFO: CardInfo[] = [
   {
     id: 8,
     image: [
-      /*"/l_text:Roboto_34px_bold:Agregar%20Participante,co_rgb:90f0a7,g_north,y_40,eo_4/v1702080771/portfolio/frontend/evidence%20tool/Add_participant_l1mee9.webm",
-      "/l_text:Roboto_34px_bold:Preguntas,co_rgb:90f0a7,g_north,y_40,eo_4/v1702080772/portfolio/frontend/evidence%20tool/Quiz_i5lqsk.webm",
-      "/l_text:Roboto_34px_bold:Evidencias,co_rgb:90f0a7,g_north,y_40,eo_4/v1702080769/portfolio/frontend/evidence%20tool/Evidences_dgq5rm.webm",
-      "/l_text:Roboto_34px_bold:Deudas,co_rgb:90f0a7,g_north,y_40,eo_4/v1702080770/portfolio/frontend/evidence%20tool/finance_x9d9my.webm",*/
       {
         url: "/v1702080763/portfolio/frontend/evidence%20tool/responsive_gpvchp.webp",
         bg: "#242a2f",
@@ -301,7 +297,7 @@ export const CARD_INFO: CardInfo[] = [
       },
     ],
     title: "EVIDENCE TOOL",
-    longTitle: "Evidence Monitoring tool",
+    longTitle: "Sanctions Monitor",
     software: ["next", "supabase", "tailwind", "mui"],
     caption:
       "Administra sanciones de usuarios en tiempo real mediante preguntas, apuestas y clips de Twitch como evidencia.",
@@ -361,7 +357,7 @@ export const CARD_INFO: CardInfo[] = [
       },
     ],
     title: "BANK CARD",
-    longTitle: "Interactive Bank Card",
+    longTitle: "Bank Card",
     software: ["react", "react hook form", "vitest"],
     caption:
       "Formulario con validación y actualizaciones en tiempo real, incluyendo mensajes de error.",
