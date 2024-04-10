@@ -6,6 +6,8 @@ import Introduce from "@/components/Introduce.astro";
 import Projects from "@/components/Projects.astro";
 import Title from "@/components/Title.astro";
 import Layout from "@/layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import shadow from "../../public/shadow.avif";
 ---
 
 <Layout title="Ivanrice Portfolio">
@@ -13,14 +15,12 @@ import Layout from "@/layouts/Layout.astro";
     class="absolute inset-0 -left-9 overflow-hidden animate-fadeIn -z-10"
     aria-hidden="true"
   >
-    <picture class="hidden sm:block">
-      <source srcset="/ivanrice/shadow.avif" type="image/avif" />
-      <img
-        src="/ivanrice/shadow.png"
-        alt="fill background"
-        class="w-full h-full object-cover bg-center bg-cover absolute animate-wave-shadow"
-      />
-    </picture>
+    <Picture
+      src={shadow}
+      formats={["avif", "png", "webp"]}
+      alt="shadow background"
+      class="w-full h-full object-cover bg-center bg-cover absolute animate-wave-shadow hidden sm:block"
+    />
   </div>
   <div id="header-static" class="block">
     <Header state="static" />
