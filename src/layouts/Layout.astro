@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 
 import "../styles/main.css";
+import { AstroFont } from "astro-font";
 
 interface Props {
   title: string;
@@ -21,6 +22,58 @@ const { title = "Portafolio de ivanrice", position = "relative" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
+    <AstroFont
+      config={[
+        {
+          name: "Mauline",
+          src: [
+            {
+              weight: "400",
+              style: "normal",
+              path: "./ivanrice/public/fonts/Mauline.otf",
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: ".font-mauline",
+          fallback: "sans-serif",
+        },
+        {
+          name: "Biryani",
+          src: [
+            {
+              weight: "200",
+              style: "normal",
+              path: "./ivanrice/public/fonts/Biryani-ExtraLight.woff",
+            },
+            {
+              weight: "300",
+              style: "normal",
+              path: "./ivanrice/public/fonts/Biryani-Light.woff",
+            },
+            {
+              weight: "normal",
+              style: "normal",
+              path: "./ivanrice/public/fonts/Biryani-Regular.woff",
+            },
+            {
+              weight: "bold",
+              style: "normal",
+              path: "./ivanrice/public/fonts/Biryani-Bold.woff",
+            },
+            {
+              weight: "600",
+              style: "normal",
+              path: "./ivanrice/public/fonts/Biryani-SemiBold.woff",
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: ".font-biryani",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
   </head>
   <!--dark/light -->
   <body>

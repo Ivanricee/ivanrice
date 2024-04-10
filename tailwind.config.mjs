@@ -75,10 +75,6 @@ export default {
       supports: {
         "no-scroll-driven-animations": "not(animation-timeline: view())",
       },
-      fontFamily: {
-        mauline: ["Mauline", "sans-serif"],
-        biryani: ["Biryani", "sans-serif"],
-      },
       colors: {
         roman: {
           50: "#fdf3f3",
