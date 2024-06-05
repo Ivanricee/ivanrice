@@ -29,7 +29,7 @@ const navItems = [
     ariaLabel: "experience",
   },
   {
-    title: "Projectos",
+    title: "Proyectos",
     url: "/ivanrice/#projects/?type=frontend",
     ariaLabel: "projects/?type=frontend",
   },
@@ -42,7 +42,7 @@ const navItems = [
 ---
 
 <header
-  class={`flex justify-between items-center left-5 right-5 sm:left-16 sm:right-16 z-20 animate-fadeInBounce
+  class={`flex justify-between items-center left-5 right-5 sm:left-16 sm:right-16 z-30 animate-fadeInBounce
  2xl:w-full 2xl:left-0 2xl:right-auto  ${cstmtyles.header}`}
 >
   <nav
@@ -67,7 +67,7 @@ const navItems = [
     <button
       data-collapse-toggle={state}
       type="button"
-      class="relative z-10 inline-flex items-center p-2 w-30 h-30 justify-center text-lg text-american-blue-200 rounded-lg md:hidden
+      class="relative z-20 inline-flex items-center p-2 w-30 h-30 justify-center text-lg text-american-blue-200 rounded-lg md:hidden
       -md:my-1 -md:mr-2 hover:bg-american-blue-600/75 focus:outline-none focus:ring-2 focus:ring-american-blue-400"
       aria-controls={state}
       aria-expanded="false"
@@ -103,7 +103,7 @@ const navItems = [
                 <a
                   href={itemNav.url}
                   class="py-8 px-4 relative font-bold font-biryani text-sm tracking-wider  uppercase leading-none
-                hover:bg-green-lime-400/5 hover:shadow-link hover:backdrop-blur-sm transition-all ease-in-out duration-500
+                  hover:backdrop-blur-sm transition-all ease-in-out duration-500
                   -md:px-0 -md:py-7 -md:w-full -md:text-center -md:text-5xl
                   h-full inline-flex justify-center items-center"
                   aria-current="false"
