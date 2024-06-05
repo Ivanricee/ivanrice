@@ -52,8 +52,8 @@ export default {
         },
         wave: {
           "0%": { transform: "translateX(0)" },
-          "50%": { transform: "translate(42px, 5px)" },
-          "100%": { transform: "translateX(10px)" },
+          "50%": { transform: "translate(47px, 5px)" },
+          "100%": { transform: "translateX(0px)" },
         },
         reveal: {
           from: {
