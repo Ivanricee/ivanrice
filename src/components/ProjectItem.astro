@@ -63,10 +63,10 @@ const isFront = type === FRONTEND;
           <li
             class="animate-reveal supports-no-scroll-driven-animations:animate-none
             [animation-timeline:view()] [animation-range:entry_-40%_cover_20%]
-            group w-full sm:h-full h-64 relative z-30 overflow-hidden rounded-xl border-2 border-american-blue-500/50
-            hover:border-2 hover:border-green-lime-600
+            group w-full sm:h-full h-64 relative z-20 overflow-hidden rounded-xl border-2 border-american-blue-500/50
+            hover:border-3 hover:border-ottoman-50
             bg-gradient-to-bl from-american-blue-950/50 from-10% via-american-blue-800/65 via-30% to-indigo-800/30 to-82%
-            hover:to-american-blue-800 hover:to-82% transition-[border] duration-700"
+            hover:to-american-blue-800 hover:to-82% transition-[border] duration-700 ease-in-out"
             style={`grid-area: item${gridArea};`}
             transition:name={`card-${id}-container`}
           >
@@ -108,27 +108,32 @@ const isFront = type === FRONTEND;
             >
               <BadgeLink items={links} itemId={id} />
             </div>
-            <div
-              class="w-full absolute inset-0 p-4 translate-y-28
-              group-hover:translate-y-14 transition-transform  ease-out"
+            <a
+              href={`/ivanrice/${id}`}
+              class="bg-red-500 w-full h-full"
             >
-              <h3 class="text-ottoman-100/95 w-full text-xl font-bold mb-2">
-                {longTitle}
-              </h3>
-              <p class=" text-green-lime-100/70 text-balance text-sm font-normal group-hover:text-green-lime-100/90">
-                {caption}
-              </p>
-              <div class="opacity-0 group-hover:opacity-100 transition-opacity mt-2">
-                <BadgeItems items={srcSoftware!} />
+              <div
+                class="w-full absolute inset-0 p-4 translate-y-28
+              group-hover:translate-y-14 transition-transform  ease-out"
+              >
+                <h3 class="text-ottoman-100/95 w-full text-xl font-bold mb-2">
+                  {longTitle}
+                </h3>
+                <p class=" text-green-lime-100/70 text-balance text-sm font-normal group-hover:text-green-lime-100/90">
+                  {caption}
+                </p>
+                <div class="opacity-0 group-hover:opacity-100 transition-opacity mt-2">
+                  <BadgeItems items={srcSoftware!} />
+                </div>
               </div>
-            </div>
+            </a>
           </li>
         );
       })
     }
     <li
       style={`grid-area: footer;`}
-      class="w-full sm:h-full h-64 relative z-30 overflow-hidden rounded-xl border-2 border-american-blue-500/50
+      class="w-full sm:h-full h-64 relative z-20 overflow-hidden rounded-xl border-2 border-american-blue-500/50
       flex justify-center items-center text-xl text-green-lime-300
       bg-gradient-to-bl from-american-blue-950/50 from-10% via-american-blue-800/65 via-30% to-indigo-800/30 to-82%"
     >
