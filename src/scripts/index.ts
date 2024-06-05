@@ -41,9 +41,11 @@ export function menuRoutingObserver({
           if (item.getAttribute("aria-label") === entry.target.id) {
             item.classList.add("bg-green-lime-500/80");
             item.classList.add("text-american-blue-800");
+            item.classList.remove("hover:shadow-link");
           } else {
             item.classList.remove("bg-green-lime-500/80");
             item.classList.remove("text-american-blue-800");
+            item.classList.add("hover:shadow-link");
           }
         });
       }
