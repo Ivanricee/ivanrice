@@ -6,101 +6,6 @@ export const CARD_INFO: CardInfo[] = [
     id: 1,
     image: [
       {
-        url: "/v1700180330/portfolio/model/christmas/christmas_snowman_ecngcw.webp",
-        bg: "#090207",
-      },
-      {
-        url: "/v1700180349/portfolio/model/christmas/little_christmas_ivan_bautista_unxbbg.webp",
-        bg: "#090207",
-      },
-    ],
-    title: "CHRISTMAS",
-    longTitle: "Little Christmas",
-    software: ["maya", "redshift", "mari", "zbrush", "rizom uv"],
-    caption:
-      "Escena de muñecos de nieve, inspirada por la textura de arcilla y la temporada navideña.",
-    type: "3D",
-    links: [
-      {
-        text: "instagram",
-        src: "https://www.instagram.com/p/CX5kzGmLG8R/",
-      },
-      {
-        text: "artstation",
-        src: "https://www.artstation.com/artwork/6bNWDr",
-      },
-    ],
-  },
-  {
-    id: 2,
-    image: [
-      {
-        url: "/v1700182548/portfolio/model/snowman/final_ig_imytwj.webp",
-        bg: "#1847b9",
-      },
-    ],
-    title: "SNOWMAN",
-    longTitle: "Snowman lights",
-    software: [
-      "maya",
-      "redshift",
-      "mari",
-      "substance 3D",
-      "zbrush",
-      "rizom uv",
-    ],
-    caption:
-      "Snowman: una práctica con nieve y luces, donde los autos rodean a un gigante muñeco de nieve.",
-    type: "3D",
-    links: [
-      {
-        text: "instagram",
-        src: "https://www.instagram.com/p/CJO0HkwjFUd/",
-      },
-      {
-        text: "artstation",
-        src: "https://www.artstation.com/artwork/mDgzZy",
-      },
-    ],
-  },
-  {
-    id: 3,
-    image: [
-      {
-        url: "/v1700179021/portfolio/model/mictlantecuhtli/mictlantecuhtli_cut_bmmbxs.webp",
-        bg: "#43037e",
-      },
-      {
-        url: "/v1700179030/portfolio/model/mictlantecuhtli/mictlantecuhtli_ao_g2ynqp.webp",
-        bg: "#fdfcff",
-      },
-      {
-        url: "/v1700179026/portfolio/model/mictlantecuhtli/diffuse_ind_iyoy4z.webp",
-        bg: "#090207",
-      },
-    ],
-    title: "MICTLAN",
-    longTitle: "Mictlantecuhtli",
-    software: ["maya", "arnold", "mari"],
-    caption:
-      "Inspirado en el dios azteca de la muerte Mictlantecuhtli, realizado con un estilo toon.",
-    type: "3D",
-    links: [
-      {
-        text: "instagram",
-        src: "https://www.instagram.com/p/CkcD_GpDMff/",
-      },
-      {
-        text: "artstation",
-        src: "https://www.artstation.com/artwork/xYABK4",
-      },
-    ],
-  },
-
-  {
-    id: 4,
-    image: [
-      {
         url: "/v1700179626/portfolio/model/Ghibli/ghibli_totoro_autumn_2_bfxe5a.webp",
         bg: "#251f40",
       },
@@ -142,7 +47,40 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 5,
+    id: 2,
+    image: [
+      {
+        url: "/v1700179021/portfolio/model/mictlantecuhtli/mictlantecuhtli_cut_bmmbxs.webp",
+        bg: "#43037e",
+      },
+      {
+        url: "/v1700179030/portfolio/model/mictlantecuhtli/mictlantecuhtli_ao_g2ynqp.webp",
+        bg: "#fdfcff",
+      },
+      {
+        url: "/v1700179026/portfolio/model/mictlantecuhtli/diffuse_ind_iyoy4z.webp",
+        bg: "#090207",
+      },
+    ],
+    title: "MICTLAN",
+    longTitle: "Mictlantecuhtli",
+    software: ["maya", "arnold", "mari"],
+    caption:
+      "Inspirado en el dios azteca de la muerte Mictlantecuhtli, realizado con un estilo toon.",
+    type: "3D",
+    links: [
+      {
+        text: "instagram",
+        src: "https://www.instagram.com/p/CkcD_GpDMff/",
+      },
+      {
+        text: "artstation",
+        src: "https://www.artstation.com/artwork/xYABK4",
+      },
+    ],
+  },
+  {
+    id: 3,
     image: [
       {
         url: "/v1606776535/portfolio/model/midnightgospel/final_img_c_mzsgrf.webp",
@@ -185,7 +123,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 6,
+    id: 4,
     image: [
       {
         url: "/v1606775187/portfolio/model/cyberpunk/nave-final_v6m09q.webp",
@@ -237,6 +175,69 @@ export const CARD_INFO: CardInfo[] = [
       },
     ],
   },
+  {
+    id: 5,
+    image: [
+      {
+        url: "/v1700180330/portfolio/model/christmas/christmas_snowman_ecngcw.webp",
+        bg: "#090207",
+      },
+      {
+        url: "/v1700180349/portfolio/model/christmas/little_christmas_ivan_bautista_unxbbg.webp",
+        bg: "#090207",
+      },
+    ],
+    title: "CHRISTMAS",
+    longTitle: "Little Christmas",
+    software: ["maya", "redshift", "mari", "zbrush", "rizom uv"],
+    caption:
+      "Escena de muñecos de nieve, inspirada por la textura de arcilla y la temporada navideña.",
+    type: "3D",
+    links: [
+      {
+        text: "instagram",
+        src: "https://www.instagram.com/p/CX5kzGmLG8R/",
+      },
+      {
+        text: "artstation",
+        src: "https://www.artstation.com/artwork/6bNWDr",
+      },
+    ],
+  },
+
+  {
+    id: 6,
+    image: [
+      {
+        url: "/v1700182548/portfolio/model/snowman/final_ig_imytwj.webp",
+        bg: "#1847b9",
+      },
+    ],
+    title: "SNOWMAN",
+    longTitle: "Snowman lights",
+    software: [
+      "maya",
+      "redshift",
+      "mari",
+      "substance 3D",
+      "zbrush",
+      "rizom uv",
+    ],
+    caption:
+      "Snowman: una práctica con nieve y luces, donde los autos rodean a un gigante muñeco de nieve.",
+    type: "3D",
+    links: [
+      {
+        text: "instagram",
+        src: "https://www.instagram.com/p/CJO0HkwjFUd/",
+      },
+      {
+        text: "artstation",
+        src: "https://www.artstation.com/artwork/mDgzZy",
+      },
+    ],
+  },
+
   {
     id: 7,
     image: [
