@@ -12,7 +12,8 @@ export default {
         "-md": { max: "767px" },
       },
       backgroundColor: {
-        backImg: "#ebfff4",
+        //backImg: "#ebfff4",
+        backImg: "#2c3168",
       },
       backgroundImage: {
         rock: "url('httpsu://res.cloudinary.com/ivanrice-c/image/upload/q_70/v1706725502/portfolio/imges/bg_noshadow_darker_wbuiy4.webp')",
@@ -20,14 +21,17 @@ export default {
           "url('https://res.cloudinary.com/ivanrice-c/image/upload/q_70/v1706250878/portfolio/imges/bg_dark_tfdbtw.webp')",
         shadow: "url('/ivanrice/shadow.avif')",
         "gradient-card": "linear-gradient(225deg, #4752bd, #4e5cd4)",
-        "gradient-card-b": "linear-gradient(225deg, #4554cc, #5c64d9)",
+        //"gradient-card-b": "linear-gradient(225deg, #4554cc, #5c64d9)",
+        "gradient-card-b": "linear-gradient(225deg, #f1ffdf, #cbdef5)",
       },
       boxShadow: {
-        container: "-15px 15px 30px #cee6d8,15px -15px 30px #D1FFEA",
-        "card-lg": "-0.5px 3px 10px #4354bb,0px 3px 10px #475cdd",
+        //container: "-15px 15px 30px #cee6d8,15px -15px 30px #D1FFEA",
+        container: "-15px 15px 30px #223051, 30px -20px 50px #314974",
+        //"card-lg": "-0.5px 3px 10px #4354bb,0px 3px 10px #475cdd",
+        "card-lg": "-5px 5px 10px #3f60adad, 5px -5px 10px #4d81d34d",
         "card-xl": "-13px 17px 23px #3d44b3, 5px -5px 28px #4b61ea",
         /*"card-2xl": "-10px 15px 16px #bd3d3f,3px -3px 12px #d3393c",*/
-        link: "0px -4px 36px 0px #C0CEB24A inset",
+        link: "0px -4px 70px 10px #C0CEB26A inset",
       },
       textColor: {
         "card-text": "#e67177",
