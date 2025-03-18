@@ -3,24 +3,31 @@ import { CLOUDINARY_LOW, CLOUDINARY_URL } from '@/lib/constants'
 import PhotoCard from './PhotoCard.astro'
 
 interface Props {
-	title: string
+  title: string
   longTitle: string
   software: string[]
-	caption: string
+  caption: string
   bg: string
-	href: string
+  href: string
   type: string
   id: number
 }
 
-const { href, title, caption, bg, longTitle,id } = Astro.props;
+const { href, title, caption, bg, longTitle, id } = Astro.props
 const rand = String(Math.random() * 4 - 2)
 const src = `${CLOUDINARY_URL}${CLOUDINARY_LOW}${bg}`
-
 ---
 
-<li class=" border-8 border-t-roman-400/50 border-b-roman-400/50 border-x-0 flex  p-9 ">
-  <PhotoCard src={src} alt={longTitle} className=" aspect-video w-60 h-40 opacity-75" animate id={id} href={href} layers={3} />
+<li class="border-t-roman-400/50 border-b-roman-400/50 flex border-8 border-x-0 p-9">
+  <PhotoCard
+    src={src}
+    alt={longTitle}
+    className="aspect-video h-40 w-60 opacity-75"
+    animate
+    id={id}
+    href={href}
+    layers={3}
+  />
 </li>
 <style>
   li {

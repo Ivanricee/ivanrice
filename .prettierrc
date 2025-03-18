@@ -1,0 +1,40 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 100,
+  "maxLineLength": false,
+  "maxLen": 100,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  "pluginSearchDirs": false,
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx", "*.mjs", "*.ts", "*.tsx"],
+      "options": {
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "semi": false,
+        "singleQuote": true,
+        "printWidth": 100,
+        "maxLineLength": false,
+        "maxLen": 100,
+        "bracketSpacing": true,
+        "bracketSameLine": false,
+        "plugins": [
+          "prettier-plugin-astro",
+          "prettier-plugin-tailwindcss"
+        ],
+        "pluginSearchDirs": false
+      }
+    }
+  ]
+}

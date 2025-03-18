@@ -1,28 +1,22 @@
 ---
-import { FRONTEND, TRESD } from "@/lib/constants";
-import ProjectItem from "./ProjectItem.astro";
+import { FRONTEND, TRESD } from '@/lib/constants'
+import ProjectItem from './ProjectItem.astro'
 ---
 
 <section
   class="font-biryani box-content md:h-[66rem] lg:h-[39rem]"
   transition:name="project-container"
 >
-  <div class="mb-4 flex justify-center w-full sm:w-1/2 lg:w-full">
+  <div class="mb-4 flex w-full justify-center sm:w-1/2 lg:w-full">
     <ul
-      class="flex text-lg font-semibold text-center rounded-lg justify-center relative z-10 w-60 h-[5.5rem]"
+      class="relative z-10 flex h-[5.5rem] w-60 justify-center rounded-lg text-center text-lg font-semibold"
       id="default-tab"
       data-tabs-toggle="#default-tab-content"
       role="tablist"
     >
-      <li class="focus-within:z-10 w-7/12 h-full" role="presentation">
+      <li class="h-full w-7/12 focus-within:z-10" role="presentation">
         <button
-          class="inline-block w-full h-full p-4
-                text-ottoman-100/70 border-s-0 rounded-s-lg
-                bg-gradient-to-bl from-american-blue-950/50 from-10% via-american-blue-800/65 via-30% to-indigo-800/30 to-82%
-                aria-selected:bg-gradient-to-bl aria-selected:from-green-lime-500 aria-selected:from-10% aria-selected:to-green-lime-400/70 aria-selected:to-82%
-                aria-selected:text-american-blue-900 aria-selected:border-0 aria-selected:font-bold
-                hover:text-ottoman-50/85 focus:ring-1 focus:outline-none focus:ring-green-lime-500/40
-                hover:bg-gradient-to-br hover:from-american-blue-800/70 hover:from-40%"
+          class="text-ottoman-100/70 from-american-blue-950/50 via-american-blue-800/65 aria-selected:from-green-lime-500 aria-selected:to-green-lime-400/70 aria-selected:text-american-blue-900 hover:text-ottoman-50/85 focus:ring-green-lime-500/40 hover:from-american-blue-800/70 inline-block h-full w-full rounded-s-lg border-s-0 bg-gradient-to-bl from-10% via-30% to-indigo-800/30 to-82% p-4 hover:bg-gradient-to-br hover:from-40% focus:ring-1 focus:outline-none aria-selected:border-0 aria-selected:bg-gradient-to-bl aria-selected:from-10% aria-selected:to-82% aria-selected:font-bold"
           id="frontend-tab"
           data-tabs-target="#frontend"
           type="button"
@@ -34,15 +28,9 @@ import ProjectItem from "./ProjectItem.astro";
           FRONTEND
         </button>
       </li>
-      <li class="focus-within:z-10 w-5/12 h-full" role="presentation">
+      <li class="h-full w-5/12 focus-within:z-10" role="presentation">
         <button
-          class="inline-block w-full p-4 h-full
-              text-ottoman-100/70 border-s-0 rounded-e-lg
-                bg-gradient-to-bl from-american-blue-950/50 from-10% via-american-blue-800/65 via-30% to-indigo-800/30 to-82%
-                aria-selected:bg-gradient-to-br aria-selected:from-green-lime-500 aria-selected:from-10% aria-selected:to-green-lime-400/70 aria-selected:to-82%
-              aria-selected:text-american-blue-900 aria-selected:border-0 aria-selected:font-bold
-              hover:text-ottoman-50/85 focus:ring-1 focus:outline-none focus:ring-green-lime-500/40
-                hover:bg-gradient-from-br hover:from-american-blue-800/70 hover:from-40%"
+          class="text-ottoman-100/70 from-american-blue-950/50 via-american-blue-800/65 aria-selected:from-green-lime-500 aria-selected:to-green-lime-400/70 aria-selected:text-american-blue-900 hover:text-ottoman-50/85 focus:ring-green-lime-500/40 hover:bg-gradient-from-br hover:from-american-blue-800/70 inline-block h-full w-full rounded-e-lg border-s-0 bg-gradient-to-bl from-10% via-30% to-indigo-800/30 to-82% p-4 hover:from-40% focus:ring-1 focus:outline-none aria-selected:border-0 aria-selected:bg-gradient-to-br aria-selected:from-10% aria-selected:to-82% aria-selected:font-bold"
           id="tresd-tab"
           data-tabs-target="#tresd"
           type="button"
@@ -58,7 +46,7 @@ import ProjectItem from "./ProjectItem.astro";
   </div>
   <div id="default-tab-content" class="sm:-translate-y-[7.7rem]">
     <div
-      class="hidden pt-4 rounded-lg border-0"
+      class="hidden rounded-lg border-0 pt-4"
       id="frontend"
       role="tabpanel"
       aria-labelledby="frontend-tab"
@@ -66,7 +54,7 @@ import ProjectItem from "./ProjectItem.astro";
       <ProjectItem type={FRONTEND} />
     </div>
     <div
-      class="hidden pt-4 rounded-lg border-0"
+      class="hidden rounded-lg border-0 pt-4"
       id="tresd"
       role="tabpanel"
       aria-labelledby="tresd-tab"
@@ -76,80 +64,37 @@ import ProjectItem from "./ProjectItem.astro";
   </div>
 </section>
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const frontendTabButton = document.getElementById("frontend-tab");
-    const tresdTabButton = document.getElementById("tresd-tab");
-    if (!frontendTabButton || !tresdTabButton)
-      throw new Error("menu items not found");
-    frontendTabButton.addEventListener("click", (e) => {
-      const target = e.target as HTMLElement;
-      const name = target.getAttribute("aria-controls");
-      history.replaceState({}, "", `/ivanrice/#projects/?type=${name}`);
-    });
+  document.addEventListener('astro:page-load', () => {
+    const frontendTabButton = document.getElementById('frontend-tab')
+    const tresdTabButton = document.getElementById('tresd-tab')
+    if (!frontendTabButton || !tresdTabButton) throw new Error('menu items not found')
+    frontendTabButton.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement
+      const name = target.getAttribute('aria-controls')
+      history.replaceState({}, '', `/ivanrice/#projects/?type=${name}`)
+    })
 
-    tresdTabButton.addEventListener("click", (e) => {
-      const target = e.target as HTMLElement;
-      const name = target.getAttribute("aria-controls");
-      history.replaceState({}, "", `/ivanrice/#projects/?type=${name}`);
-    });
-  });
+    tresdTabButton.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement
+      const name = target.getAttribute('aria-controls')
+      history.replaceState({}, '', `/ivanrice/#projects/?type=${name}`)
+    })
+  })
 </script>
 <script>
-
-  import { Tabs } from "flowbite";
-  import type { TabsOptions, TabsInterface, TabItem } from "flowbite";
-  import type { InstanceOptions } from "flowbite";
-  document.addEventListener("astro:page-load", () => {
+  document.addEventListener('astro:page-load', () => {
     function initializeFlowbiteTabs() {
-      const tabsElement: HTMLElement | null =
-        document.getElementById("default-tab");
       const getQueryParam = () => {
         // Get type
-        const queryString = window.location.hash.split("?")[1];
-        if (!queryString) return;
+        const queryString = window.location.hash.split('?')[1]
+        if (!queryString) return
         // Create a URLSearchParams object with the query string
-        const searchParams = new URLSearchParams(queryString);
-        return searchParams.get("type");
-      };
-      if (!tabsElement) throw new Error("not tab element found");
+        const searchParams = new URLSearchParams(queryString)
+        return searchParams.get('type')
+      }
 
-      const tabElements: TabItem[] = [
-        {
-          id: "frontend",
-          triggerEl: document.querySelector("#frontend-tab") as HTMLElement,
-          targetEl: document.querySelector("#frontend") as HTMLElement,
-        },
-        {
-          id: "tresd",
-          triggerEl: document.querySelector("#tresd-tab") as HTMLElement,
-          targetEl: document.querySelector("#tresd") as HTMLElement,
-        },
-      ];
-
-      const options: TabsOptions = {
-        defaultTabId: "frontend",
-        activeClasses:
-          "text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-400 border-blue-600 dark:border-blue-500",
-        inactiveClasses:
-          "text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300",
-      };
-
-      // Instance options with default values
-      const instanceOptions: InstanceOptions = {
-        id: "default-tab",
-        override: true,
-      };
-
-      // Create a new Tabs object based on the parameters previously set.
-      const tabs: TabsInterface = new Tabs(
-        tabsElement,
-        tabElements,
-        options,
-        instanceOptions
-      );
-      const type = getQueryParam();
-      if (type) tabs.show(type);
+      const type = getQueryParam()
     }
-    initializeFlowbiteTabs();
-  });
+    initializeFlowbiteTabs()
+  })
 </script>

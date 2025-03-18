@@ -193,59 +193,11 @@ const mediaStr = JSON.stringify(media)
 
 <script >
   //Items
-  import {
-    Carousel,
-    type CarouselInterface,
-    type CarouselItem,
-    type CarouselOptions,
-    type InstanceOptions
-  } from "flowbite"
 
 
   document.addEventListener('astro:page-load', () => {
     const carouselPortfolio = document.getElementById('carousel-portfolio')
     if(!carouselPortfolio) return
-    const itemsPortfolio = carouselPortfolio!.querySelectorAll('.item-portfolio')
-    const carouselItems = Array.from(itemsPortfolio).map((item, position) => ({
-          position,
-          el: item
-        })
-    )  as CarouselItem[]
-    //indicators (dots)
-    const indicatorWrap = document.getElementById('indicators')
-    const indicators = indicatorWrap!.querySelectorAll('button')
-    const carouselIndicators = Array.from(indicators).map((item, position) => ({
-          position,
-          el: item
-        })
-    ) as CarouselItem[]
-    //Options
-    const options: CarouselOptions = {
-      interval: 6000000,
-      indicators: {
-        activeClasses: 'bg-american-blue-200',
-        inactiveClasses:
-            'bg-american-blue-100/50 dark:bg-gray-800/50 hover:bg-green-lime-100 dark:hover:bg-gray-800',
-        items: carouselIndicators,
-      }
-    }
-    // instance options object
-    const instanceOptions: InstanceOptions = {
-      id: 'carousel-portfolio',
-      override: true
-    };
-    const carousel: CarouselInterface = new Carousel(carouselPortfolio, carouselItems, options, instanceOptions);
-    //carousel.cycle();
-    carousel.pause();
-
-    //events for prev|next
-    const $prevButton = document.getElementById('data-carousel-prev');
-    const $nextButton = document.getElementById('data-carousel-next');
-    $prevButton!.addEventListener('click', () => carousel.prev());
-    $nextButton!.addEventListener('click', () => carousel.next());
-    // Pause carousel on hover
-    carouselPortfolio.addEventListener('mouseenter', () => carousel.pause());
-    carouselPortfolio.addEventListener('mouseleave', () => carousel.cycle());
 
   });
 </script>

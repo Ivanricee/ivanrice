@@ -1,42 +1,37 @@
 ---
-import CarouselPortfolio from "@/components/CarouselPortfolio.astro";
-import Icons from "@/components/Icons.astro";
-import type { CardInfo } from "@/env";
-import Layout from "@/layouts/Layout.astro";
-import { CARD_INFO } from "@/lib/data";
+import CarouselPortfolio from '@/components/CarouselPortfolio.astro'
+import Icons from '@/components/Icons.astro'
+import type { CardInfo } from '@/env'
+import Layout from '@/layouts/Layout.astro'
+import { CARD_INFO } from '@/lib/data'
 
-const cardsInfo = await CARD_INFO;
+const cardsInfo = await CARD_INFO
 
-const { idPortfolio } = Astro.params;
-const idPortfolioNum = Number(idPortfolio);
-const card = cardsInfo.find(
-  (cardItm) => cardItm.id === idPortfolioNum
-) as CardInfo;
+const { idPortfolio } = Astro.params
+const idPortfolioNum = Number(idPortfolio)
+const card = cardsInfo.find((cardItm) => cardItm.id === idPortfolioNum) as CardInfo
 
 export async function getStaticPaths() {
-  const cardsInfo = await CARD_INFO;
+  const cardsInfo = await CARD_INFO
   return cardsInfo.map((cardItm) => ({
     params: { idPortfolio: cardItm.id },
-  }));
+  }))
 }
-const { caption, id, links, longTitle, software, title, type, image } = card;
+const { caption, id, links, longTitle, software, title, type, image } = card
 ---
 
 <Layout title={`${longTitle} - Portfolio`} position="fixed">
   <section
-    class="flex justify-center items-center fixed w-dvw h-dvh top-0 bg-american-blue-550/50 backdrop-blur-lg"
+    class="bg-american-blue-550/50 fixed top-0 flex h-dvh w-dvw items-center justify-center backdrop-blur-lg"
   >
     <CarouselPortfolio media={image} slide id={id} />
     <div
-      class="flex justify-center items-center absolute z-30 top-0 right-0 translate-y-4 -translate-x-4
-      sm:translate-y-12 sm:-translate-x-12"
+      class="absolute top-0 right-0 z-30 flex -translate-x-4 translate-y-4 items-center justify-center sm:-translate-x-12 sm:translate-y-12"
     >
       <button
         type="button"
         id="close"
-        class="text-sm p-2.5 text-center inline-flex items-center text-green-lime-400 bg-american-blue-550/45
-        focus:outline-none focus:ring-green-lime-600/60 font-medium rounded-full
-        hover:bg-american-blue-550/65 hover:text-green-lime-600 focus:ring-4 transition-colors"
+        class="text-green-lime-400 bg-american-blue-550/45 focus:ring-green-lime-600/60 hover:bg-american-blue-550/65 hover:text-green-lime-600 inline-flex items-center rounded-full p-2.5 text-center text-sm font-medium transition-colors focus:ring-4 focus:outline-none"
       >
         <Icons name="close" size="3rem" stroke={1.5}>
           <span class="sr-only">Close</span>
@@ -46,20 +41,20 @@ const { caption, id, links, longTitle, software, title, type, image } = card;
   </section>
 </Layout>
 <script>
-  let eventListenersAdded = false;
+  let eventListenersAdded = false
 
-  document.addEventListener("astro:page-load", () => {
-    const closeBtn = document.getElementById("close");
-    const handleBack = () => history.back();
+  document.addEventListener('astro:page-load', () => {
+    const closeBtn = document.getElementById('close')
+    const handleBack = () => history.back()
 
-    if (!closeBtn) throw new Error(" carousel close btn not found");
+    if (!closeBtn) throw new Error(' carousel close btn not found')
     // Listen for the click
-    closeBtn.addEventListener("click", handleBack);
+    closeBtn.addEventListener('click', handleBack)
     // Listen for the keydownesc
-    if (eventListenersAdded) return; // Prevent adding keydown listeners multiple times
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") handleBack();
-    });
-    eventListenersAdded = true;
-  });
+    if (eventListenersAdded) return // Prevent adding keydown listeners multiple times
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') handleBack()
+    })
+    eventListenersAdded = true
+  })
 </script>

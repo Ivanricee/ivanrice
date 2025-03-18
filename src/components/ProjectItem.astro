@@ -1,34 +1,18 @@
 ---
-import { Image } from "astro:assets";
-import down from "../../public/down.jpg";
-import {
-  CLOUDINARY_LOW,
-  CLOUDINARY_URL,
-  FRONTEND,
-  TRESD,
-} from "@/lib/constants";
-import { CARD_INFO, SOFTWARE } from "../lib/data";
-import type { CardInfo } from "@/env";
-import BadgeItems from "./BadgeItems.astro";
-import BadgeLink from "./BadgeLink.astro";
-import { getTemplateArea } from "@/utils";
-import Icons from "./Icons.astro";
+import { Image } from 'astro:assets'
+import { CLOUDINARY_LOW, CLOUDINARY_URL, FRONTEND, TRESD } from '@/lib/constants'
+import { CARD_INFO, SOFTWARE } from '../lib/data'
+import type { CardInfo } from '@/env'
+import BadgeItems from './BadgeItems.astro'
+import BadgeLink from './BadgeLink.astro'
+import { getTemplateArea } from '@/utils'
+import Icons from './Icons.astro'
 interface Props {
-  type: "frontend" | "3D";
+  type: 'frontend' | '3D'
 }
-const { type } = Astro.props;
-let count3D = 0;
-let countFront = 0;
-const cardInfoMap: { [key: string]: () => CardInfo[] } =
-  {
-    [TRESD]: () =>
-      CARD_INFO.filter((item) => item.type === TRESD && count3D++ <= 4),
-    [FRONTEND]: () =>
-      CARD_INFO.filter((item) => item.type === FRONTEND && countFront++ <= 4),
-  } || [];
-const cardInfo = cardInfoMap[type] ? cardInfoMap[type]() : [];
+const { type } = Astro.props
 
-const cloudBase = `${CLOUDINARY_URL}${CLOUDINARY_LOW}`;
+const cloudBase = `${CLOUDINARY_URL}${CLOUDINARY_LOW}`
 
 //----- area template
 /*const countCards = cardInfo.length;
@@ -38,125 +22,43 @@ const [rows2, TGridArea2] = getTemplateArea({ columns: 2, countCards });*/
 const [rows3, TGridArea3] = getTemplateArea({
   columns: 3,
   countCards: 5,
-});
+})
 const [rows2, TGridArea2] = getTemplateArea({
   columns: 2,
   countCards: 5,
-});
+})
 //----- area template
-const isFront = type === FRONTEND;
+const isFront = type === FRONTEND
 ---
 
-<article class="w-full font-biryani">
-  <ul id="gridTemplateAreas" class="w-full h-full">
-    <li style={`grid-area: menu;`} class="w-full h-full relative"></li>
-    {
-      cardInfo.map((info: CardInfo, index: number) => {
-        const src = `${cloudBase}${info.image[0].url}`;
-        const { id, longTitle, type, caption, links, title } = info;
+<article class="font-biryani w-full">
+  <ul id="gridTemplateAreas" class="h-full w-full">
+    <li style={`grid-area: menu;`} class="relative h-full w-full"></li>
 
-        const srcSoftware = info.software.map((itm) => {
-          return { src: SOFTWARE[itm], text: itm };
-        });
-        const gridArea = `${index + 1}`;
-        return (
-          <li
-            class="animate-reveal supports-no-scroll-driven-animations:animate-none
-            [animation-timeline:view()] [animation-range:entry_-40%_cover_20%]
-            group w-full sm:h-full h-64 relative z-20 overflow-hidden rounded-xl border-2 border-american-blue-500/50
-            hover:border-3 hover:border-ottoman-50
-            bg-gradient-to-bl from-american-blue-950/50 from-10% via-american-blue-800/65 via-30% to-indigo-800/30 to-82%
-            hover:to-american-blue-800 hover:to-82% transition-[border] duration-700 ease-in-out"
-            style={`grid-area: item${gridArea};`}
-            transition:name={`card-${id}-container`}
-          >
-            <div class=" absolute top-0 right-0 w-1/3 flex justify-center py-8 z-10 pointer-events-none">
-              <h3 class="text-9xl font-extralight text-green-lime-700/45 blur-sm group-hover:blur group-hover:text-american-blue-400/35">
-                {gridArea}
-              </h3>
-            </div>
-            <div class="w-full h-full relative">
-              <div class="light absolute w-28 h-28 rounded-full bg-indigo-700/20 blur-xl -right-7 -top-4 z-10" />
-              <div class="light absolute w-9 h-28 rounded-3xl bg-american-blue-550 blur-xl -right-4 top-12 z-10" />
-              <div
-                class="light absolute w-8 h-24 rounded-3xl bg-ottoman-500/30 blur-xl -left-2 top-20 z-10
-            group-hover:top-14 group-hover:w-12"
-              />
-              <Image
-                src={down}
-                class={`frontImgNoise absolute -z-10 translate-x-4 translate-y-4 w-full h-40 object-cover object-right rounded-lg mix-blend-plus-lighter opacity-30
-              group-hover:opacity-30 group-hover:translate-x-0 group-hover:translate-y-0 transition-all `}
-                width={235}
-                height={235}
-                alt="noise"
-                aria-hidden={true}
-              />
-
-              <Image
-                class={`frontImg translate-x-4 translate-y-4 w-full h-40 object-cover object-left rounded-lg hue-rotate-15 opacity-80
-              border-2 border-indigo-500/30
-              group-hover:opacity-30 group-hover:translate-x-0 group-hover:translate-y-0 transition-all ease-in`}
-                src={src}
-                alt={longTitle}
-                width={235}
-                height={235}
-              />
-            </div>
-            <div
-              class="pb-4 flex justify-center w-full gap-1.5 absolute top-6 opacity-0 z-10
-              group-hover:opacity-100 transition-opacity duration-200 ease-in"
-            >
-              <BadgeLink items={links} itemId={id} />
-            </div>
-            <a
-              href={`/ivanrice/${id}`}
-              class="bg-red-500 w-full h-full"
-            >
-              <div
-                class="w-full absolute inset-0 p-4 translate-y-28
-              group-hover:translate-y-14 transition-transform  ease-out"
-              >
-                <h3 class="text-ottoman-100/95 w-full text-xl font-bold mb-2">
-                  {longTitle}
-                </h3>
-                <p class=" text-green-lime-100/70 text-balance text-sm font-normal group-hover:text-green-lime-100/90">
-                  {caption}
-                </p>
-                <div class="opacity-0 group-hover:opacity-100 transition-opacity mt-2">
-                  <BadgeItems items={srcSoftware!} />
-                </div>
-              </div>
-            </a>
-          </li>
-        );
-      })
-    }
     <li
       style={`grid-area: footer;`}
-      class="w-full sm:h-full h-64 relative z-20 overflow-hidden rounded-xl border-2 border-american-blue-500/50
-      flex justify-center items-center text-xl text-green-lime-300
-      bg-gradient-to-bl from-american-blue-950/50 from-10% via-american-blue-800/65 via-30% to-indigo-800/30 to-82%"
+      class="border-american-blue-500/50 text-green-lime-300 from-american-blue-950/50 via-american-blue-800/65 relative z-20 flex h-64 w-full items-center justify-center overflow-hidden rounded-xl border-2 bg-gradient-to-bl from-10% via-30% to-indigo-800/30 to-82% text-xl sm:h-full"
     >
       {
         isFront ? (
-          <div class="flex flex-nowrap gap-2 items-center">
+          <div class="flex flex-nowrap items-center gap-2">
             <a
               href="https://github.com/Ivanricee"
               target="_blank"
               rel="noopener"
-              class="hover:underline transition-all duration-700 text-sm uppercase font-bold translate-y-0.5"
+              class="translate-y-0.5 text-sm font-bold uppercase transition-all duration-700 hover:underline"
             >
               VER MÁS
             </a>
             <Icons name="seemore" size="1.3rem" stroke={2} />
           </div>
         ) : (
-          <div class="flex flex-nowrap gap-2 items-center">
+          <div class="flex flex-nowrap items-center gap-2">
             <a
               href="https://www.instagram.com/ivanrice_/"
               target="_blank"
               rel="noopener"
-              class="hover:underline transition-all duration-700 text-sm uppercase font-bold translate-y-0.5"
+              class="translate-y-0.5 text-sm font-bold uppercase transition-all duration-700 hover:underline"
             >
               VER MÁS
             </a>

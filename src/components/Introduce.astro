@@ -1,57 +1,58 @@
 ---
-import Icons from "./Icons.astro";
-import PhotoCard from "./PhotoCard.astro";
+import Icons from './Icons.astro'
+import PhotoCard from './PhotoCard.astro'
 const src =
-  "https://res.cloudinary.com/ivanrice-c/image/upload/c_crop,g_north,w_500,h_500/v1717566205/portfolio/irice_sjagyh.jpg";
+  'https://res.cloudinary.com/ivanrice-c/image/upload/c_crop,g_north,w_500,h_500/v1717566205/portfolio/irice_sjagyh.jpg'
 ---
 
-<section
-  class="relative box-border w-full font-biryani font-thin text-american-blue-50/85"
->
+<section class="overflow-hidden">
   <div
-    class="flex flex-col gap-5 justify-center items-center md:flex-row lg:gap-7"
+    id="spotlight"
+    aria-hidden
+    class="absolute right-0 -z-10 hidden h-[37rem] w-3/4 translate-x-1/3 translate-y-36 -rotate-12 rounded-s-full blur-3xl"
   >
-    <div
-      class="text-left text-lg md:text-xl text-balance pl-0 w-fit lg:pr-5 font-normal"
-    >
+  </div>
+
+  <div class="">
+    <div class="">
       <PhotoCard
         layers={2}
-        className="aspect-square w-24 md:w-28 rounded-full opacity-75"
+        className="aspect-square w-24 rounded-full opacity-75 md:w-28"
         src={src}
         alt="Profile"
       />
-      <h1 class="font-mauline text-green-lime-400/90 text-4xl md:text-5xl my-5">
-        Hey <span class="text-xl sm:text-2xl md:text-3xl">👋</span>, soy Ivan
-        Bautista.
-      </h1>
-      <h2 class="leading-relaxed text-sm md:text-lg font-normal">
-        +4 años de experiencia. Pasé de ser Full Stack Developer a
-        especializarme como
-        <span class="font-semibold text-ottoman-100/90 text-sm md:text-lg"
-          >Frontend Developer,</span
+      <span class="font-title tracking-wider">
+        <h1 class="text-2xl font-medium text-orange-500">IVANRICE</h1>
+        <p class="text-2xl font-medium text-stone-200">FRONTEND DEVELOPER</p>
+        <p class="text-2xl font-medium text-stone-200">ENFOCADO DESARRO Y PROYECTOS 3D.</p>
+      </span>
+      {
+        //      Hey <span class="">👋</span>, soy Ivan Bautista.
+      }
+      <p class="font-body py-8">
+        +4 años de experiencia. Pasé de ser Full Stack Developer a especializarme como
+        <span class="text-ottoman-100/90 text-sm font-semibold md:text-lg">Frontend Developer,</span
         >
-        con un trasfondo en 3D y un gran interés en UI/UX. Apasionado por aprender,
-        experimentar y crear experiencias web y proyectos 3D cautivadores.
-      </h2>
+        con un trasfondo en 3D y un gran interés en UI/UX. Apasionado por aprender, experimentar y crear
+        experiencias web y proyectos 3D cautivadores.
+      </p>
     </div>
   </div>
   <div
-    class="flex justify-start items-center mt-3 text-ottoman-100/85 gap-3 pt-4 pb-3 ms-0
-    [&>a]:border-2 [&>a]:border-green-lime-400/10 [&>a]:bg-green-lime-400/25 [&>a]:rounded-md
-    [&>a]:transition-all duration-1000"
+    class="text-ottoman-100/85 [&>a]:border-green-lime-400/10 [&>a]:bg-green-lime-400/25 ms-0 mt-3 flex items-center justify-start gap-3 pt-4 pb-3 duration-1000 [&>a]:rounded-md [&>a]:border-2 [&>a]:transition-all"
   >
     <a
       href="https://drive.google.com/file/d/1e-iCE6vOeKAyIIZ2RzSjQIrxq4yXzoVF/view?usp=drive_link"
       target="_blank"
       rel="noopener"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
       aria-label="ver cv"
     >
       <Icons name="cv" stroke={1.5} size="2.2rem" />
     </a>
     <a
       href="https://github.com/Ivanricee"
-      class="duration-1000 hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 duration-1000 hover:scale-105 hover:rounded-3xl"
       aria-label="GitHub Profile"
       target="_blank"
       rel="noopener"
@@ -61,7 +62,7 @@ const src =
     <a
       href="https://www.linkedin.com/in/ivanrice/"
       target="_blank"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
       aria-label="LinkedIn Profile"
       rel="noopener"
     >
@@ -70,7 +71,7 @@ const src =
     <a
       href="https://www.instagram.com/ivanrice_/"
       target="_blank"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
       aria-label="Instagram Profile"
       rel="noopener"
     >
@@ -79,7 +80,7 @@ const src =
     <a
       href="https://www.artstation.com/ivanrice"
       target="_blank"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
       aria-label="Artstation Profile"
       rel="noopener"
     >
@@ -87,7 +88,7 @@ const src =
     </a>
     <a
       href="mailto:ivanbautistag@gmail.com"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:scale-105 hover:text-ottoman-50/90 hover:rounded-3xl"
+      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
       target="_blank"
       aria-label="Mail"
       rel="noopener"

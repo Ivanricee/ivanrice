@@ -1,23 +1,27 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-
-import "../styles/main.css";
-import { AstroFont } from "astro-font";
+import '@fontsource/space-grotesk/300.css'
+import '@fontsource/space-grotesk/400.css'
+import '@fontsource/space-grotesk/500.css'
+import '@fontsource/space-grotesk/600.css'
+import '@fontsource/inconsolata'
+import '@fontsource/syne'
+import '@fontsource/inter'
+import '../styles/main.css'
 
 interface Props {
-  title: string;
-  position?: string;
+  title: string
+  position?: string
 }
 
-const { title = "Portafolio de ivanrice", position = "relative" } = Astro.props;
+const { title = 'Portafolio de ivanrice', position = 'relative' } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="ivanrice/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -41,87 +45,20 @@ const { title = "Portafolio de ivanrice", position = "relative" } = Astro.props;
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="ivanricee.github.io" />
-    <meta
-      property="twitter:url"
-      content="https://ivanricee.github.io/ivanrice"
-    />
+    <meta property="twitter:url" content="https://ivanricee.github.io/ivanrice" />
     <meta name="twitter:title" content="Portfolio of IvanRice" />
     <meta
       name="twitter:description"
       content="Ivan Bautista - Frontend Developer. Dive into my portfolio to see a variety of projects and learn about my professional journey."
     />
     <meta name="twitter:image" content="/ivanrice/images/porfolio.jpg" />
-
-    <ViewTransitions />
-    <AstroFont
-      config={[
-        {
-          name: "Mauline",
-          src: [
-            {
-              weight: "400",
-              style: "normal",
-              path: "./ivanrice/fonts/Mauline.otf",
-            },
-          ],
-          preload: true,
-          display: "swap",
-          selector: ".font-mauline",
-          fallback: "sans-serif",
-        },
-        {
-          name: "Biryani",
-          src: [
-            {
-              weight: "200",
-              style: "normal",
-              path: "./ivanrice/fonts/Biryani-ExtraLight.woff",
-            },
-            {
-              weight: "300",
-              style: "normal",
-              path: "./ivanrice/fonts/Biryani-Light.woff",
-            },
-            {
-              weight: "normal",
-              style: "normal",
-              path: "./ivanrice/fonts/Biryani-Regular.woff",
-            },
-            {
-              weight: "bold",
-              style: "normal",
-              path: "./ivanrice/fonts/Biryani-Bold.woff",
-            },
-            {
-              weight: "600",
-              style: "normal",
-              path: "./ivanrice/fonts/Biryani-SemiBold.woff",
-            },
-          ],
-          preload: true,
-          display: "swap",
-          selector: ".font-biryani",
-          fallback: "sans-serif",
-        },
-      ]}
-    />
   </head>
   <!--dark/light -->
-  <body>
-    <div
-      class="bg-backImg w-full min-h-dvh flex justify-center items-center 2xl:p-8 h-full overflow-clip"
-    >
-      <div
-        id="introduce"
-        class={`bg-american-blue-600 border-0 sm:border-[1.5rem] border-ottoman-50 ${position} flex flex-col w-full h-full items-center
-         rounded-none sm:rounded-[4rem] lg:shadow-container px-8 md:px-16 pt-28 sm:pt-44 md:pt-56 max-w-screen-2xl overflow-clip z-0 `}
-      >
-        <slot />
-      </div>
+  <body class="flex min-h-screen justify-center">
+    <div class="mx-auto w-full max-w-2xl min-w-[320px]">
+      <slot />
     </div>
     <style is:global>
-      :root {
-      }
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
       }
@@ -131,12 +68,11 @@ const { title = "Portafolio de ivanrice", position = "relative" } = Astro.props;
         scrollbar-width: none; /* Firefox */
       }
       html {
-        font-family: "Neucha", cursive;
+        font-family: 'Neucha', cursive;
         background: #13151a;
         background-size: 224px;
         /*scroll-behavior: smooth;*/
       }
-
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
