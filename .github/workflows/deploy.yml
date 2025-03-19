@@ -16,9 +16,12 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install dependencies
+      - name: Update Corepack and enable it
         run: |
+          npm i -g corepack@latest
           corepack enable
+      - name: Prepare and activate pnpm
+        run: |
           corepack prepare pnpm@latest --activate
           pnpm install
       - name: Build your site
