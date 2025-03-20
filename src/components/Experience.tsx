@@ -40,13 +40,13 @@ const experiences: Experience[] = [
 ]
 export default function Experience() {
   return (
-    <Accordion type="single" collapsible>
+    <Accordion type="single" collapsible className="">
       {experiences.map((experience) => {
         const { role, company, time, description, isLatest } = experience
         return (
-          <AccordionItem value={`item-${role}`} key={role} className="font-body py-4">
-            <AccordionTrigger>
-              <div className="flex w-full flex-nowrap justify-between gap-2">
+          <AccordionItem value={`item-${role}`} key={role} className="font-body">
+            <AccordionTrigger className="py-4 [&[data-state=open]]:bg-linear-[140deg] [&[data-state=open]]:from-transparent [&[data-state=open]]:from-15% [&[data-state=open]]:to-orange-600/40 [&[data-state=open]]:pr-4">
+              <div className="flex w-full flex-nowrap items-baseline justify-between gap-2">
                 <div className="flex flex-col justify-start font-semibold">
                   <h3 className="font-title text-2xl text-pretty">{role}</h3>
                   <span className="text-base font-light">{company}</span>
@@ -54,7 +54,7 @@ export default function Experience() {
                 <time className="text-sm font-light tracking-wide">{time}</time>
               </div>
             </AccordionTrigger>
-            <AccordionContent>
+            <AccordionContent className="to-background bg-linear-[195deg] from-orange-400/20 to-40%">
               <li className="flex w-full flex-col flex-nowrap">
                 <p className="flex w-full items-center text-base font-light text-balance">
                   {description}
