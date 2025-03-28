@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+/*import fs from 'node:fs'
+import path from 'node:path'
 
 function fetchSVGIcon(icon: string) {
   const svgPath = path.resolve('public/svg', `${icon}.svg`)
@@ -29,3 +29,4 @@ export function getIcon(icon: IconName) {
   const iconItem = iconDir[icon] ?? null
   return iconItem
 }
+*/
