@@ -1,6 +1,6 @@
 import { CLOUDINARY_LOW, CLOUDINARY_URL } from '@/lib/constants'
 import { CARD_INFO, SOFTWARE } from '../lib/data'
-import { ArrowUpRight, Github, Instagram } from 'lucide-react'
+import { ArrowUpRight, Eye, Github, Image, Instagram, Maximize, Maximize2 } from 'lucide-react'
 import { ArtstationIcon } from './ui/ArtstationIcon'
 import { Button } from './ui/button'
 
@@ -15,33 +15,43 @@ export function ProjectItem({ type }: Props) {
 
   const projectsByType = CARD_INFO.filter((project) => project.type === type)
   return (
-    <article className="animate animate-fadeIn mt-20 w-full duration-700 ease-in-out">
+    <article className="animate-in fade-in-45 zoom-in-[100.5%] mt-20 w-full duration-700 ease-in-out">
       <ul className="font-body flex flex-col gap-20">
         {projectsByType.map((project, index) => {
           const { id, caption, image, links, longTitle, software, title, type } = project
           return (
             <li className="group relative" key={id}>
               {/* Número de proyecto */}
-              <div className="absolute -top-20 -left-4 font-mono text-9xl font-bold text-orange-200/15 mix-blend-soft-light select-none">
+              <div className="absolute -top-20 -left-4 font-mono text-9xl font-bold text-orange-200/5  will-change-[mix-blend-mode,opacity] select-none">
                 {(index + 1).toString().padStart(2, '0')}
               </div>
 
               <div className="relative grid gap-8 md:grid-cols-2">
-                {/* Imagen con efecto */}
+                {/* wrapper button */}
                 <div
-                  className="relative min-h-[250px] overflow-hidden border-2 transition-all duration-700 group-hover:border-2
-                group-hover:border-orange-500/20 group-hover:shadow-2xl group-hover:shadow-orange-600/10 before:absolute
-                before:inset-0 before:z-10 before:bg-linear-to-bl before:from-orange-950/30 before:to-transparent before:opacity-0
-                before:transition-all before:duration-500 group-hover:before:opacity-100"
+                  role="button"
+                  tabIndex={0}
+                  className="group/inner relative min-h-[250px] cursor-pointer overflow-hidden border-2 transition-all duration-700 group-hover:border-2
+                group-hover:border-orange-500/20 group-hover:shadow-2xl group-hover:shadow-orange-600/10 "
                 >
+                  {/* overlay */}
+                  <div
+                    className="from-background/90 absolute inset-0 z-10 flex flex-col items-center justify-center bg-linear-to-tl
+                      from-30% to-orange-500/15  p-4 text-orange-50/90 opacity-0 backdrop-blur-xs transition-all duration-300
+                    group-hover:opacity-100 group-hover/inner:text-orange-500    "
+                  >
+                    <Image
+                      size={40}
+                      className=" -translate-x-1 transition-all duration-300 group-hover/inner:translate-x-0"
+                    />
+                    Ver Más del Proyecto
+                  </div>
                   <img
                     src={`${imageUrlBase}${image[0].url}`}
                     alt={title}
-                    width={320}
-                    height={250}
                     decoding="async"
                     loading={'lazy'}
-                    className="h-full w-full object-cover opacity-90 transition-all duration-1000 ease-in-out group-hover:scale-105"
+                    className="h-full w-full cursor-pointer object-cover opacity-90 transition-all duration-1000 ease-in-out group-hover:scale-105"
                   />
 
                   {/* Etiqueta de tipo */}
@@ -49,81 +59,6 @@ export function ProjectItem({ type }: Props) {
                     <span className="bg-orange-500/85 px-3 py-1 font-mono text-xs font-bold text-black">
                       {type}
                     </span>
-                  </div>
-                  {/* Botones integrados con la imagen */}
-                  <div
-                    className="font-title bg-background/70 absolute right-0 bottom-0 left-0 z-20 flex translate-y-12 gap-4 border-t-2
-                    border-transparent bg-linear-to-t from-transparent to-orange-400/5 to-40% p-4 opacity-0 backdrop-blur-sm
-                    transition-all duration-300 group-hover:translate-y-0 group-hover:border-orange-500/30 group-hover:opacity-100 "
-                  >
-                    {/*
-                    <Button asChild className="hidden">
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`group/inner  inline-flex items-center gap-1.5 p-2 text-sm font-medium text-orange-500 transition-colors hover:text-orange-400`}
-                      >
-                        Ver mas
-                        <ArrowUpRight
-                          size={16}
-                          className=" transition-all duration-300 group-hover/inner:translate-x-0.5"
-                        />
-                      </a>
-                    </Button>*/}
-                    {links.map((link) => {
-                      if (link.text === 'demo') {
-                        return (
-                          <a
-                            key={link.src}
-                            href={link.src}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={` group/inner inline-flex items-center gap-1.5 p-2 text-sm font-medium text-orange-500 transition-colors hover:text-orange-400`}
-                          >
-                            Ver Proyecto
-                            <ArrowUpRight
-                              size={16}
-                              className=" transition-all duration-300 group-hover/inner:translate-x-0.5"
-                            />
-                          </a>
-                        )
-                      }
-                      return (
-                        <a
-                          key={link.src}
-                          href={link.src}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`group/innerbtn $ inline-flex items-center  gap-1.5 p-0 text-sm font-medium
-                            text-orange-50/80 capitalize transition-colors duration-300 hover:text-orange-50/90 ${link.text !== 'instagram' && 'px-2 py-0.5'}`}
-                        >
-                          {link.text === 'instagram' && (
-                            <>
-                              <Instagram
-                                size={25}
-                                className="p-0 transition-transform duration-300 group-hover/innerbtn:scale-105"
-                              />
-                            </>
-                          )}
-                          {link.text === 'artstation' && (
-                            <ArtstationIcon
-                              size={27}
-                              className="p-0 transition-transform duration-300 group-hover/innerbtn:scale-105"
-                            />
-                          )}
-                          {link.text === 'github' && (
-                            <>
-                              <span>Código</span>
-                              <Github
-                                size={16}
-                                className="transition-transform duration-300 group-hover/innerbtn:translate-x-0.5"
-                              />
-                            </>
-                          )}
-                        </a>
-                      )
-                    })}
                   </div>
                 </div>
 
