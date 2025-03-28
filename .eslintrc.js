@@ -3,6 +3,7 @@ module.exports = {
   extends: [
     // ...
     "plugin:astro/recommended",
+    "prettier"
   ],
   // ...
   overrides: [
@@ -20,6 +21,11 @@ module.exports = {
       rules: {
         // override/add rules settings here, such as:
         // "astro/no-set-html-directive": "error"
+        "max-len": ["error", 140],
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "quotes": [2, "single", { "avoidEscape": true }]
       },
     },
     // ...

@@ -9,7 +9,12 @@
   "bracketSpacing": true,
   "bracketSameLine": false,
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  "tailwindFunctions": [
+    "clsx"
+  ],
+  "tailwindPreserveWhitespace": true,
   "pluginSearchDirs": false,
+
   "overrides": [
     {
       "files": "*.astro",
@@ -30,9 +35,12 @@
         "bracketSpacing": true,
         "bracketSameLine": false,
         "plugins": [
-          "prettier-plugin-astro",
           "prettier-plugin-tailwindcss"
         ],
+        "tailwindFunctions": [
+          "clsx"
+        ],
+        "tailwindPreserveWhitespace": true,
         "pluginSearchDirs": false
       }
     }
