@@ -1,5 +1,5 @@
 ---
-import CarouselPortfolio from '@/components/CarouselPortfolio.astro'
+//import CarouselPortfolio from '@/components/CarouselPortfolio.astro'
 import Icons from '@/components/Icons.astro'
 import type { CardInfo } from '@/env'
 import Layout from '@/layouts/Layout.astro'
@@ -17,14 +17,13 @@ export async function getStaticPaths() {
     params: { idPortfolio: cardItm.id },
   }))
 }
-const { caption, id, links, longTitle, software, title, type, image } = card
+const { caption, id, links, longTitle, software, title, type, media } = card
 ---
 
 <Layout title={`${longTitle} - Portfolio`} position="fixed">
   <section
     class="bg-american-blue-550/50 fixed top-0 flex h-dvh w-dvw items-center justify-center backdrop-blur-lg"
   >
-    <CarouselPortfolio media={image} slide id={id} />
     <div
       class="absolute top-0 right-0 z-30 flex -translate-x-4 translate-y-4 items-center justify-center sm:-translate-x-12 sm:translate-y-12"
     >
