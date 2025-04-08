@@ -141,7 +141,7 @@ export function ProjectItem({ type }: Props) {
                               <Icon
                                 name="artstation"
                                 size={20}
-                                className=" ease-in-cst text-orange-500transition-transform size-[1.25rem] duration-300 group-hover/icon:scale-110"
+                                className=" ease-in-cst size-[1.25rem] text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
                                 isButton
                                 url={link.src}
                                 tooltipContent="Artstation"
