@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface IconProps {
   size?: number | string
   strokeWidth?: number
@@ -9,7 +7,7 @@ interface IconProps {
 }
 
 export function ArtstationIcon({
-  size = 24,
+  size = 10,
   strokeWidth = 20,
   stroke = 'currentColor',
   fill = 'currentColor',
