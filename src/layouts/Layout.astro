@@ -7,7 +7,8 @@ import '@fontsource/inconsolata'
 import '@fontsource/syne'
 import '@fontsource/inter'
 import '../styles/main.css'
-
+import { IconSymbols } from '@/components/ui/Icon'
+import { Test } from '@/components/Test'
 interface Props {
   title: string
   position?: string
@@ -23,6 +24,13 @@ const { title = 'Portafolio de ivanrice', position = 'relative' } = Astro.props
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="ivanrice/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/cloudinary-video-player@2.3.3/dist/cld-video-player.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <!-- HTML Meta Tags -->
@@ -55,7 +63,8 @@ const { title = 'Portafolio de ivanrice', position = 'relative' } = Astro.props
   </head>
   <!--dark/light -->
   <body class="noise-container flex min-h-screen justify-center">
-    <div class="mx-auto w-full max-w-2xl min-w-[320px]">
+    <IconSymbols client:visible />
+    <div class="mx-8 md:mx-auto w-full max-w-2xl min-w-[320px]">
       <slot />
     </div>
     <style is:global>
@@ -79,5 +88,9 @@ const { title = 'Portafolio de ivanrice', position = 'relative' } = Astro.props
         }
       }
     </style>
+    <script
+      src="https://cdn.jsdelivr.net/npm/cloudinary-video-player@2.3.3/dist/cld-video-player.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
   </body>
 </html>
