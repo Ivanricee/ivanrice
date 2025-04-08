@@ -8,7 +8,6 @@ import '@fontsource/syne'
 import '@fontsource/inter'
 import '../styles/main.css'
 import { IconSymbols } from '@/components/ui/Icon'
-import { Test } from '@/components/Test'
 interface Props {
   title: string
   position?: string
@@ -64,7 +63,7 @@ const { title = 'Portafolio de ivanrice', position = 'relative' } = Astro.props
   <!--dark/light -->
   <body class="noise-container flex min-h-screen justify-center">
     <IconSymbols client:visible />
-    <div class="mx-8 md:mx-auto w-full max-w-2xl min-w-[320px]">
+    <div class="mx-8 w-full max-w-2xl min-w-[320px] md:mx-auto">
       <slot />
     </div>
     <style is:global>
