@@ -4,10 +4,10 @@ import { CLOUDINARY_URL } from './constants'
 export const CARD_INFO: CardInfo[] = [
   {
     id: 1,
-    image: [
+    media: [
       {
         url: '/v1700179626/portfolio/model/Ghibli/ghibli_totoro_autumn_2_bfxe5a.webp',
-        bg: '#251f40',
+        bg: '#4f220d',
       },
       {
         url: '/v1700179638/portfolio/model/Ghibli/byke_mpidi9.webp',
@@ -40,7 +40,7 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 2,
-    image: [
+    media: [
       {
         url: '/v1700179021/portfolio/model/mictlantecuhtli/mictlantecuhtli_cut_bmmbxs.webp',
         bg: '#43037e',
@@ -73,7 +73,7 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 3,
-    image: [
+    media: [
       {
         url: '/v1606776535/portfolio/model/midnightgospel/final_img_c_mzsgrf.webp',
         bg: '#32125b',
@@ -109,10 +109,10 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 4,
-    image: [
+    media: [
       {
         url: '/v1606775187/portfolio/model/cyberpunk/nave-final_v6m09q.webp',
-        bg: '#090207',
+        bg: '#253649',
       },
       {
         url: '/v1606774993/portfolio/model/cyberpunk/LIGHT_uu7hiw.webp',
@@ -153,10 +153,10 @@ export const CARD_INFO: CardInfo[] = [
   },
   {
     id: 5,
-    image: [
+    media: [
       {
         url: '/v1700180330/portfolio/model/christmas/christmas_snowman_ecngcw.webp',
-        bg: '#090207',
+        bg: '#530603',
       },
       {
         url: '/v1700180349/portfolio/model/christmas/little_christmas_ivan_bautista_unxbbg.webp',
@@ -180,10 +180,9 @@ export const CARD_INFO: CardInfo[] = [
       },
     ],
   },
-
   {
     id: 6,
-    image: [
+    media: [
       {
         url: '/v1700182548/portfolio/model/snowman/final_ig_imytwj.webp',
         bg: '#1847b9',
@@ -209,17 +208,69 @@ export const CARD_INFO: CardInfo[] = [
 
   {
     id: 7,
-    image: [
+    media: [
       {
-        url: '/v1702071603/portfolio/frontend/discord/cover_dmo4zq.webp',
-        bg: '#202226',
+        url: '/v1743557243/portfolio/frontend/SpeakEaseAi/5a725262-b4a3-479f-9134-bcf0bddef39f.webp',
+        bg: '#51503f',
       },
       {
-        url: 'portfolio/frontend/discord/Browser_vlmm8c.webm',
+        url: 'portfolio/frontend/SpeakEaseAi/Speak_Ease_AI_-demo_gdethi',
         bg: '#232a2d',
       },
       {
-        url: 'portfolio/frontend/discord/Browser_vlmm8c.webm',
+        url: '/v1743556911/portfolio/frontend/SpeakEaseAi/22e25c7f-1388-4f1a-b7fb-16494a564719.webp',
+        bg: '#232a2d',
+      },
+    ],
+    title: 'Speak Ease AI',
+    longTitle: 'Speak Ease AI',
+    software: ['next', 'zustand', 'vercel', 'openAi', 'azure', 'tailwind'],
+    caption:
+      'App para aprender inglés con IA. Practica con temas personalizados y recibe puntuaciones según tu nivel. ¡Ganadora del 2° lugar en la hackathon de midudev y Vercel! 🏆',
+    type: 'frontend',
+    links: [
+      { text: 'demo', src: 'https://speakeaseai.vercel.app/' },
+      {
+        text: 'github',
+        src: 'https://github.com/Ivanricee/SpeakEaseAI',
+      },
+    ],
+  },
+  {
+    id: 8,
+    media: [
+      {
+        url: '/v1743561065/portfolio/frontend/weeklytodo/postspark_export_2025-04-01_20-19-13_gtr5cx.webp',
+        bg: '#666564',
+      },
+    ],
+    title: 'To-Do List',
+    longTitle: 'Weekly To-Do List',
+    software: ['react', 'tailwind', 'firebase'],
+    caption:
+      'Todo App con con login o invitado. Muestra la semana actual y el día de hoy. Permite agregar, eliminar y marcar tareas.',
+    type: 'frontend',
+    links: [
+      { text: 'demo', src: 'https://weeklytodo-list.vercel.app' },
+      {
+        text: 'github',
+        src: 'https://github.com/Ivanricee/weeklytodo',
+      },
+    ],
+  },
+  {
+    id: 9,
+    media: [
+      {
+        url: '/v1702071603/portfolio/frontend/discord/cover_dmo4zq.webp',
+        bg: '#2d3035',
+      },
+      {
+        url: 'portfolio/frontend/discord/Browser_vlmm8c',
+        bg: '#232a2d',
+      },
+      {
+        url: 'portfolio/frontend/discord/Mobile_sjq9kq',
         bg: '#232a2d',
       },
     ],
@@ -235,29 +286,29 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 8,
-    image: [
+    id: 10,
+    media: [
       {
         url: '/v1702080763/portfolio/frontend/evidence%20tool/responsive_gpvchp.webp',
-        bg: '#242a2f',
+        bg: '#2d3035',
       },
       {
-        url: 'portfolio/frontend/evidence%20tool/Add_participant_l1mee9.webm',
+        url: 'portfolio/frontend/evidence%20tool/Add_participant_l1mee9',
         bg: '#202226',
         caption: 'Agregar un participante',
       },
       {
-        url: 'portfolio/frontend/evidence%20tool/Quiz_i5lqsk.webm',
+        url: 'portfolio/frontend/evidence%20tool/Quiz_i5lqsk',
         bg: '#202226',
         caption: 'Administrar Preguntas',
       },
       {
-        url: 'portfolio/frontend/evidence%20tool/Evidences_dgq5rm.webm',
+        url: 'portfolio/frontend/evidence%20tool/Evidences_dgq5rm',
         bg: '#202226',
         caption: 'Administrar Evidencias',
       },
       {
-        url: 'portfolio/frontend/evidence%20tool/finance_x9d9my.webm',
+        url: 'portfolio/frontend/evidence%20tool/finance_x9d9my',
         bg: '#202226',
         caption: 'Administrar Deudas',
       },
@@ -281,18 +332,18 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 9,
-    image: [
+    id: 11,
+    media: [
       {
         url: '/v1702090713/portfolio/frontend/countries/cover_subieb.webp',
-        bg: '#1f2d38',
+        bg: '#263744',
       },
       {
-        url: 'portfolio/frontend/countries/Browser_pvsqww.webm',
+        url: 'portfolio/frontend/countries/Browser_pvsqww',
         bg: '#1e2f3b',
       },
       {
-        url: 'portfolio/frontend/countries/Mobile_kihkqy.webm',
+        url: 'portfolio/frontend/countries/Mobile_kihkqy',
         bg: '#232a2d',
       },
     ],
@@ -310,19 +361,19 @@ export const CARD_INFO: CardInfo[] = [
       },
     ],
   },
-  {
-    id: 10,
-    image: [
+  /*{
+    id: 12,
+    media: [
       {
         url: '/v1702338812/portfolio/frontend/cards/cover_pj1ebf.webp',
-        bg: '#222128',
+        bg: '#2f2e38',
       },
       {
-        url: 'portfolio/frontend/cards/card-browser_uedxy4.webm',
+        url: 'portfolio/frontend/cards/card-browser_uedxy4',
         bg: '#23252b',
       },
       {
-        url: 'portfolio/frontend/cards/card_mobile_rhmkoz.webm',
+        url: 'portfolio/frontend/cards/card_mobile_rhmkoz',
         bg: '#23252b',
       },
     ],
@@ -341,18 +392,18 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 11,
-    image: [
+    id: 13,
+    media: [
       {
         url: '/v1702090998/portfolio/frontend/shor-url/cover_fkxq2a.webp',
-        bg: '#eff1f7',
+        bg: '#352C3E',
       },
       {
-        url: 'portfolio/frontend/shor-url/Browser_myslco.webm',
+        url: 'portfolio/frontend/shor-url/Browser_myslco',
         bg: '#fffffd',
       },
       {
-        url: 'portfolio/frontend/shor-url/Mobile_xpet1s.webm',
+        url: 'portfolio/frontend/shor-url/Mobile_xpet1s',
         bg: '#fffffd',
       },
     ],
@@ -369,7 +420,7 @@ export const CARD_INFO: CardInfo[] = [
         src: 'https://github.com/Ivanricee/shorturl',
       },
     ],
-  },
+  },*/
 ]
 
 const transform2 = 'e_grayscale,q_auto:eco,f_avif,w_50,h_50'
@@ -393,5 +444,9 @@ export const SOFTWARE: Record<string, string> = {
   tailwind: `${CLOUDINARY_URL}${transform}${'/v1702929997/portfolio/icons/frontend/tailwind_giofmq.avif'}`,
   mui: `${CLOUDINARY_URL}${transform}${'/v1702929510/portfolio/icons/frontend/mui_qw7c69.avif'}`,
   'react hook form': `${CLOUDINARY_URL}${transform2}${'/v1702929603/portfolio/icons/frontend/react-hook-form_l9larm.avif'}`,
-  vitest: `${CLOUDINARY_URL}${transform}${'/v1609285677/portfolio/icons/maya_mvhgmh.avif'}`,
+  zustand: `${CLOUDINARY_URL}${transform}${'/v1743552578/portfolio/icons/zustand_eoq1vv.avif'}`,
+  vercel: `${CLOUDINARY_URL}${transform}${'/v1743552574/portfolio/icons/vercel_lx8gn1.avif'}`,
+  openAi: `${CLOUDINARY_URL}${transform}${'/v1743552570/portfolio/icons/openai_wbk8ru.avif'}`,
+  azure: `${CLOUDINARY_URL}${transform}${'/v1743552567/portfolio/icons/azure_d1t8la.avif'}`,
+  firebase: `${CLOUDINARY_URL}${transform}${'/v1743562391/portfolio/icons/firebase_tbybk1.avif'}`,
 }
