@@ -1,7 +1,5 @@
 import { FRONTEND, TRESD } from '@/lib/constants'
 
-import { Button } from './ui/button'
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ProjectItem } from './ProjectItem'
 export default function Projects() {
