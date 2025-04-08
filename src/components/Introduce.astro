@@ -1,6 +1,7 @@
 ---
-import Icons from './Icons.astro'
 import PhotoCard from './PhotoCard.astro'
+import { Icon } from '@/components/ui/Icon'
+
 const src =
   'https://res.cloudinary.com/ivanrice-c/image/upload/c_crop,g_north,w_500,h_500/v1717566205/portfolio/irice_sjagyh.jpg'
 ---
@@ -22,14 +23,12 @@ const src =
         alt="Profile"
       />
       <span class="font-title tracking-wider">
-        <h1 class="text-2xl font-medium text-orange-500">IVANRICE</h1>
+        <h1 class="pb-6 text-2xl font-medium text-orange-500">IVANRICE</h1>
         <p class="text-2xl font-medium text-stone-200">FRONTEND DEVELOPER</p>
         <p class="text-2xl font-medium text-stone-200">ENFOCADO DESARRO Y PROYECTOS 3D.</p>
       </span>
-      {
-        //      Hey <span class="">👋</span>, soy Ivan Bautista.
-      }
-      <p class="font-body py-8">
+
+      <p class="font-body py-6">
         +4 años de experiencia. Pasé de ser Full Stack Developer a especializarme como
         <span class="text-ottoman-100/90 text-sm font-semibold md:text-lg">Frontend Developer,</span
         >
@@ -37,67 +36,57 @@ const src =
         experiencias web y proyectos 3D cautivadores.
       </p>
     </div>
-  </div>
-  <div
-    class="text-ottoman-100/85 [&>a]:border-green-lime-400/10 [&>a]:bg-green-lime-400/25 ms-0 mt-3 flex items-center justify-start gap-3 pt-4 pb-3 duration-1000 [&>a]:rounded-md [&>a]:border-2 [&>a]:transition-all"
-  >
-    {
-      /**
-     * <a
-      href="https://drive.google.com/file/d/1e-iCE6vOeKAyIIZ2RzSjQIrxq4yXzoVF/view?usp=drive_link"
-      target="_blank"
-      rel="noopener"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
-      aria-label="ver cv"
-    >
-      <Icons name="cv" stroke={1.5} size="2.2rem" />
-    </a>
-    <a
-      href="https://github.com/Ivanricee"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 duration-1000 hover:scale-105 hover:rounded-3xl"
-      aria-label="GitHub Profile"
-      target="_blank"
-      rel="noopener"
-    >
-      <Icons name="github" stroke={1.5} size="2.2rem" />
-    </a>
-    <a
-      href="https://www.linkedin.com/in/ivanrice/"
-      target="_blank"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
-      aria-label="LinkedIn Profile"
-      rel="noopener"
-    >
-      <Icons name="linkedin" stroke={1.5} size="2.2rem" />
-    </a>
-    <a
-      href="https://www.instagram.com/ivanrice_/"
-      target="_blank"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
-      aria-label="Instagram Profile"
-      rel="noopener"
-    >
-      <Icons name="instagram" stroke={1.5} size="2.2rem" />
-    </a>
-    <a
-      href="https://www.artstation.com/ivanrice"
-      target="_blank"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
-      aria-label="Artstation Profile"
-      rel="noopener"
-    >
-      <Icons name="artstation" stroke={40} size="2.2rem" />
-    </a>
-    <a
-      href="mailto:ivanbautistag@gmail.com"
-      class="hover:bg-green-lime-600/35 hover:border-green-lime-500/50 hover:text-ottoman-50/90 hover:scale-105 hover:rounded-3xl"
-      target="_blank"
-      aria-label="Mail"
-      rel="noopener"
-    >
-      <Icons name="gmail" stroke={1.5} size="2.2rem" />
-    </a>
-     */
-    }
+    <div class="">
+      <a
+        href="mailto:ivanbautistag@gmail.com"
+        rel="noopener"
+        aria-label="Mail"
+        target="_blank"
+        class="group font-title relative inline-flex flex-nowrap items-center gap-2 border
+        bg-orange-300/5 p-2 px-2 text-sm text-orange-500 uppercase transition-colors duration-500
+        hover:bg-teal-300/5"
+      >
+        <span
+          class="relative inline-block h-2 w-2 rounded-full bg-emerald-400 shadow-md shadow-teal-500
+          before:absolute before:inline-block before:h-2 before:w-2 before:bg-teal-500 before:blur-xs"
+        ></span>
+        <span>DISPONIBLE PARA NUEVOS PROYECTOS Y OPORTUNIDADES</span>
+        <span
+          class="ease-in-cst absolute bottom-2 left-1/2 ml-2 h-[1px] w-11/12
+          -translate-x-1/2 transform bg-orange-500
+          opacity-70 transition-all duration-300
+          group-hover:left-1/2 group-hover:w-3/4 group-hover:-translate-x-1/2 group-hover:opacity-60"
+        ></span>
+      </a>
+    </div>
+    <div class="flex flex-nowrap gap-2 py-2">
+      <Icon
+        name="cv"
+        size={24}
+        className="ease-in-cst size-6 text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
+        isButton
+        url="https://drive.google.com/file/d/1e-iCE6vOeKAyIIZ2RzSjQIrxq4yXzoVF/view?usp=drive_link"
+        tooltipContent="Curriculum Vitae"
+        client:visible
+      />
+      <Icon
+        name="linkedin"
+        size={24}
+        className="ease-in-cst size-6 text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
+        client:visible
+        isButton
+        url="https://www.linkedin.com/in/ivanrice/"
+        tooltipContent="LinkedIn"
+      />
+      <Icon
+        name="github"
+        size={24}
+        className="ease-in-cst  size-5 text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
+        client:visible
+        isButton
+        url="https://github.com/Ivanricee"
+        tooltipContent="GitHub"
+      />
+    </div>
   </div>
 </section>
