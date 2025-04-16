@@ -8,8 +8,9 @@ import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://Ivanricee.github.io',
-  base: '/ivanrice',
+  //site: 'https://Ivanricee.github.io',
+  //base: '/ivanrice',
+  base: '/',
   integrations: [compressor(), react()],
   output: 'static',
   vite: {
