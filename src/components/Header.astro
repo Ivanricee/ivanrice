@@ -3,7 +3,10 @@ import Menu from '@/components/Menu'
 import Introduce from './Introduce.astro'
 ---
 
-<header class={`flex flex-col justify-between items-center  animate-fadeInBounce `} id="inicio">
-  <Menu client:only="react"/>
+<header
+  class="animate-fadeInBounce flex flex-col items-center justify-between pt-12 pb-24"
+  id="inicio"
+>
+  <Menu client:only="react" />
   <Introduce />
 </header>
