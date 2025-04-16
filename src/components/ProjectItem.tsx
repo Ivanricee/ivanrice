@@ -52,7 +52,7 @@ export function ProjectItem({ type }: Props) {
                     <div
                       className="from-background/90 absolute inset-0 z-10 flex flex-col items-center justify-center bg-linear-to-tl
                       from-30% to-orange-500/15  p-4 text-orange-50/90 opacity-0 backdrop-blur-xs transition-all duration-300
-                      group-hover:opacity-100 group-hover/inner:text-orange-500    "
+                      group-hover:opacity-100 group-hover/inner:text-orange-400    "
                     >
                       <Image
                         size={40}
@@ -108,13 +108,17 @@ export function ProjectItem({ type }: Props) {
                       {links.map((link) => {
                         if (link.text === 'demo') {
                           return (
-                            <Button asChild className="rounded-none" key={`${link.src}${id}`}>
+                            <Button
+                              asChild
+                              className="group/inner inline-flex items-center gap-1.5 rounded-none font-medium  text-orange-400
+                              uppercase shadow-lg transition-colors hover:text-orange-400 hover:shadow-orange-300/10"
+                              key={`${link.src}${id}`}
+                            >
                               <a
                                 key={link.src}
                                 href={link.src}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={` group/inner inline-flex items-center gap-1.5 text-sm font-medium  text-orange-500 shadow-lg transition-colors hover:text-orange-500 hover:shadow-orange-300/10`}
                               >
                                 Demo
                                 <ArrowUpRight
@@ -131,7 +135,7 @@ export function ProjectItem({ type }: Props) {
                               <Icon
                                 name="instagram"
                                 size={17}
-                                className=" ease-in-cst size-[1.25rem] text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
+                                className=" ease-in-cst size-[1.25rem] text-orange-400 transition-all duration-300 group-hover/icon:scale-110 "
                                 isButton
                                 url={link.src}
                                 tooltipContent="Instagram"
@@ -141,7 +145,7 @@ export function ProjectItem({ type }: Props) {
                               <Icon
                                 name="artstation"
                                 size={20}
-                                className=" ease-in-cst size-[1.25rem] text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
+                                className=" ease-in-cst size-[1.25rem] text-orange-400 transition-all duration-300 group-hover/icon:scale-110 "
                                 isButton
                                 url={link.src}
                                 tooltipContent="Artstation"
@@ -151,7 +155,7 @@ export function ProjectItem({ type }: Props) {
                               <Icon
                                 name="github"
                                 size={20}
-                                className=" ease-in-cst size-[1.15rem] text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
+                                className=" ease-in-cst size-[1.15rem] text-orange-400 transition-all duration-300 group-hover/icon:scale-110 "
                                 isButton
                                 url={link.src}
                                 tooltipContent="GitHub"
