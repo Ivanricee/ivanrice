@@ -8,22 +8,22 @@ export default function Menu() {
   const navItems = [
     {
       title: 'Inicio',
-      url: '/ivanrice/#inicio',
+      url: '/#inicio',
       ariaLabel: 'header',
     },
     {
       title: 'Experiencia',
-      url: '/ivanrice/#experience',
+      url: '/#experience',
       ariaLabel: 'experience',
     },
     {
       title: 'Proyectos',
-      url: '/ivanrice/#projects',
+      url: '/#projects',
       ariaLabel: 'projects/?type=frontend',
     },
     {
       title: 'Sobre Mi',
-      url: '/ivanrice/#aboutme',
+      url: '/#aboutme',
       ariaLabel: 'aboutme',
     },
   ]
@@ -60,7 +60,7 @@ export default function Menu() {
       {/* Desktop Menu */}
       <div className="fixed top-0 right-0 left-0 z-50 flex justify-center">
         <nav
-          className="font-title relative h-16 w-full max-w-2xl  border border-orange-500/20 bg-black/30 backdrop-blur-xl"
+          className="font-title relative h-16 w-full max-w-2xl  border border-orange-500/20 bg-black/50 backdrop-blur-xl"
           aria-label="Main navigation"
         >
           <div className=" flex h-full items-center justify-end md:justify-between">
@@ -86,13 +86,13 @@ export default function Menu() {
                   }}
                   className={`group relative flex h-full items-center px-8 transition-colors duration-300 ${
                     activeItem === index
-                      ? ' text-orange-50/90 '
-                      : 'text-orange-50/70 hover:text-orange-50/90'
+                      ? ' text-orange-50 '
+                      : 'text-orange-50/80 hover:text-orange-50/90'
                   }`}
                   aria-current={activeItem === index ? 'page' : undefined}
                   aria-label={item.ariaLabel}
                 >
-                  <span className="relative z-10  text-sm tracking-widest uppercase">
+                  <span className="relative z-10  text-[0.9rem] tracking-widest uppercase">
                     {item.title}
                   </span>
                 </a>
@@ -128,8 +128,6 @@ export default function Menu() {
           </div>
         </nav>
       </div>
-      {/* Spacer for fixed navigation */}
-      <div className="h-16"></div>
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
