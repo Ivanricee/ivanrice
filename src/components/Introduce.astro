@@ -6,87 +6,83 @@ const src =
   'https://res.cloudinary.com/ivanrice-c/image/upload/c_crop,g_north,w_500,h_500/v1717566205/portfolio/irice_sjagyh.jpg'
 ---
 
-<section class="overflow-hidden">
-  <div
-    id="spotlight"
-    aria-hidden
-    class="absolute right-0 -z-10 hidden h-[37rem] w-3/4 translate-x-1/3 translate-y-36 -rotate-12 rounded-s-full blur-3xl"
-  >
-  </div>
-
-  <div class="">
-    <div class="">
-      <PhotoCard
-        layers={2}
-        className="aspect-square w-24 rounded-full opacity-75 md:w-28"
-        src={src}
-        alt="Profile"
-      />
-      <span class="font-title tracking-wider">
-        <h1 class="pb-6 text-2xl font-medium text-orange-500">IVANRICE</h1>
-        <p class="text-2xl font-medium text-stone-200">FRONTEND DEVELOPER</p>
-        <p class="text-2xl font-medium text-stone-200">ENFOCADO DESARRO Y PROYECTOS 3D.</p>
-      </span>
-
-      <p class="font-body py-6">
-        +4 años de experiencia. Pasé de ser Full Stack Developer a especializarme como
-        <span class="text-ottoman-100/90 text-sm font-semibold md:text-lg">Frontend Developer,</span
-        >
-        con un trasfondo en 3D y un gran interés en UI/UX. Apasionado por aprender, experimentar y crear
-        experiencias web y proyectos 3D cautivadores.
-      </p>
-    </div>
-    <div class="">
-      <a
-        href="mailto:ivanbautistag@gmail.com"
-        rel="noopener"
-        aria-label="Mail"
-        target="_blank"
-        class="group font-title relative inline-flex flex-nowrap items-center gap-2 border
-        bg-orange-300/5 p-2 px-2 text-sm text-orange-500 uppercase transition-colors duration-500
-        hover:bg-teal-300/5"
+<section class="font-body overflow-hidden [&_p]:text-balance">
+  <div class="py-8 text-orange-50/75 [&_strong]:font-medium [&_strong]:text-orange-50">
+    {
+      (
+        <PhotoCard
+          layers={2}
+          className="aspect-square w-24 rounded-full opacity-75 md:w-28"
+          src={src}
+          alt="Profile"
+        />
+      )
+    }
+    <hgroup class="font-title tracking-wider">
+      <h1 class="pb-2 text-2xl font-medium text-orange-500">IVAN BAUTISTA</h1>
+      <p class="text-2xl font-medium text-orange-50">FRONTEND DEVELOPER</p>
+    </hgroup>
+    <p class="py-4">
+      <strong> Desarrollador Frontend con +4 años de experiencia: </strong>de full-stack a
+      especializarme en el desarrollo frontend. Además, cuento con un <strong
+        >background en UI/UX.</strong
       >
-        <span
-          class="relative inline-block h-2 w-2 rounded-full bg-emerald-400 shadow-md shadow-teal-500
+    </p>
+    <p>
+      Mi interés en animación, 3D y otras áreas creativas ha guiado mi camino como desarrollador.
+      Hoy, mi <strong>enfoque está en crear interfaces centradas en estética e interacción.</strong>
+    </p>
+  </div>
+  <div>
+    <a
+      href="https://www.linkedin.com/in/ivanrice/"
+      rel="noopener"
+      aria-label="Mail"
+      target="_blank"
+      class="group font-title relative inline-flex flex-nowrap items-center gap-2 border
+        bg-orange-300/5 p-2 px-2 text-sm text-orange-400 uppercase transition-colors duration-500
+        hover:bg-lime-300/5"
+    >
+      <span
+        class="relative inline-block h-2 w-2 rounded-full bg-lime-400 shadow-md shadow-lime-500
           before:absolute before:inline-block before:h-2 before:w-2 before:bg-teal-500 before:blur-xs"
-        ></span>
-        <span>DISPONIBLE PARA NUEVOS PROYECTOS Y OPORTUNIDADES</span>
-        <span
-          class="ease-in-cst absolute bottom-2 left-1/2 ml-2 h-[1px] w-11/12
-          -translate-x-1/2 transform bg-orange-500
+      ></span>
+      <span>DISPONIBLE PARA NUEVOS PROYECTOS Y OPORTUNIDADES</span>
+      <span
+        class="ease-in-cst absolute bottom-2 left-1/2 ml-2 h-[1px] w-11/12
+          -translate-x-1/2 transform bg-orange-400
           opacity-70 transition-all duration-300
           group-hover:left-1/2 group-hover:w-3/4 group-hover:-translate-x-1/2 group-hover:opacity-60"
-        ></span>
-      </a>
-    </div>
-    <div class="flex flex-nowrap gap-2 py-2">
-      <Icon
-        name="cv"
-        size={24}
-        className="ease-in-cst size-6 text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
-        isButton
-        url="https://drive.google.com/file/d/1e-iCE6vOeKAyIIZ2RzSjQIrxq4yXzoVF/view?usp=drive_link"
-        tooltipContent="Curriculum Vitae"
-        client:visible
-      />
-      <Icon
-        name="linkedin"
-        size={24}
-        className="ease-in-cst size-6 text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
-        client:visible
-        isButton
-        url="https://www.linkedin.com/in/ivanrice/"
-        tooltipContent="LinkedIn"
-      />
-      <Icon
-        name="github"
-        size={24}
-        className="ease-in-cst  size-5 text-orange-500 transition-transform duration-300 group-hover/icon:scale-110"
-        client:visible
-        isButton
-        url="https://github.com/Ivanricee"
-        tooltipContent="GitHub"
-      />
-    </div>
+      ></span>
+    </a>
+  </div>
+  <div class="flex flex-nowrap gap-2 py-2">
+    <Icon
+      name="cv"
+      size={24}
+      className="ease-in-cst size-6 text-orange-400 transition-transform duration-300 group-hover/icon:scale-110 "
+      isButton
+      url="https://drive.google.com/file/d/1e-iCE6vOeKAyIIZ2RzSjQIrxq4yXzoVF/view?usp=drive_link"
+      tooltipContent="Curriculum Vitae"
+      client:visible
+    />
+    <Icon
+      name="mail"
+      size={24}
+      className="ease-in-cst size-6 text-orange-400 transition-transform duration-300 group-hover/icon:scale-110 "
+      client:visible
+      isButton
+      url="mailto:ivanbautistag@gmail.com"
+      tooltipContent="LinkedIn"
+    />
+    <Icon
+      name="github"
+      size={24}
+      className="ease-in-cst  size-5 text-orange-400 transition-transform duration-300 group-hover/icon:scale-110 "
+      client:visible
+      isButton
+      url="https://github.com/Ivanricee"
+      tooltipContent="GitHub"
+    />
   </div>
 </section>
