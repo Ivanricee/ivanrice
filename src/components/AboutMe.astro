@@ -3,6 +3,7 @@ import { Image } from 'astro:assets'
 import BadgeItems from './BadgeItems.astro'
 import { SOFTWARE } from '@/lib/data'
 import PhotoCard from './PhotoCard.astro'
+import { Icon } from './ui/Icon'
 
 export const THREED = [
   { src: SOFTWARE['maya'], text: 'maya' },
@@ -31,39 +32,115 @@ const src =
   'https://res.cloudinary.com/ivanrice-c/image/upload/c_crop,g_north,w_500,h_500/v1717566205/portfolio/irice_sjagyh.jpg'
 ---
 
-<div class="font-body mb-8 flex flex-nowrap gap-4 text-orange-50/80">
-  <PhotoCard
-    layers={2}
-    className="aspect-square h-48 w-auto rounded-full opacity-75 md:w-4/12 "
-    src={src}
-    alt="Profile"
-  />
-  <div class="flex flex-1 flex-col gap-4 [&_p]:text-balance">
-    <p>
-      Comencé en el desarrollo durante mis prácticas universitarias, migrando bases de datos,
-      seguido de una capacitación en PHP que me llevó a mi primer empleo como desarrollador
-      fullstack, donde trabajé por más de cinco años. Durante este tiempo, valoré el trabajo en
-      equipo, la comunicación y mantenerme al día con tecnologías y metodologías ágiles.
-    </p>
-
-    <p class="">
-      Mientras me formaba como fullstack, también estudié Animación y Arte Digital, lo que despertó
-      mi interés por el frontend. Aprender sobre UX/UI, composición, animación y 3D me ayudó a ver
-      el desarrollo desde otro punto de vista y a encontrar nuevas formas de enfrentar sus retos.
-    </p>
-    <p class="">
-      Ese camino me mostró que cuidar la salud mental es clave para mantener el equilibrio y
-      afrontar los desafíos con resiliencia.
-    </p>
-    <p>
-      Estas experiencias han sido clave en mi etapa como freelance. Sigo aprendiendo y
-      especializándome como frontend, motivado por crear y explorar nuevas tendencias en diseño y
-      desarrollo.
-    </p>
+<div
+  class="font-body mb-8 flex flex-col flex-nowrap items-center gap-10 text-orange-50/75 md:flex-row md:gap-3 [&_strong]:font-medium [&_strong]:text-orange-50"
+>
+  <div
+    class="flex h-full w-auto flex-col items-center justify-center md:aspect-square md:w-[12.3rem]"
+  >
+    <PhotoCard
+      layers={2}
+      className=" h-44 w-44 rounded-full opacity-75 md:h-full md:w-full "
+      src={src}
+      alt="Profile"
+    />
+    <div
+      class="flex flex-wrap gap-1 [&_span]:flex [&_span]:justify-center [&_span]:gap-1 [&_span]:border
+      [&_span]:border-orange-200/10 [&_span]:px-2 [&_span]:py-1 [&_span]:text-[0.7rem]
+      [&_span]:text-orange-200/80 [&_span]:capitalize"
+    >
+      <span>
+        <Icon
+          name="cuboid"
+          size={15}
+          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
+          client:visible
+        />
+        3D
+      </span>
+      <span>
+        <Icon
+          name="camera"
+          size={20}
+          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
+          client:visible
+        />
+        Fotografía
+      </span>
+      <span>
+        <Icon
+          name="cine"
+          size={20}
+          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
+          client:visible
+        />
+        Cine
+      </span>
+      <span>
+        <Icon
+          name="arte"
+          size={20}
+          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
+          client:visible
+        />
+        Arte
+      </span>
+      <span>
+        <Icon
+          name="piano"
+          size={20}
+          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
+          client:visible
+        />
+        Piano
+      </span>
+      <span>
+        <Icon
+          name="pesas"
+          size={20}
+          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
+          client:visible
+        />
+        Box
+      </span>
+    </div>
   </div>
+  <div class="relative flex flex-1 flex-col gap-4 [&_p]:text-balance">
+    <div
+      class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-7 bg-orange-400/45 blur-3xl"
+    >
+    </div>
+    <p>
+      Empecé en desarrollo durante mis <strong>prácticas universitarias.</strong> Luego obtuve una <strong
+        >certificación en PHP</strong
+      > que me abrió paso como <strong>desarrollador fullstack</strong>, rol que desempeñé por <strong
+        >más de cinco años</strong
+      > y donde reforcé habilidades clave como <strong
+        >trabajo en equipo, comunicación y adaptación.</strong
+      >
+    </p>
 
-  {
-    /**
+    <p class="">
+      Mientras tanto, <strong>estudié Animación y Arte Digital</strong>, lo que despertó mi interés
+      por el <strong>frontend</strong>. Aprender sobre <strong
+        >UX/UI, composición, animación y 3D
+      </strong>me dio una nueva perspectiva y formas distintas de abordar los retos del desarrollo.
+      <p class="">
+        Ese recorrido también me enseñó la importancia de cuidar la <strong>salud mental</strong> para
+        mantener el
+        <strong>equilibrio y la resiliencia.</strong>
+      </p>
+      <p>
+        Estas experiencias han sido clave en mi etapa como <strong>freelance</strong>. Sigo
+        aprendiendo y
+        <strong>especializándome como frontend</strong>, motivado por <strong
+          >crear y explorar nuevas formas de diseñar y desarrollar</strong
+        >.
+      </p>
+    </p>
+
+    {
+      /**
       <div class="w-full md:w-7/12"></div>
       <div class="w-full md:w-5/12">
        *
@@ -102,5 +179,6 @@ const src =
         </section>
         </div>
         */
-  }
+    }
+  </div>
 </div>
