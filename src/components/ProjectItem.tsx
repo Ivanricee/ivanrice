@@ -90,7 +90,7 @@ export function ProjectItem({ type }: Props) {
                       {software.map((tech) => (
                         <span
                           key={tech}
-                          className="font-body flex justify-center gap-1 border-2 border-orange-200/10 px-3 py-1 text-xs text-orange-50/80 capitalize mix-blend-exclusion"
+                          className="font-body flex justify-center gap-1 border-2 border-orange-200/10 px-3 py-1 text-xs text-orange-200/80 capitalize "
                         >
                           <img
                             src={SOFTWARE[tech]}
