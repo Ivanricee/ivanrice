@@ -18,7 +18,7 @@ import {
 import type { ModalData } from '@/env'
 import { CLOUDINARY_HIGH, CLOUDINARY_URL } from '@/lib/constants'
 import { cn } from '@/lib/utils'
-import { useEffect, useRef } from 'react'
+
 import { CloudinaryVideo } from './CloudinaryVideo'
 interface Props {
   detail: ModalData
