@@ -1,14 +1,24 @@
 ---
 import Header from '@/components/Header.astro'
-import MainContent from '@/components/MainContent.astro'
 import Layout from '@/layouts/Layout.astro'
 import Footer from '@/components/Footer.astro'
+import Title from '@/components/Title.astro'
+import Experience from '@/components/Experience.astro'
+import Projects from '@/components/Projects'
 //import { Picture } from "astro:assets";
 ---
 
 <Layout title="Portfolio of IvanRice">
   <Header />
-  <MainContent />
-  <Footer />
+  <main class="w-full md:mx-auto">
+    <section id="experience">
+      <Title caption="Experiencia Reciente" />
+      <Experience />
+    </section>
+    <section id="projects" class="min-h-72">
+      <Title caption="Proyectos" />
+      <Projects client:only="react" />
+    </section>
+    <Footer />
+  </main>
 </Layout>
-<script></script>
