@@ -1,4 +1,4 @@
-import { CLOUDINARY_LOW, CLOUDINARY_URL } from '@/lib/constants'
+import { CLOUDINARY_LOW, CLOUDINARY_URL, FRONTEND } from '@/lib/constants'
 import { CARD_INFO, SOFTWARE } from '../lib/data'
 import { ArrowUpRight, Github, Image, Instagram } from 'lucide-react'
 import { ArtstationIcon } from './ui/ArtstationIcon'
@@ -14,6 +14,7 @@ interface Props {
 const imageUrlBase = `${CLOUDINARY_URL}${CLOUDINARY_LOW}`
 
 export function ProjectItem({ type }: Props) {
+  const [showAll, setShowAll] = useState(false)
   const [modal, setModal] = useState<ModalData>({
     media: [],
     title: '',
@@ -23,23 +24,32 @@ export function ProjectItem({ type }: Props) {
     if (media && title) return setModal({ isOpen, media, title })
     setModal((prevModal) => ({ ...prevModal, isOpen }))
   }
-
+  const isFront = type === FRONTEND
   const projectsByType = CARD_INFO.filter((project) => project.type === type)
+  const visibleProjects = showAll ? projectsByType : projectsByType.slice(0, 4)
   return (
     <>
       <ProjectItemDetail detail={modal} onOpenChange={setIsOpen} />
       <article className="animate-in fade-in-45 zoom-in-[100.5%] mt-20 w-full duration-700 ease-in-out">
-        <ul className="font-body flex flex-col gap-20">
-          {projectsByType.map((project, index) => {
+        <ul className="font-body relative flex flex-col gap-20 ">
+          {visibleProjects.map((project, index) => {
             const { id, caption, media, links, longTitle, software, title, type } = project
+            const isLast = index === visibleProjects.length - 1
             return (
-              <li className="group relative" key={id}>
+              <li
+                key={id}
+                className={`group animate animate-in fade-in-20 slide-in-from-top-6 relative duration-300  ${
+                  isLast && !showAll
+                    ? 'mask-repeat-no-repeat pointer-events-none [mask-image:linear-gradient(to_bottom,black,transparent_85%)]'
+                    : ''
+                } ${isLast && showAll ? 'mb-16' : ''}`}
+              >
                 {/* Número de proyecto */}
                 <div className="absolute -top-20 -left-4 font-mono text-9xl font-bold text-orange-200/5  will-change-[mix-blend-mode,opacity] select-none">
                   {(index + 1).toString().padStart(2, '0')}
                 </div>
 
-                <div className="relative grid gap-8 md:grid-cols-2">
+                <div className="relative grid gap-8 sm:grid-cols-2">
                   {/* wrapper button */}
                   <div
                     role="button"
@@ -79,7 +89,7 @@ export function ProjectItem({ type }: Props) {
                   {/* Contenido del proyecto */}
                   <div className="relative flex flex-col justify-center">
                     <div className="pointer-events-none absolute top-3 bottom-3 w-2/3 -translate-x-12 bg-orange-300/10 mix-blend-exclusion blur-3xl transition-all duration-700 select-none group-hover:w-9/12 group-hover:opacity-0" />
-                    <div className="pointer-events-none absolute top-3 bottom-3 w-2/3 -translate-x-12 bg-orange-300/10 opacity-0 mix-blend-normal blur-3xl transition-all duration-700 select-none group-hover:w-full group-hover:rounded-r-2xl group-hover:opacity-100" />
+                    <div className="pointer-events-none absolute top-3 bottom-3 w-2/3 -translate-x-12 bg-orange-400/15 opacity-0 mix-blend-normal blur-3xl transition-all duration-700 select-none group-hover:w-full group-hover:rounded-r-2xl group-hover:opacity-100" />
                     <h3 className="font-title mb-3 bg-gradient-to-r from-orange-400 from-20% to-orange-900 to-95% bg-clip-text text-xl font-bold tracking-tight text-transparent">
                       {longTitle}
                     </h3>
@@ -138,7 +148,7 @@ export function ProjectItem({ type }: Props) {
                                 className=" ease-in-cst size-[1.25rem] text-orange-400 transition-all duration-300 group-hover/icon:scale-110 "
                                 isButton
                                 url={link.src}
-                                tooltipContent="Instagram"
+                                tooltipContent="Instagram ↗"
                               />
                             )}
                             {link.text === 'artstation' && (
@@ -148,7 +158,7 @@ export function ProjectItem({ type }: Props) {
                                 className=" ease-in-cst size-[1.25rem] text-orange-400 transition-all duration-300 group-hover/icon:scale-110 "
                                 isButton
                                 url={link.src}
-                                tooltipContent="Artstation"
+                                tooltipContent="Artstation ↗"
                               />
                             )}
                             {link.text === 'github' && (
@@ -158,7 +168,7 @@ export function ProjectItem({ type }: Props) {
                                 className=" ease-in-cst size-[1.15rem] text-orange-400 transition-all duration-300 group-hover/icon:scale-110 "
                                 isButton
                                 url={link.src}
-                                tooltipContent="GitHub"
+                                tooltipContent="GitHub ↗"
                               />
                             )}
                           </Fragment>
@@ -170,41 +180,34 @@ export function ProjectItem({ type }: Props) {
               </li>
             )
           })}
-          {/**
-     *
-    <li
-      style={`grid-area: footer;`}
-      className="border-american-blue-500/50 text-green-lime-300 from-american-blue-950/50 via-american-blue-800/65 relative z-20 flex h-64 w-full items-center justify-center overflow-hidden rounded-xl border-2 bg-gradient-to-bl from-10% via-30% to-indigo-800/30 to-82% text-xl sm:h-full"
-    >
-      {
-        isFront ? (
-          <div className="flex flex-nowrap items-center gap-2">
-            <a
-              href="https://github.com/Ivanricee"
-              target="_blank"
-              rel="noopener"
-              className="translate-y-0.5 text-sm font-bold uppercase transition-all duration-700 hover:underline"
+          <li className={`absolute right-0  left-0 z-20 ${showAll ? '-bottom-2' : '-bottom-28'}`}>
+            <Button
+              onClick={() => setShowAll((state) => !state)}
+              variant="ghost"
+              asChild
+              className={`group/inner absolute bottom-0 z-20  flex  w-full items-center p-0 text-lg
+            text-orange-400 transition-opacity duration-500 after:absolute
+              after:inset-0 after:bg-linear-0 after:from-transparent after:via-orange-500/5
+              after:to-transparent after:opacity-0 after:transition-opacity
+              after:duration-500 hover:text-orange-500
+            ${
+              !showAll &&
+              `bottom-44 h-[30rem] bg-linear-0 from-transparent via-stone-900/75 to-transparent backdrop-blur-[2px] hover:after:opacity-100
+                sm:bottom-20 sm:h-80`
+            }`}
             >
-              VER MÁS
-            </a>
-            <Icons name="seemore" size="1.3rem" stroke={2} />
-          </div>
-        ) : (
-          <div className="flex flex-nowrap items-center gap-2">
-            <a
-              href="https://www.instagram.com/ivanrice_/"
-              target="_blank"
-              rel="noopener"
-              className="translate-y-0.5 text-sm font-bold uppercase transition-all duration-700 hover:underline"
-            >
-              VER MÁS
-            </a>
-            <Icons name="seemore" size="1.3rem" stroke={2} />
-          </div>
-        )
-      }
-    </li>
-     */}
+              <div className={`flex  ${showAll ? 'items-end' : 'items-center'}`}>
+                <p className="relative flex flex-nowrap items-center  gap-1 ">
+                  {showAll ? 'VER MENOS' : 'VER MÁS'}
+                  <Icon
+                    name="down"
+                    size={30}
+                    className={`ml-1 size-7 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`}
+                  />
+                </p>
+              </div>
+            </Button>
+          </li>
         </ul>
       </article>
     </>
