@@ -1,66 +1,50 @@
+import { useMenuObserver } from '@/hooks/useMenuObserver'
 import { useState, useEffect } from 'react'
 
 export default function Menu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeItem, setActiveItem] = useState(0)
-  const [dimensions, setDimensions] = useState({ width: 0, left: 0 })
+  const { activeSection, setActiveSection, updateDimensions, dimensions } = useMenuObserver()
 
   const navItems = [
     {
       title: 'Inicio',
       url: '/#inicio',
-      ariaLabel: 'header',
+      label: 'inicio',
     },
     {
       title: 'Experiencia',
       url: '/#experience',
-      ariaLabel: 'experience',
+      label: 'experience',
     },
     {
       title: 'Proyectos',
       url: '/#projects',
-      ariaLabel: 'projects/?type=frontend',
+      label: 'projects',
     },
     {
       title: 'Sobre Mi',
       url: '/#aboutme',
-      ariaLabel: 'aboutme',
+      label: 'aboutme',
     },
   ]
 
-  const updateDimensions = (index: number) => {
-    const element = document.getElementById(`menu-item-${index}`)
-    if (element) {
-      const rect = element.getBoundingClientRect()
-      const parentRect = element.parentElement?.getBoundingClientRect()
-      setDimensions({
-        width: rect.width,
-        left: parentRect ? rect.left - parentRect.left : rect.left,
-      })
-    }
-  }
-
   useEffect(() => {
-    if (window.innerWidth >= 768) {
-      updateDimensions(activeItem)
-    }
+    if (window.innerWidth >= 768) updateDimensions(activeSection)
 
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        updateDimensions(activeItem)
-      }
+      if (window.innerWidth >= 768) updateDimensions(activeSection)
     }
 
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [activeItem])
+  }, [activeSection])
 
   return (
     <section className="relative mb-16 flex w-full justify-center">
       {/* Desktop Menu */}
       <div className="fixed top-0 right-0 left-0 z-50 flex justify-center">
         <nav
-          className="font-title relative h-16 w-full max-w-2xl  border border-orange-500/20 bg-black/50 backdrop-blur-xl"
+          className="font-title relative flex h-16 w-full max-w-2xl justify-center  border border-orange-500/20 bg-stone-900/60 backdrop-blur-xl"
           aria-label="Main navigation"
         >
           <div className=" flex h-full items-center justify-end md:justify-between">
@@ -76,21 +60,21 @@ export default function Menu() {
                 }}
               />
 
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <a
                   key={item.title}
-                  id={`menu-item-${index}`}
+                  id={`menu-item-${item.label}`}
                   href={item.url}
                   onClick={(e) => {
-                    setActiveItem(index)
+                    setActiveSection(item.label)
                   }}
                   className={`group relative flex h-full items-center px-8 transition-colors duration-300 ${
-                    activeItem === index
+                    activeSection === item.url.replace('/#', '')
                       ? ' text-orange-50 '
                       : 'text-orange-50/80 hover:text-orange-50/90'
                   }`}
-                  aria-current={activeItem === index ? 'page' : undefined}
-                  aria-label={item.ariaLabel}
+                  aria-current={activeSection === item.url.replace('/#', '') ? 'page' : undefined}
+                  aria-label={item.label}
                 >
                   <span className="relative z-10  text-[0.9rem] tracking-widest uppercase">
                     {item.title}
@@ -138,7 +122,7 @@ export default function Menu() {
       >
         {/* Backdrop */}
         <div
-          className={`ease-in-cst absolute inset-0 bg-black/40`}
+          className={`ease-in-cst absolute inset-0 bg-stone-950/40`}
           onClick={() => setIsMenuOpen(false)}
         />
 
@@ -156,15 +140,16 @@ export default function Menu() {
                   key={item.title}
                   href={item.url}
                   onClick={() => {
-                    setActiveItem(index)
+                    setActiveSection(item.label)
                     setIsMenuOpen(false)
                   }}
                   className={`block  px-4 py-6  text-sm tracking-wider uppercase transition-colors duration-300 ${
-                    activeItem === index
+                    activeSection === item.url.replace('/#', '')
                       ? 'bg-orange-500/20 text-orange-400'
                       : 'text-white/70 hover:bg-orange-500/10 hover:text-white'
                   }`}
-                  aria-current={activeItem === index ? 'page' : undefined}
+                  aria-current={activeSection === item.url.replace('/#', '') ? 'page' : undefined}
+                  aria-label={item.label}
                 >
                   {item.title}
                 </a>
