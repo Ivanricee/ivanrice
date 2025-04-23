@@ -35,7 +35,11 @@ const experiences: Experience[] = [
 ]
 ---
 
-<section class="font-body mx-auto grid grid-cols-[auto_1fr] gap-x-5">
+<section class="font-body relative mx-auto grid sm:grid-cols-[auto_1fr] sm:gap-x-5">
+  <div
+    class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 block w-7 bg-orange-400/40 blur-3xl sm:hidden"
+  >
+  </div>
   {
     experiences.map((experience) => {
       const { role, company, time, description, isLatest } = experience
@@ -43,9 +47,9 @@ const experiences: Experience[] = [
         <>
           <div class="font-title relative text-right text-sm text-orange-500">
             {time}
-            <div class="absolute top-1/2 -right-5 h-px w-4 bg-orange-500" />
-            <div class="absolute top-1.5 right-0 z-10 h-2.5 w-2.5 translate-x-6.5 bg-orange-500" />
-            <div class="pointer-events-none absolute top-0 right-0 bottom-0 z-10 w-7 bg-orange-300/25 blur-3xl" />
+            <div class="absolute top-1/2 -right-5 hidden h-px w-4 bg-orange-500 sm:block" />
+            <div class="absolute top-1.5 right-0 z-10 hidden h-2.5 w-2.5 translate-x-6.5 bg-orange-500 sm:block" />
+            <div class="pointer-events-none absolute top-0 right-0 bottom-0 z-10 hidden w-7 bg-orange-400/40 blur-3xl sm:block" />
           </div>
 
           <div
