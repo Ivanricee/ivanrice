@@ -1,184 +1,177 @@
 ---
-import { Image } from 'astro:assets'
-import BadgeItems from './BadgeItems.astro'
 import { SOFTWARE } from '@/lib/data'
 import PhotoCard from './PhotoCard.astro'
 import { Icon } from './ui/Icon'
 
-export const THREED = [
-  { src: SOFTWARE['maya'], text: 'maya' },
-  { src: SOFTWARE['redshift'], text: 'redshift' },
-  { src: SOFTWARE['mari'], text: 'mari' },
-  { src: SOFTWARE['substance 3D'], text: 'substance 3D' },
-  { src: SOFTWARE['zbrush'], text: 'zbrush' },
-  { src: SOFTWARE['rizom uv'], text: 'rizom uv' },
-  { src: SOFTWARE['arnold'], text: 'arnold' },
-  { src: SOFTWARE['nuke'], text: 'nuke' },
-]
-const WEB = [
-  { src: SOFTWARE['react'], text: 'react' },
-  { src: SOFTWARE['redux'], text: 'redux' },
-  { src: SOFTWARE['twilio'], text: 'twilio' },
-  { src: SOFTWARE['graphql'], text: 'graphql' },
-  { src: SOFTWARE['figma'], text: 'figma' },
-  { src: SOFTWARE['next'], text: 'next' },
-  { src: SOFTWARE['supabase'], text: 'supabase' },
-  { src: SOFTWARE['tailwind'], text: 'tailwind' },
-  { src: SOFTWARE['mui'], text: 'mui' },
-  { src: SOFTWARE['react hook form'], text: 'react hook form' },
-  { src: SOFTWARE['vitest'], text: 'vitest' },
-]
+export const THREED = ['maya', 'redshift', 'substance 3D', 'zbrush', 'rizom uv']
+const WEB = ['react', 'redux', 'next', 'tailwind', 'vitest']
 const src =
   'https://res.cloudinary.com/ivanrice-c/image/upload/c_crop,g_north,w_500,h_500/v1717566205/portfolio/irice_sjagyh.jpg'
 ---
 
-<div
-  class="font-body mb-8 flex flex-col flex-nowrap items-center gap-10 text-orange-50/75 md:flex-row md:gap-3 [&_strong]:font-medium [&_strong]:text-orange-50"
->
+<>
   <div
-    class="flex h-full w-auto flex-col items-center justify-center md:aspect-square md:w-[12.3rem]"
+    class="font-body mt-10 mb-8 flex flex-col flex-nowrap items-center justify-center
+    gap-10 text-orange-50/75 [&_strong]:font-medium [&_strong]:text-orange-50"
   >
-    <PhotoCard
-      layers={2}
-      className=" h-44 w-44 rounded-full opacity-75 md:h-full md:w-full "
-      src={src}
-      alt="Profile"
-    />
-    <div
-      class="flex flex-wrap gap-1 [&_span]:flex [&_span]:justify-center [&_span]:gap-1 [&_span]:border
-      [&_span]:border-orange-200/10 [&_span]:px-2 [&_span]:py-1 [&_span]:text-[0.7rem]
-      [&_span]:text-orange-200/80 [&_span]:capitalize"
-    >
-      <span>
-        <Icon
-          name="cuboid"
-          size={15}
-          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
-          client:visible
-        />
-        3D
-      </span>
-      <span>
-        <Icon
-          name="camera"
-          size={20}
-          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
-          client:visible
-        />
-        Fotografía
-      </span>
-      <span>
-        <Icon
-          name="cine"
-          size={20}
-          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
-          client:visible
-        />
-        Cine
-      </span>
-      <span>
-        <Icon
-          name="arte"
-          size={20}
-          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
-          client:visible
-        />
-        Arte
-      </span>
-      <span>
-        <Icon
-          name="piano"
-          size={20}
-          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
-          client:visible
-        />
-        Piano
-      </span>
-      <span>
-        <Icon
-          name="pesas"
-          size={20}
-          className=" ease-in-cst size-[0.9rem] text-orange-200/80 transition-all duration-300 group-hover/icon:scale-110 "
-          client:visible
-        />
-        Box
-      </span>
-    </div>
-  </div>
-  <div class="relative flex flex-1 flex-col gap-4 [&_p]:text-balance">
-    <div
-      class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-7 bg-orange-400/45 blur-3xl"
-    >
-    </div>
-    <p>
-      Empecé en desarrollo durante mis <strong>prácticas universitarias.</strong> Luego obtuve una <strong
-        >certificación en PHP</strong
-      > que me abrió paso como <strong>desarrollador fullstack</strong>, rol que desempeñé por <strong
-        >más de cinco años</strong
-      > y donde reforcé habilidades clave como <strong
-        >trabajo en equipo, comunicación y adaptación.</strong
+    <div class="flex w-full flex-col flex-nowrap sm:flex-row">
+      <PhotoCard
+        layers={2}
+        className="ml-5 h-52 w-44 rounded-full opacity-60 "
+        src={src}
+        alt="Profile"
+      />
+      <section
+        class="[&_h3]:font-title relative flex w-fit flex-col gap-5
+         p-2 pl-4 text-sm text-orange-200/75
+        [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:capitalize"
       >
-    </p>
-
-    <p class="">
-      Mientras tanto, <strong>estudié Animación y Arte Digital</strong>, lo que despertó mi interés
-      por el <strong>frontend</strong>. Aprender sobre <strong
-        >UX/UI, composición, animación y 3D
-      </strong>me dio una nueva perspectiva y formas distintas de abordar los retos del desarrollo.
-      <p class="">
-        Ese recorrido también me enseñó la importancia de cuidar la <strong>salud mental</strong> para
-        mantener el
-        <strong>equilibrio y la resiliencia.</strong>
-      </p>
-      <p>
-        Estas experiencias han sido clave en mi etapa como <strong>freelance</strong>. Sigo
-        aprendiendo y
-        <strong>especializándome como frontend</strong>, motivado por <strong
-          >crear y explorar nuevas formas de diseñar y desarrollar</strong
-        >.
-      </p>
-    </p>
-
-    {
-      /**
-      <div class="w-full md:w-7/12"></div>
-      <div class="w-full md:w-5/12">
-       *
-       * <section
-        class="text-american-blue-50/85 flex hidden flex-col gap-1 text-[0.85rem] [&>div]:flex [&>div]:items-center [&>div]:gap-2"
-      >
-        <h3 class="text-green-lime-400 mb-2 text-sm font-bold uppercase">Apasionado por:</h3>
-        <div>
-          <Image width="20" height="10" src="/ivanrice/images/ui.png" alt="ui/ux" />
-          <p>UI/UX</p>
+        <div
+          class="pointer-events-none absolute top-0 bottom-0 -left-6 z-10 w-1/2 bg-orange-400/10 blur-3xl"
+        >
         </div>
-        <div>
-          <Image width="20" height="10" src="/ivanrice/images/3d.png" alt="3D art" />
-          <p>3D Texturing & Look Development</p>
+        {/*stack tecnológico*/}
+        <div class="w-fit">
+          <h3
+            class="bg-gradient-to-r from-orange-400 from-2% to-transparent to-70% bg-clip-text text-transparent"
+          >
+            Web Stack
+          </h3>
+          <div class="flex flex-wrap gap-1 text-[0.7rem] text-orange-200/80 capitalize">
+            {
+              WEB.map((tech) => (
+                <span class="font-body flex justify-center gap-1 border border-orange-200/10 px-1 py-1">
+                  <img
+                    src={SOFTWARE[tech]}
+                    alt={tech}
+                    width={10}
+                    height={10}
+                    class="h-4 w-4 opacity-75"
+                  />
+                  {tech}
+                </span>
+              ))
+            }
+          </div>
         </div>
-        <div>
-          <Image width="20" height="10" src="/ivanrice/images/camera.png" alt="camera" />
-          <p>Fotografía y Videografía</p>
+        <div class="w-fit">
+          <h3
+            class="bg-gradient-to-r from-orange-400 from-2% to-transparent to-70% bg-clip-text text-transparent"
+          >
+            3D Stack
+          </h3>
+          <div class="flex flex-wrap gap-1 text-[0.7rem] text-orange-200/80 capitalize">
+            {
+              THREED.map((tech) => (
+                <span class="font-body flex justify-center gap-1 border border-orange-200/10 px-1 py-1">
+                  <img
+                    src={SOFTWARE[tech]}
+                    alt={tech}
+                    width={10}
+                    height={10}
+                    class="h-4 w-4 opacity-75"
+                  />
+                  {tech}
+                </span>
+              ))
+            }
+          </div>
         </div>
-        <div>
-          <Image width="20" height="10" src="/ivanrice/images/piano.png" alt="piano" />
-          <p>Tocar Piano</p>
+        {/*INTERESES*/}
+        <div
+          class="[&_span]:flex [&_span]:justify-center [&_span]:gap-1 [&_span]:border
+          [&_span]:border-orange-200/10 [&_span]:px-1 [&_span]:py-1 [&_span]:text-[0.7rem] [&_span]:text-orange-200/80 [&_span]:capitalize"
+        >
+          <h3
+            class="bg-gradient-to-r from-orange-400 from-2% to-transparent to-70% bg-clip-text text-transparent"
+          >
+            Interes en
+          </h3>
+          <div class="flex flex-wrap gap-1.5 text-xs text-orange-200/80 capitalize">
+            <span>
+              <Icon name="cuboid" size={15} className=" size-[0.9rem]  " client:visible />
+              3D
+            </span>
+            <span>
+              <Icon name="camera" size={20} className=" size-[0.9rem]  " client:visible />
+              Fotografía
+            </span>
+            <span>
+              <Icon name="cine" size={20} className="  size-[0.9rem]" client:visible />
+              Cine
+            </span>
+            <span>
+              <Icon name="arte" size={20} className="  size-[0.9rem]" client:visible />
+              Arte
+            </span>
+            <span>
+              <Icon name="piano" size={20} className="size-[0.9rem]" client:visible />
+              Piano
+            </span>
+            <span>
+              <Icon name="pesas" size={20} className="size-[0.9rem]" client:visible />
+              Box
+            </span>
+          </div>
         </div>
       </section>
-      <section>
-        <h3 class="text-green-lime-400 my-4 text-sm font-bold uppercase">Web stack:</h3>
-        {
-          //<BadgeItems items={WEB} />
-        }
+    </div>
+    {/* Separador visual entre About Me y Footer */}
+    <div class="mx-auto w-full max-w-4xl px-4">
+      <div class="h-px bg-gradient-to-r from-transparent via-amber-700/40 to-transparent"></div>
+    </div>
+    <div class="[&_p]:text-balanc relative flex flex-1 flex-wrap gap-1">
+      <div
+        class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-7 bg-orange-400/50 blur-3xl"
+      >
+      </div>
+      <section class="flex flex-col gap-4">
+        <p>
+          Empecé en desarrollo durante mis <strong>prácticas universitarias.</strong> Luego obtuve una
+          <strong>certificación en PHP</strong> que me abrió paso como <strong
+            >desarrollador fullstack</strong
+          >, rol que desempeñé por <strong>más de cinco años</strong> y donde reforcé habilidades clave
+          como <strong>trabajo en equipo, comunicación y adaptación.</strong>
+        </p>
+        <p>
+          Mientras tanto, <strong>estudié Animación y Arte Digital</strong>, lo que despertó mi
+          interés por el <strong>frontend</strong>. Aprender sobre <strong
+            >UX/UI, composición, animación y 3D
+          </strong>me dio una nueva perspectiva y formas distintas de abordar los retos del
+          desarrollo.
+          <p>
+            Ese recorrido también me enseñó la importancia de cuidar la <strong>salud mental</strong
+            > para mantener el
+            <strong>equilibrio y la resiliencia.</strong>
+          </p>
+          <p>
+            Estas experiencias han sido clave en mi etapa como <strong>freelance</strong>. Sigo
+            aprendiendo y
+            <strong>especializándome como frontend</strong>, motivado por <strong
+              >crear y explorar nuevas formas de diseñar y desarrollar</strong
+            >.
+          </p>
+        </p>
       </section>
-      <section>
-        <h3 class="text-green-lime-400 my-4 text-sm font-bold uppercase">3D stack:</h3>
-        {
-          //<BadgeItems items={THREED} />
-        }
-        </section>
-        </div>
-        */
-    }
+    </div>
   </div>
-</div>
+  {/* Separador visual entre About Me y Footer */}
+  <section
+    class="font-title flex justify-between border-t border-stone-800 py-4 pb-12 text-xs text-orange-200/65"
+  >
+    <div class="w-20">© 2025</div>
+    <div>ÚLTIMA ACTUALIZACIÓN: 04/24/2025</div>
+    <div class="flex gap-2">
+      <a
+        href="https://twitter.com/ivanrice_"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Twitter"
+        class="transition-colors duration-300 hover:text-orange-400"
+      >
+        <Icon name="x" size={20} className="h-4 w-4" />
+      </a>
+      <p>CDMX, MX (GMT-6)</p>
+    </div>
+  </section>
+</>
