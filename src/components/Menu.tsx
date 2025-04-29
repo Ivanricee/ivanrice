@@ -44,7 +44,7 @@ export default function Menu() {
       {/* Desktop Menu */}
       <div className="fixed top-0 right-0 left-0 z-50 flex justify-center">
         <nav
-          className="font-title relative flex h-16 w-full max-w-2xl justify-center  border border-orange-500/20 bg-stone-900/60 backdrop-blur-xl"
+          className="font-title relative flex h-16 w-full max-w-2xl justify-end border  border-orange-500/20 bg-stone-900/60 backdrop-blur-xl md:justify-center"
           aria-label="Main navigation"
         >
           <div className=" flex h-full items-center justify-end md:justify-between">
