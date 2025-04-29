@@ -3,60 +3,44 @@ interface Props {
   className?: string
   layers?: number // 1,2,3
   id?: number
-  animate?: boolean
   src: string
   alt: string
   href?: string
 }
-const { className, id = 0, animate = false, layers = 2, src, alt, href } = Astro.props
+const { className, id = 0, layers = 0, src, alt, href } = Astro.props
 
 const arrLayers = Array.from(Array(layers))
-const hasIdForTransition = id !== 0
 ---
 
 <div class={`relative ${className} `}>
   {
     arrLayers.map((_, i) => {
-      const randRotate = String(Math.random() * 6 - 3)
-      const randTY = String(Math.random() * 1.5 - 1)
-      const randTX = String(Math.random() * 1.5 - 1)
+      const randRotate = String(Math.random() * 3 - 1)
+      const randTY = String(Math.random() * 1.7 - 2)
+      const randTX = String(Math.random() * 0 - 1)
       const isLastLayer = layers === i + 1
-      const isAnimated =
-        animate && isLastLayer
-          ? 'group transition duration-300 ease-in-out transform hover:-rotate-0 hover:scale-110 hover:shadow-card-2xl'
-          : ''
 
-      const picture = isLastLayer && (
-        <div class="bg-american-blue-700/50 relative h-full overflow-hidden rounded-xl">
-          <picture>
-            <img
-              src={src}
-              alt={alt}
-              width="20"
-              height="20"
-              class="absolute top-0 left-0 h-full w-full rounded-t-xl object-cover object-center transition duration-150 group-hover:scale-[1.1]"
-            />
-          </picture>
-        </div>
-      )
-
-      if (hasIdForTransition && isLastLayer)
-        return (
-          <div
-            class={`card bg-gradient-card card-xl shadow-card-xl absolute z-10 aspect-square h-full w-full origin-top rounded-2xl p-3 ${isAnimated} `}
-            style={`--rotate: ${randRotate}deg; --translateX: ${randTX}rem; --translateY: ${randTY}rem`}
-          >
-            <a href={href} class="h-full w-full">
-              <div class="h-full w-full">{picture}</div>
-            </a>
-          </div>
-        )
       return (
         <div
-          class={`card bg-gradient-card-b card-xl shadow-card-lg absolute z-10 aspect-square h-full w-full origin-top rounded-2xl p-2 ${isAnimated}`}
-          style={`--rotate: ${randRotate}deg; --translateX: ${randTX}rem; --translateY: ${randTY}rem`}
+          class={`card card-xl absolute z-10 h-48 w-40 origin-top border border-orange-500/65
+            bg-gradient-to-r from-orange-500/25 to-orange-300/5 p-1.5 pb-5
+          ${
+            isLastLayer
+              ? '-translate-x-5 -translate-y-4 -rotate-2 overflow-hidden shadow-lg shadow-amber-900/70'
+              : 'translate-x-0 translate-y-0 rotate-2  shadow-xl shadow-amber-600/20'
+          } `}
         >
-          {picture}
+          {isLastLayer && (
+            <div class="relative h-full bg-blue-700/50 ">
+              <picture>
+                <img
+                  src={src}
+                  alt={alt}
+                  class="absolute inset-0  h-full w-full  object-cover object-center "
+                />
+              </picture>
+            </div>
+          )}
         </div>
       )
     })
@@ -71,12 +55,6 @@ const hasIdForTransition = id !== 0
       transform: rotate(var(--rotate)) translate(var(--translateX), var(--translateY));
     }
   }
-  /*.card {
-    --rotate: 0;
-    --translateX: 0;
-    --translateY: 0;
-    animation: rotateAndMove 0.5s forwards;
-  }*/
   .card {
     --rotate: 0;
     --translateX: 0;
