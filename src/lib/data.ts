@@ -423,8 +423,8 @@ export const CARD_INFO: CardInfo[] = [
   },*/
 ]
 
-const transform2 = 'e_grayscale,q_auto:eco,f_avif,w_50,h_50'
-const transform = 'e_colorize,co_rgb:fde3e3,q_auto:eco,f_avif,w_50,h_50'
+const transform2 = 'e_colorize,co_rgb:FFE4B5,q_auto:eco,f_avif,w_50,h_50'
+const transform = 'e_colorize,co_rgb:FFE4B5,q_auto:eco,f_avif,w_50,h_50'
 export const SOFTWARE: Record<string, string> = {
   maya: `${CLOUDINARY_URL}${transform}${'/v1609285677/portfolio/icons/maya_mvhgmh.avif'}`,
   redshift: `${CLOUDINARY_URL}${transform2}${'/v1609286796/portfolio/icons/redshift_bzbnze.avif'}`,
@@ -449,4 +449,5 @@ export const SOFTWARE: Record<string, string> = {
   openAi: `${CLOUDINARY_URL}${transform}${'/v1743552570/portfolio/icons/openai_wbk8ru.avif'}`,
   azure: `${CLOUDINARY_URL}${transform}${'/v1743552567/portfolio/icons/azure_d1t8la.avif'}`,
   firebase: `${CLOUDINARY_URL}${transform}${'/v1743562391/portfolio/icons/firebase_tbybk1.avif'}`,
+  vitest: `${CLOUDINARY_URL}${transform}${'/v1702930257/portfolio/icons/frontend/vitest_ewunvy.avif'}`,
 }
