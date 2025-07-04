@@ -32,11 +32,11 @@ function TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPr
       data-slot="tabs-trigger"
       className={cn(
         `font-body focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring inline-flex h-[calc(100%-1px)]
-        flex-1 items-center justify-center gap-1.5 rounded-none border px-7 py-3 text-sm font-medium
-         whitespace-nowrap text-orange-50/90 uppercase transition-all duration-300
-        hover:bg-orange-400/15 hover:text-orange-100 hover:shadow-xl hover:shadow-orange-500/10 focus-visible:ring-[3px] focus-visible:outline-1
-        disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-600/35
-        data-[state=active]:to-orange-400/25 data-[state=active]:text-orange-50 data-[state=active]:shadow-2xl data-[state=active]:shadow-orange-500/40
+        flex-1 items-center justify-center gap-1.5 rounded-none border text-sm font-medium whitespace-nowrap text-orange-50/90
+         uppercase transition-all duration-300 hover:bg-orange-400/15 hover:text-orange-100
+        hover:shadow-xl hover:shadow-orange-500/10 focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50
+        data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-600/35 data-[state=active]:to-orange-400/25 data-[state=active]:text-orange-50
+        data-[state=active]:shadow-2xl data-[state=active]:shadow-orange-500/40 sm:px-7 sm:py-3
         [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 `,
         className
       )}
