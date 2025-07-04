@@ -61,9 +61,9 @@ const { title = 'Portafolio de ivanrice', position = 'relative' } = Astro.props
     <meta name="twitter:image" content="/ivanrice/images/porfolio.jpg" />
   </head>
   <!--dark/light -->
-  <body class="noise-container flex min-h-screen justify-center">
+  <body class="noise-container block h-full min-h-dvh w-full">
     <IconSymbols client:visible />
-    <div class="mx-8 w-full max-w-2xl min-w-[320px] md:mx-auto">
+    <div class="w-full sm:max-w-2xl min-w-[200px]  sm:px-8 mx-auto md:px-0 px-4 ">
       <slot />
     </div>
     <style is:global>
