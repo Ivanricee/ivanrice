@@ -240,6 +240,32 @@ export const CARD_INFO: CardInfo[] = [
     id: 8,
     media: [
       {
+        url: '/v1749620470/portfolio/arcadia-quest/475_1x_shots_so16-9_hbutia.webp',
+        bg: '#a97b4a',
+      },
+      {
+        url: 'portfolio/arcadia-quest/Arcadia_quest_mp1nfy',
+        bg: '#a97b4a',
+      },
+    ],
+    title: 'Arcadia Quest',
+    longTitle: 'Arcadia Quest',
+    software: ['next', 'supabase', 'tailwind'],
+    caption:
+      'Plataforma multijugador con sistema escalable. Incluye Firewall Breach, un juego de trivia hacker con minijuegos de desarrollo web y mecánicas en tiempo real.',
+    type: 'frontend',
+    links: [
+      { text: 'demo', src: 'https://arcadia-quest.vercel.app/' },
+      {
+        text: 'github',
+        src: 'https://github.com/Ivanricee/arcadia-quest',
+      },
+    ],
+  },
+  {
+    id: 9,
+    media: [
+      {
         url: '/v1743561065/portfolio/frontend/weeklytodo/postspark_export_2025-04-01_20-19-13_gtr5cx.webp',
         bg: '#666564',
       },
@@ -259,7 +285,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     media: [
       {
         url: '/v1702071603/portfolio/frontend/discord/cover_dmo4zq.webp',
@@ -286,7 +312,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     media: [
       {
         url: '/v1702080763/portfolio/frontend/evidence%20tool/responsive_gpvchp.webp',
@@ -332,7 +358,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     media: [
       {
         url: '/v1702090713/portfolio/frontend/countries/cover_subieb.webp',
