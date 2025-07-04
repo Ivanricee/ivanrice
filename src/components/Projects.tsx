@@ -6,9 +6,13 @@ export default function Projects() {
   return (
     <section className="web">
       <Tabs defaultValue="web" className="w-full">
-        <TabsList className="ml-12 flex w-fit flex-nowrap">
-          <TabsTrigger value="web">Desarrollo Web</TabsTrigger>
-          <TabsTrigger value="tresd">Modelado 3D</TabsTrigger>
+        <TabsList className="ml-0 flex w-full flex-nowrap sm:ml-12 sm:w-fit">
+          <TabsTrigger value="web" className=" px-3 py-3">
+            Desarrollo Web
+          </TabsTrigger>
+          <TabsTrigger value="tresd" className="w-full px-3 py-3">
+            Modelado 3D
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="web">
           <ProjectItem type={FRONTEND} />
