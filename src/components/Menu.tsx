@@ -44,11 +44,11 @@ export default function Menu() {
       {/* Desktop Menu */}
       <div className="fixed top-0 right-0 left-0 z-50 flex justify-center">
         <nav
-          className="font-title relative flex h-16 w-full max-w-2xl justify-end border  border-orange-500/20 bg-stone-900/60 backdrop-blur-xl md:justify-center"
+          className="font-title relative flex h-16 w-full max-w-2xl justify-end border  border-orange-500/20 bg-stone-900/60 backdrop-blur-xl sm:justify-center"
           aria-label="Main navigation"
         >
-          <div className=" flex h-full items-center justify-end md:justify-between">
-            <div className="relative hidden h-full md:flex">
+          <div className=" flex h-full items-center justify-end sm:justify-between">
+            <div className="relative hidden h-full sm:flex">
               {/* Background Slider */}
               <div
                 className="ease-spring absolute h-full  bg-gradient-to-r from-orange-600/35 to-orange-400/25
@@ -86,7 +86,7 @@ export default function Menu() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="group relative z-50 p-6 transition-colors hover:bg-orange-500/10 md:hidden"
+              className="group relative z-50 p-6 transition-colors hover:bg-orange-500/10 sm:hidden"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -115,7 +115,7 @@ export default function Menu() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`font-title ease-in-cst fixed inset-0 z-40 backdrop-blur-sm transition-all duration-500 md:hidden ${
+        className={`font-title ease-in-cst fixed inset-0 z-40 backdrop-blur-sm transition-all duration-500 sm:hidden ${
           isMenuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
         aria-hidden={!isMenuOpen}
