@@ -45,7 +45,7 @@ const experiences: Experience[] = [
       const { role, company, time, description, isLatest } = experience
       return (
         <>
-          <div class="font-title relative text-right text-sm text-orange-500">
+          <div class="font-title relative text-right text-[0.75rem] text-orange-500 sm:text-sm">
             {time}
             <div class="absolute top-1/2 -right-5 hidden h-px w-4 bg-orange-500 sm:block" />
             <div class="absolute top-1.5 right-0 z-10 hidden h-2.5 w-2.5 translate-x-6.5 bg-orange-500 sm:block" />
@@ -60,12 +60,12 @@ const experiences: Experience[] = [
           hover:before:opacity-100"
           >
             {role && (
-              <h3 class="bg-gradient-to-r from-orange-400 from-25% to-transparent to-95% bg-clip-text text-xl font-bold text-transparent">
+              <h3 class="bg-gradient-to-r from-orange-400 from-25% to-transparent to-110% bg-clip-text text-lg font-bold text-transparent sm:to-95% sm:text-xl">
                 {role}
               </h3>
             )}
-            <h4 class="text-orange-50/70">{company}</h4>
-            <p class="font-body mt-3 border-l-2 border-orange-50/15 pl-4 text-sm text-orange-50/85">
+            <h4 class="text-sm text-orange-50/70 sm:text-base">{company}</h4>
+            <p class="font-body mt-3 border-l-2 border-orange-50/15 pl-4  text-[0.75rem] text-orange-50/85 sm:text-sm">
               {description}
             </p>
           </div>

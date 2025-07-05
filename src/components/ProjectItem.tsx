@@ -90,11 +90,13 @@ export function ProjectItem({ type }: Props) {
                   <div className="relative flex flex-col justify-center">
                     <div className="pointer-events-none absolute top-3 bottom-3 w-2/3 -translate-x-12 bg-orange-300/10  blur-3xl transition-all duration-700 select-none group-hover:w-9/12 group-hover:opacity-0" />
                     <div className="pointer-events-none absolute top-3 bottom-3 w-2/3 -translate-x-12 bg-orange-400/15 opacity-0 mix-blend-normal blur-3xl transition-all duration-700 select-none group-hover:w-full group-hover:rounded-r-2xl group-hover:opacity-100" />
-                    <h3 className="font-title mb-3 bg-gradient-to-r from-orange-400 from-20% to-orange-900 to-95% bg-clip-text text-xl font-bold tracking-tight text-transparent">
+                    <h3 className="font-title mb-3 bg-gradient-to-r from-orange-400 from-20% to-orange-900 to-95% bg-clip-text text-lg font-bold tracking-tight text-transparent sm:text-xl">
                       {longTitle}
                     </h3>
 
-                    <p className="mb-4 text-[0.92rem] text-orange-50/85">{caption}</p>
+                    <p className="mb-4  text-[0.75rem] text-orange-50/85 sm:text-[0.92rem]">
+                      {caption}
+                    </p>
 
                     <div className="mb-4 flex flex-wrap gap-2">
                       {software.map((tech) => (

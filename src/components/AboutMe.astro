@@ -17,13 +17,13 @@ const src =
     <div class="flex w-full flex-col flex-nowrap sm:flex-row">
       <PhotoCard
         layers={2}
-        className="ml-5 h-52 w-44 rounded-full opacity-60 "
+        className="ml-0 flex h-52 w-full justify-center rounded-full opacity-60 sm:ml-5 sm:w-44 "
         src={src}
         alt="Profile"
       />
       <section
         class="[&_h3]:font-title relative flex w-fit flex-col gap-5
-         p-2 pl-4 text-sm text-orange-200/75
+         p-0 text-sm text-orange-200/75 sm:p-2 sm:pl-4
         [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:capitalize"
       >
         <div
@@ -125,7 +125,7 @@ const src =
         class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-7 bg-orange-400/50 blur-3xl"
       >
       </div>
-      <section class="flex flex-col gap-4">
+      <section class="flex flex-col gap-4 text-sm sm:text-base">
         <p>
           Empecé en desarrollo durante mis <strong>prácticas universitarias.</strong> Luego obtuve una
           <strong>certificación en PHP</strong> que me abrió paso como <strong
@@ -157,10 +157,10 @@ const src =
   </div>
   {/* Separador visual entre About Me y Footer */}
   <section
-    class="font-title flex justify-between border-t border-stone-800 py-4 pb-12 text-xs text-orange-200/65"
+    class="font-title flex justify-between border-t border-stone-800 py-4 pb-12 text-[0.6rem] text-orange-200/65 sm:text-xs"
   >
     <div class="w-20">© 2025</div>
-    <div>ÚLTIMA ACTUALIZACIÓN: 04/24/2025</div>
+    <div>ÚLTIMA ACTUALIZACIÓN: 07/04/2025</div>
     <div class="flex gap-2">
       <a
         href="https://twitter.com/ivanrice_"
