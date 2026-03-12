@@ -40,7 +40,7 @@ export function ProjectItem({ type }: Props) {
                 key={id}
                 className={`group animate animate-in fade-in-20 slide-in-from-top-6 relative duration-300  ${
                   isLast && !showAll
-                    ? 'mask-repeat-no-repeat pointer-events-none [mask-image:linear-gradient(to_bottom,black,transparent_85%)]'
+                    ? 'mask-repeat-no-repeat pointer-events-none  mask-radial-[50%_122%] mask-radial-from-5% mask-radial-at-top'
                     : ''
                 } ${isLast && showAll ? 'mb-16' : ''}`}
               >
@@ -122,8 +122,10 @@ export function ProjectItem({ type }: Props) {
                           return (
                             <Button
                               asChild
-                              className="group/inner inline-flex items-center gap-1.5 rounded-none font-medium  text-orange-400
-                              uppercase shadow-lg transition-colors hover:text-orange-400 hover:shadow-orange-300/10"
+                              className={`
+                                group/inner inline-flex items-center gap-1.5 rounded-none font-medium  text-orange-400
+                                uppercase shadow-lg transition-colors hover:text-orange-400 hover:shadow-orange-300/10
+                                ${isLast && !showAll ? 'backdrop-blur-none' : ''} `}
                               key={`${link.src}${id}`}
                             >
                               <a
@@ -147,10 +149,11 @@ export function ProjectItem({ type }: Props) {
                               <Icon
                                 name="instagram"
                                 size={17}
-                                className=" ease-in-cst size-[1.25rem] text-orange-400 transition-all duration-300 group-hover/icon:scale-110 "
+                                className={`ease-in-cst size-[1.25rem] text-orange-400 transition-all duration-300 group-hover/icon:scale-110`}
                                 isButton
                                 url={link.src}
                                 tooltipContent="Instagram ↗"
+                                backdrop={isLast && !showAll}
                               />
                             )}
                             {link.text === 'artstation' && (
@@ -161,6 +164,7 @@ export function ProjectItem({ type }: Props) {
                                 isButton
                                 url={link.src}
                                 tooltipContent="Artstation ↗"
+                                backdrop={isLast && !showAll}
                               />
                             )}
                             {link.text === 'github' && (
@@ -171,6 +175,7 @@ export function ProjectItem({ type }: Props) {
                                 isButton
                                 url={link.src}
                                 tooltipContent="GitHub ↗"
+                                backdrop={isLast && !showAll}
                               />
                             )}
                           </Fragment>
@@ -182,24 +187,24 @@ export function ProjectItem({ type }: Props) {
               </li>
             )
           })}
-          <li className={`absolute right-0  left-0 z-20 ${showAll ? '-bottom-2' : '-bottom-28'}`}>
+          <li className={`absolute right-0 left-0  z-20  ${showAll ? '-bottom-2' : '-bottom-28'}`}>
             <Button
               onClick={() => setShowAll((state) => !state)}
               variant="ghost"
               asChild
               className={`group/inner absolute bottom-0 z-20  flex  w-full items-center p-0 text-lg
             text-orange-400 transition-opacity duration-500 after:absolute
-              after:inset-0 after:bg-linear-0 after:from-transparent after:via-orange-500/5
+              after:inset-0 after:bg-linear-0 after:from-transparent after:via-orange-900/5
               after:to-transparent after:opacity-0 after:transition-opacity
               after:duration-500 hover:text-orange-500
             ${
               !showAll &&
-              `bottom-44 h-[30rem] bg-linear-0 from-transparent via-stone-900/75 to-transparent backdrop-blur-[2px] hover:after:opacity-100
+              `bottom-44 h-[22rem] bg-linear-0 from-transparent via-stone-900/80 to-transparent backdrop-blur-[2px] hover:after:opacity-100
                 sm:bottom-20 sm:h-80`
             }`}
             >
               <div className={`flex  ${showAll ? 'items-end' : 'items-center'}`}>
-                <p className="relative flex flex-nowrap items-center  gap-1 ">
+                <p className="relative flex flex-nowrap items-center  gap-1 text-2xl">
                   {showAll ? 'VER MENOS' : 'VER MÁS'}
                   <Icon
                     name="down"
