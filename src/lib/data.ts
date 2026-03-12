@@ -205,7 +205,6 @@ export const CARD_INFO: CardInfo[] = [
       },
     ],
   },
-
   {
     id: 7,
     media: [
@@ -240,6 +239,36 @@ export const CARD_INFO: CardInfo[] = [
     id: 8,
     media: [
       {
+        url: '/v1773264948/Frontend/la%20colmena%20market/954_1x_shots_so_xihrgg.webp',
+        bg: '#996016',
+      },
+      {
+        url: '/v1773264948/Frontend/la%20colmena%20market/954_1x_shots_so_xihrgg.webp',
+        bg: '#996016',
+      },
+      {
+        url: '/v1773264948/Frontend/la%20colmena%20market/954_1x_shots_so_xihrgg.webp',
+        bg: '#996016',
+      },
+    ],
+    title: 'La Colmena Market',
+    longTitle: 'La Colmena Market',
+    software: ['astro', 'alpine', 'tailwind', 'nanostores'],
+    caption:
+      'E-commerce de productos variados a base de miel. Desarrollado con Astro y Hygraph para una navegación rápida vía SSG. Integra gestión de pedidos y automatiza el envío del ticket de compra a WhatsApp.',
+    type: 'frontend',
+    links: [
+      { text: 'demo', src: 'https://www.lacolmenamarket.shop/' },
+      {
+        text: 'github',
+        src: 'https://github.com/Ivanricee/SpeakEaseAI',
+      },
+    ],
+  },
+  {
+    id: 9,
+    media: [
+      {
         url: '/v1749620470/portfolio/arcadia-quest/475_1x_shots_so16-9_hbutia.webp',
         bg: '#a97b4a',
       },
@@ -263,7 +292,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     media: [
       {
         url: '/v1743561065/portfolio/frontend/weeklytodo/postspark_export_2025-04-01_20-19-13_gtr5cx.webp',
@@ -285,7 +314,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     media: [
       {
         url: '/v1702071603/portfolio/frontend/discord/cover_dmo4zq.webp',
@@ -312,7 +341,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     media: [
       {
         url: '/v1702080763/portfolio/frontend/evidence%20tool/responsive_gpvchp.webp',
@@ -358,7 +387,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 12,
+    id: 13,
     media: [
       {
         url: '/v1702090713/portfolio/frontend/countries/cover_subieb.webp',
@@ -452,6 +481,9 @@ export const CARD_INFO: CardInfo[] = [
 const transform2 = 'e_colorize,co_rgb:FFE4B5,q_auto:eco,f_avif,w_50,h_50'
 const transform = 'e_colorize,co_rgb:FFE4B5,q_auto:eco,f_avif,w_50,h_50'
 export const SOFTWARE: Record<string, string> = {
+  astro: `${CLOUDINARY_URL}${transform}${'/v1773278808/portfolio/icons/astro_ljttim.avif'}`,
+  alpine: `${CLOUDINARY_URL}${transform}${'/v1773278992/portfolio/icons/Alpine.js_hiijvd.avif'}`,
+  nanostores: `${CLOUDINARY_URL}${transform}${'/v1773279745/portfolio/icons/nanostores_ku6oty.avif'}`,
   maya: `${CLOUDINARY_URL}${transform}${'/v1609285677/portfolio/icons/maya_mvhgmh.avif'}`,
   redshift: `${CLOUDINARY_URL}${transform2}${'/v1609286796/portfolio/icons/redshift_bzbnze.avif'}`,
   mari: `${CLOUDINARY_URL}${transform}${'/v1609285677/portfolio/icons/mari_uq9jsd.avif'}`,
