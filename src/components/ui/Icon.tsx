@@ -166,11 +166,13 @@ type iconButtonProps = BaseIconProps & {
   isButton: true
   url: string
   tooltipContent: string
+  backdrop?: boolean
 }
 type iconNonButtonProps = BaseIconProps & {
   isButton?: false
   url?: never
   tooltipContent?: never
+  backdrop?: boolean
 }
 type IconProps = iconButtonProps | iconNonButtonProps
 export function Icon({
@@ -180,6 +182,7 @@ export function Icon({
   className = '',
   url,
   tooltipContent,
+  backdrop = false,
 }: IconProps) {
   const svgElement = (
     <svg width={size} height={size} className={className}>
@@ -194,7 +197,7 @@ export function Icon({
             <Button
               size="icon"
               asChild
-              className="group/icon  rounded-none shadow-lg hover:shadow-orange-300/10"
+              className={`group/icon  rounded-none shadow-lg hover:shadow-orange-300/10 ${backdrop ? 'backdrop-blur-none' : ''}`}
             >
               <a href={url} target="_blank" rel="noopener noreferrer">
                 {svgElement}
