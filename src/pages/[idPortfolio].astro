@@ -14,7 +14,7 @@ const card = cardsInfo.find((cardItm) => cardItm.id === idPortfolioNum) as CardI
 export async function getStaticPaths() {
   const cardsInfo = await CARD_INFO
   return cardsInfo.map((cardItm) => ({
-    params: { idPortfolio: cardItm.id },
+    params: { idPortfolio: String(cardItm.id) },
   }))
 }
 const { caption, id, links, longTitle, software, title, type, media } = card
