@@ -209,6 +209,33 @@ export const CARD_INFO: CardInfo[] = [
     id: 7,
     media: [
       {
+        url: '/c_pad,ar_4:3,b_rgb:1b4167/portfolio/frontend/ring-toss/Demo_-_utis_rings_-_tyderian-Cover_fuwj8g.webp',
+        bg: '#204f7b',
+      },
+      {
+        url: 'portfolio/frontend/ring-toss/Demo_-_utis_rings_-_tyderian_bfhhvs',
+        //https://res.cloudinary.com/ivanrice-c/video/upload/v1792719278/
+        bg: '#204f7b',
+      },
+    ],
+    title: 'Water Ring Toss',
+    longTitle: 'Water Ring Toss',
+    software: ['react', 'rizom uv', 'maya'],
+    caption:
+      'Minijuego 3D inspirado en el arte de Sanna Annukka para el álbum Under the Iron Sea de Keane. Estilo Water Ring Toss desarrollada con React Three Fiber y Blender.',
+    type: 'frontend',
+    links: [
+      { text: 'demo', src: 'https://utis-arcade.ivanrice.dev/' },
+      {
+        text: 'github',
+        src: 'https://github.com/Ivanricee/utis-arcade',
+      },
+    ],
+  },
+  {
+    id: 8,
+    media: [
+      {
         url: '/v1743557243/portfolio/frontend/SpeakEaseAi/5a725262-b4a3-479f-9134-bcf0bddef39f.webp',
         bg: '#51503f',
       },
@@ -236,7 +263,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     media: [
       {
         url: '/v1773264948/Frontend/la%20colmena%20market/954_1x_shots_so_xihrgg.webp',
@@ -266,7 +293,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     media: [
       {
         url: '/v1749620470/portfolio/arcadia-quest/475_1x_shots_so16-9_hbutia.webp',
@@ -292,7 +319,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     media: [
       {
         url: '/v1743561065/portfolio/frontend/weeklytodo/postspark_export_2025-04-01_20-19-13_gtr5cx.webp',
@@ -314,7 +341,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     media: [
       {
         url: '/v1702071603/portfolio/frontend/discord/cover_dmo4zq.webp',
@@ -341,7 +368,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 12,
+    id: 13,
     media: [
       {
         url: '/v1702080763/portfolio/frontend/evidence%20tool/responsive_gpvchp.webp',
@@ -387,7 +414,7 @@ export const CARD_INFO: CardInfo[] = [
     ],
   },
   {
-    id: 13,
+    id: 14,
     media: [
       {
         url: '/v1702090713/portfolio/frontend/countries/cover_subieb.webp',
